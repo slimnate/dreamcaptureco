@@ -1,4 +1,4 @@
-<section class="background-radial-gradient mb-32 text-center text-gray-800 lg:text-left">
+<section class="background-radial-gradient mb-12 text-center text-gray-800 lg:text-left">
 	<div
 		class="relative overflow-hidden bg-cover bg-no-repeat"
 		style="

@@ -1,11 +1,10 @@
 <script>
-	import Quote from '../icons/Quote.svelte';
 	import TestimonialsItem from './TestimonialsItem.svelte';
 </script>
 
 <!-- Section: Testimonials -->
-<section class="mb-32 text-center text-gray-800">
-	<h2 class="mb-12 text-3xl font-bold">Testimonials</h2>
+<section class="mb-12 text-center text-gray-800">
+	<h2 class="mb-8 text-3xl font-bold">Testimonials</h2>
 
 	<div
 		id="testimonialsCarousel"

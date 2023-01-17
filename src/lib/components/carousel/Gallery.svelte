@@ -1,4 +1,5 @@
-<section class="mb-32 text-center">
+<section class="mb-0 text-center">
+	<div class="mb-8 text-3xl font-bold">Galleries</div>
 	<div id="galleryCarousel" class="slide carousel relative" data-bs-ride="carousel">
 		<div class="carousel-indicators absolute right-0 bottom-0 left-0 mb-4 flex justify-center p-0">
 			<button

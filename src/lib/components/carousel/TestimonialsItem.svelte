@@ -1,5 +1,5 @@
 <script>
-	import Quote from '../icons/Quote.svelte';
+	import Quote from '../icons/QuoteIcon.svelte';
 
 	export let name = '';
 	export let location = '';
