@@ -41,7 +41,7 @@
 	<h2 class="mb-12 text-3xl font-bold">Testimonials</h2>
 
 	<div
-		id="carouselExampleCaptions"
+		id="testimonialsCarousel"
 		class="slide carousel-dark carousel relative"
 		data-bs-ride="carousel"
 	>
@@ -156,7 +156,7 @@
 		<button
 			class="carousel-control-prev absolute top-0 bottom-0 left-0 flex items-center justify-center border-0 p-0 text-center hover:no-underline hover:outline-none focus:no-underline focus:outline-none"
 			type="button"
-			data-bs-target="#carouselExampleCaptions"
+			data-bs-target="#testimonialsCarousel"
 			data-bs-slide="prev"
 		>
 			<span class="carousel-control-prev-icon inline-block bg-no-repeat" aria-hidden="true" />
@@ -165,7 +165,7 @@
 		<button
 			class="carousel-control-next absolute top-0 bottom-0 right-0 flex items-center justify-center border-0 p-0 text-center hover:no-underline hover:outline-none focus:no-underline focus:outline-none"
 			type="button"
-			data-bs-target="#carouselExampleCaptions"
+			data-bs-target="#testimonialsCarousel"
 			data-bs-slide="next"
 		>
 			<span class="carousel-control-next-icon inline-block bg-no-repeat" aria-hidden="true" />
@@ -177,11 +177,11 @@
 
 <!-- Section: Carousel -->
 <section class="mb-32 text-center">
-	<div id="carouselExampleCaptions" class="slide carousel relative" data-bs-ride="carousel">
+	<div id="galleryCarousel" class="slide carousel relative" data-bs-ride="carousel">
 		<div class="carousel-indicators absolute right-0 bottom-0 left-0 mb-4 flex justify-center p-0">
 			<button
 				type="button"
-				data-bs-target="#carouselExampleCaptions"
+				data-bs-target="#galleryCarousel"
 				data-bs-slide-to="0"
 				class="active"
 				aria-current="true"
@@ -189,13 +189,13 @@
 			/>
 			<button
 				type="button"
-				data-bs-target="#carouselExampleCaptions"
+				data-bs-target="#galleryCarousel"
 				data-bs-slide-to="1"
 				aria-label="Slide 2"
 			/>
 			<button
 				type="button"
-				data-bs-target="#carouselExampleCaptions"
+				data-bs-target="#galleryCarousel"
 				data-bs-slide-to="2"
 				aria-label="Slide 3"
 			/>
@@ -209,6 +209,7 @@
 					<img
 						src="https://mdbootstrap.com/img/Photos/Slides/img%20(123).jpg"
 						class="block w-full"
+						alt="Gallery Item 1"
 					/>
 					<div
 						class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-black bg-fixed opacity-50"
@@ -227,6 +228,7 @@
 					<img
 						src="https://mdbootstrap.com/img/Photos/Slides/img%20(124).jpg"
 						class="block w-full"
+						alt="Gallery Item 2"
 					/>
 					<div
 						class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-black bg-fixed opacity-50"
@@ -245,6 +247,7 @@
 					<img
 						src="https://mdbootstrap.com/img/Photos/Slides/img%20(125).jpg"
 						class="block w-full"
+						alt="Gallery Item 3"
 					/>
 					<div
 						class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-black bg-fixed opacity-50"
