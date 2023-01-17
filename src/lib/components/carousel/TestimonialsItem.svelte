@@ -5,12 +5,11 @@
 	export let location = '';
 	export let image = '/images/placeholder_landscape.jpg';
 	export let active = false;
-
-	$: additionalStyles = active ? 'active' : '';
 </script>
 
 <div
-	class="carousel-item relative float-left w-full justify-end overflow-hidden bg-cover bg-no-repeat {additionalStyles}"
+	class="carousel-item relative float-left w-full justify-end overflow-hidden bg-cover bg-no-repeat"
+	class:active
 	style="
 					background-position: 50%;
 					background-image: url({image});
