@@ -1,5 +1,5 @@
 <script>
-	import NavbarMenuItem from '$lib/NavbarMenuItem.svelte';
+	import NavbarMenuItem from '$lib/components/NavbarMenuItem.svelte';
 </script>
 
 <nav
