@@ -1,3 +1,7 @@
+<script>
+	import Quote from '$lib/components/icons/Quote.svelte';
+</script>
+
 <!-- Section: Title Hero -->
 <section class="background-radial-gradient mb-32 text-center text-gray-800 lg:text-left">
 	<div
@@ -45,114 +49,77 @@
 		class="slide carousel-dark carousel relative"
 		data-bs-ride="carousel"
 	>
-		<div class="carousel-inner relative w-full overflow-hidden">
+		<div class="carousel-inner relative h-full w-full overflow-hidden">
 			<!-- Carousel Item -->
-			<div class="carousel-item active relative float-left w-full">
-				<img
-					class="mx-auto mb-6 rounded-full shadow-lg"
-					src="https://mdbootstrap.com/img/Photos/Avatars/img%20(10).jpg"
-					alt="avatar"
-					style="width: 150px"
-				/>
-				<div class="flex flex-wrap justify-center">
-					<div class="w-full shrink-0 grow-0 basis-auto px-3 lg:w-8/12">
-						<h5 class="mb-3 text-lg font-bold">Maria Kate</h5>
-						<p class="mb-4 font-medium text-gray-700">Kansas City</p>
-						<p class="mb-6 text-gray-500">
-							<svg
-								aria-hidden="true"
-								focusable="false"
-								data-prefix="fas"
-								data-icon="quote-left"
-								class="inline-block w-6 pr-2"
-								role="img"
-								xmlns="http://www.w3.org/2000/svg"
-								viewBox="0 0 512 512"
-							>
-								<path
-									fill="currentColor"
-									d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"
-								/>
-							</svg>In ac turpis justo. Vivamus auctor quam vitae odio feugiat pulvinar. Sed semper
-							ligula sed lorem tincidunt dignissim. Nam sed cursus lectus. Proin non rutrum magna.
-							Proin gravida, justo et imperdiet tristique, turpis nisi viverra est, nec posuere ex
-							arcu sit amet erat. Sed a dictum sem. Duis pretium condimentum nulla.
+			<div
+				class="carousel-item active relative float-left w-full justify-end overflow-hidden bg-cover bg-no-repeat"
+				style="
+					background-position: 50%;
+					background-image: url('/images/placeholder_landscape.jpg');
+					height: 500px;
+				"
+			>
+				<div class="flex h-full flex-wrap justify-center">
+					<div class="flex w-full flex-col justify-end px-3 lg:w-8/12 lg:justify-center">
+						<h5 class="mb-3 text-lg font-bold text-black drop-shadow-md">Maria Kate</h5>
+						<p class="mb-4 font-medium text-gray-900 drop-shadow-md">Kansas City</p>
+						<p class="mb-6 text-black drop-shadow-md">
+							<Quote />In ac turpis justo. Vivamus auctor quam vitae odio feugiat pulvinar. Sed
+							semper ligula sed lorem tincidunt dignissim. Nam sed cursus lectus. Proin non rutrum
+							magna. Proin gravida, justo et imperdiet tristique, turpis nisi viverra est, nec
+							posuere ex arcu sit amet erat. Sed a dictum sem. Duis pretium condimentum nulla.
 						</p>
 					</div>
 				</div>
 			</div>
 
-			<!-- Carousel item -->
-			<div class="carousel-item relative float-left w-full">
-				<img
-					class="mx-auto mb-6 rounded-full shadow-lg"
-					src="https://mdbootstrap.com/img/Photos/Avatars/img%20(32).jpg"
-					alt="avatar"
-					style="width: 150px"
-				/>
-				<div class="flex flex-wrap justify-center">
-					<div class="w-full shrink-0 grow-0 basis-auto px-3 lg:w-8/12">
-						<h5 class="mb-3 text-lg font-bold">John Doe</h5>
-						<p class="mb-4 font-medium text-gray-700">St. Louis</p>
-						<p class="mb-6 text-gray-500">
-							<svg
-								aria-hidden="true"
-								focusable="false"
-								data-prefix="fas"
-								data-icon="quote-left"
-								class="inline-block w-6 pr-2"
-								role="img"
-								xmlns="http://www.w3.org/2000/svg"
-								viewBox="0 0 512 512"
-							>
-								<path
-									fill="currentColor"
-									d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"
-								/>
-							</svg>
-							Maecenas auctor, quam eget tincidunt pretium, felis diam semper turpis, sed scelerisque
-							diam libero facilisis libero. Quisque vitae semper metus. Aliquam eu dui aliquam, faucibus
-							metus quis, elementum nunc.
+			<!-- Carousel Item -->
+			<div
+				class="carousel-item relative float-left w-full justify-end overflow-hidden bg-cover bg-no-repeat"
+				style="
+					background-position: 50%;
+					background-image: url('/images/placeholder_landscape.jpg');
+					height: 500px;
+				"
+			>
+				<div class="flex h-full flex-wrap justify-center">
+					<div class="flex w-full flex-col justify-end px-3 lg:w-8/12 lg:justify-center">
+						<h5 class="mb-3 text-lg font-bold text-black drop-shadow-md">John Doe</h5>
+						<p class="mb-4 font-medium text-gray-900 drop-shadow-md">St. Louis</p>
+						<p class="mb-6 text-black drop-shadow-md">
+							<Quote />Maecenas auctor, quam eget tincidunt pretium, felis diam semper turpis, sed
+							scelerisque diam libero facilisis libero. Quisque vitae semper metus. Aliquam eu dui
+							aliquam, faucibus metus quis, elementum nunc.
 						</p>
 					</div>
 				</div>
 			</div>
 
-			<!-- Carousel item -->
-			<div class="carousel-item relative float-left w-full">
-				<img
-					class="mx-auto mb-6 rounded-full shadow-lg"
-					src="https://mdbootstrap.com/img/Photos/Avatars/img%20(1).jpg"
-					alt="avatar"
-					style="width: 150px"
-				/>
-				<div class="flex flex-wrap justify-center">
-					<div class="w-full shrink-0 grow-0 basis-auto px-3 lg:w-8/12">
-						<h5 class="mb-3 text-lg font-bold">Anna Deynah</h5>
-						<p class="mb-4 font-medium text-gray-700">Wichita</p>
-						<p class="mb-6 text-gray-500">
-							<svg
-								aria-hidden="true"
-								focusable="false"
-								data-prefix="fas"
-								data-icon="quote-left"
-								class="inline-block w-6 pr-2"
-								role="img"
-								xmlns="http://www.w3.org/2000/svg"
-								viewBox="0 0 512 512"
-							>
-								<path
-									fill="currentColor"
-									d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"
-								/>
-							</svg>Duis sagittis, turpis in ullamcorper venenatis, ligula nibh porta dui, sit amet
-							rutrum enim massa in ante. Curabitur in justo at lorem laoreet ultricies. Nunc ligula
-							felis, sagittis eget nisi vitae.
+			<!-- Carousel Item -->
+			<div
+				class="carousel-item relative float-left w-full justify-end overflow-hidden bg-cover bg-no-repeat"
+				style="
+					background-position: 50%;
+					background-image: url('/images/placeholder_landscape.jpg');
+					height: 500px;
+				"
+			>
+				<div class="flex h-full flex-wrap justify-center">
+					<div class="flex w-full flex-col justify-end px-3 lg:w-8/12 lg:justify-center">
+						<h5 class="mb-3 text-lg font-bold text-black drop-shadow-md">Anna Deynah</h5>
+						<p class="mb-4 font-medium text-gray-900 drop-shadow-md">Wichita</p>
+						<p class="mb-6 text-black drop-shadow-md">
+							<Quote />Duis sagittis, turpis in ullamcorper venenatis, ligula nibh porta dui, sit
+							amet rutrum enim massa in ante. Curabitur in justo at lorem laoreet ultricies. Nunc
+							ligula felis, sagittis eget nisi vitae.
 						</p>
 					</div>
 				</div>
 			</div>
 		</div>
+		<!-- end carousel items -->
+
+		<!-- carousel buttons-->
 		<button
 			class="carousel-control-prev absolute top-0 bottom-0 left-0 flex items-center justify-center border-0 p-0 text-center hover:no-underline hover:outline-none focus:no-underline focus:outline-none"
 			type="button"
@@ -173,7 +140,7 @@
 		</button>
 	</div>
 </section>
-<!-- Section: Testimonials -->
+<!-- end Section: Testimonials -->
 
 <!-- Section: Carousel -->
 <section class="mb-32 text-center">
@@ -259,6 +226,7 @@
 				</div>
 			</div>
 		</div>
+		<!-- carousel buttons -->
 		<button
 			class="carousel-control-prev absolute top-0 bottom-0 left-0 flex items-center justify-center border-0 p-0 text-center hover:no-underline hover:outline-none focus:no-underline focus:outline-none"
 			type="button"
