@@ -5,6 +5,6 @@
 
 <Navbar />
 
-<div class="mx-auto bg-slate-300 text-center">
+<div class="mx-auto text-center">
 	<slot />
 </div>
