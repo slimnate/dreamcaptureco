@@ -5,9 +5,10 @@
 	import IconInstagram from './icons/IconInstagram.svelte';
 	import IconMail from './icons/IconMail.svelte';
 	import IconPhone from './icons/IconPhone.svelte';
+	import FooterLink from './FooterLink.svelte';
 </script>
 
-<footer class="bg-gray-100 text-center text-gray-600 lg:text-left">
+<footer class="text-center text-gray-600 lg:text-left" style="background-color: beige;">
 	<div class="flex items-center justify-center border-b border-gray-300 p-6 md:justify-between">
 		<div class="mr-12 hidden md:block">
 			<span>Get connected with us on social networks:</span>
@@ -41,65 +42,17 @@
 	</div>
 	<div class="mx-6 py-6 text-center md:text-left">
 		<div class="grid-1 grid gap-8 md:grid-cols-3">
-			<div class="flex flex-col border-r-2 md:col-span-2 md:text-center">
-				<h6 class="mb-4 flex justify-center font-semibold uppercase">Products</h6>
+			<div class="flex flex-col md:col-span-2 md:border-r-2 md:text-center">
+				<h6 class="mb-4 flex justify-center font-semibold uppercase">Categories</h6>
 				<div class="grid-1 grid gap-4 md:grid-cols-2">
-					<p>
-						<a
-							href="#!"
-							class="hover:scale[102%] text-gray-600 hover:text-gray-800 hover:drop-shadow-lg"
-							>Wedding</a
-						>
-					</p>
-					<p>
-						<a
-							href="#!"
-							class="hover:scale[102%] text-gray-600 hover:text-gray-800 hover:drop-shadow-lg"
-							>Engagement</a
-						>
-					</p>
-					<p>
-						<a
-							href="#!"
-							class="hover:scale[102%] text-gray-600 hover:text-gray-800 hover:drop-shadow-lg"
-							>Maternity</a
-						>
-					</p>
-					<p>
-						<a
-							href="#!"
-							class="hover:scale[102%] text-gray-600 hover:text-gray-800 hover:drop-shadow-lg"
-							>Newborn</a
-						>
-					</p>
-					<p>
-						<a
-							href="#!"
-							class="hover:scale[102%] text-gray-600 hover:text-gray-800 hover:drop-shadow-lg"
-							>Family</a
-						>
-					</p>
-					<p>
-						<a
-							href="#!"
-							class="hover:scale[102%] text-gray-600 hover:text-gray-800 hover:drop-shadow-lg"
-							>Seniors</a
-						>
-					</p>
-					<p>
-						<a
-							href="#!"
-							class="hover:scale[102%] text-gray-600 hover:text-gray-800 hover:drop-shadow-lg"
-							>Portrait</a
-						>
-					</p>
-					<p>
-						<a
-							href="#!"
-							class="hover:scale[102%] text-gray-600 hover:text-gray-800 hover:drop-shadow-lg"
-							>Boudoir</a
-						>
-					</p>
+					<FooterLink href="#!">Wedding</FooterLink>
+					<FooterLink href="#!">Engagement</FooterLink>
+					<FooterLink href="#!">Maternity</FooterLink>
+					<FooterLink href="#!">Newborn</FooterLink>
+					<FooterLink href="#!">Family</FooterLink>
+					<FooterLink href="#!">Seniors</FooterLink>
+					<FooterLink href="#!">Portrait</FooterLink>
+					<FooterLink href="#!">Boudoir</FooterLink>
 				</div>
 			</div>
 			<div class="">
