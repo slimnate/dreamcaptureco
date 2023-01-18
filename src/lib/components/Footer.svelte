@@ -13,13 +13,28 @@
 			<span>Get connected with us on social networks:</span>
 		</div>
 		<div class="flex justify-center">
-			<a href="https://www.facebook.com/profile.php?id=100088847065471" class="mr-6 text-gray-600">
+			<a
+				href="https://www.facebook.com/profile.php?id=100088847065471"
+				class="mr-6 text-gray-600"
+				target="_blank"
+				rel="noreferrer"
+			>
 				<IconFacebook />
 			</a>
-			<a href="mailto:dream.capture.co.42@gmail.com" class="mr-6 text-gray-600">
+			<a
+				href="mailto:dream.capture.co.42@gmail.com"
+				class="mr-6 text-gray-600"
+				target="_blank"
+				rel="noreferrer"
+			>
 				<IconGoogle />
 			</a>
-			<a href="https://www.instagram.com/dream.capture.co/" class="mr-6 text-gray-600">
+			<a
+				href="https://www.instagram.com/dream.capture.co/"
+				class="mr-6 text-gray-600"
+				target="_blank"
+				rel="noreferrer"
+			>
 				<IconInstagram />
 			</a>
 		</div>
