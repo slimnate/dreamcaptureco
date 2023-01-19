@@ -5,15 +5,15 @@
 <nav
 	class="
   navbar
-  navbar-expand-md
   navbar-light
+  navbar-expand-md
 	relative
   flex
   w-full
   flex-wrap
   items-center
   justify-between
-  bg-gray-100
+  bg-cream
   py-1
   text-gray-500
   shadow-lg hover:text-gray-700 focus:text-gray-700
