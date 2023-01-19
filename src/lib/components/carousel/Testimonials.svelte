@@ -1,14 +1,13 @@
 <script>
+	import Spacer from '../Spacer.svelte';
 	import TestimonialsItem from './TestimonialsItem.svelte';
 </script>
 
 <!-- Section: Testimonials -->
-<section class="mb-12 text-center text-gray-800">
-	<h2 class="mb-8 text-3xl font-bold">Testimonials</h2>
-
+<section class="text-center text-gray-800">
 	<div
 		id="testimonialsCarousel"
-		class="slide carousel-dark carousel relative"
+		class="slide carousel carousel-dark relative"
 		data-bs-ride="carousel"
 	>
 		<div class="carousel-inner relative h-full w-full overflow-hidden">

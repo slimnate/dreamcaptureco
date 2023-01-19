@@ -2,6 +2,7 @@
 	import Gallery from '$lib/components/carousel/Gallery.svelte';
 	import Testimonials from '$lib/components/carousel/Testimonials.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import Spacer from '$lib/components/Spacer.svelte';
 	import TitleHero from '$lib/components/TitleHero.svelte';
 
 	const portfolioItems = [
@@ -28,6 +29,10 @@
 
 <TitleHero />
 
+<Spacer>Testimonials</Spacer>
+
 <Testimonials />
 
-<Gallery items={portfolioItems} title="Portfolio" titleFloating={false} />
+<Spacer>Portfolio</Spacer>
+
+<Gallery items={portfolioItems} title="Galleries" />

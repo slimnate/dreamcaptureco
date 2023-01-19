@@ -1,18 +1,16 @@
 <script>
+	import Spacer from '../Spacer.svelte';
+
 	/**
 	 * @type {{name: string, description: string, image: string, link: string}[]}
 	 */
 	export let items = [];
 	export let title = '';
-	export let titleFloating = true;
 </script>
 
 <section class="mb-0 text-center">
-	{#if title && !titleFloating}
-		<div class="my-8 text-3xl font-bold">{title}</div>
-	{/if}
 	<div id="galleryCarousel" class="slide carousel relative" data-bs-ride="carousel">
-		{#if title && titleFloating}
+		{#if title}
 			<div class="absolute inset-0 top-0 z-10 flex h-min justify-center">
 				<div class="rounded-b-3xl bg-burly-wood/70 p-2 px-8 backdrop-blur-[1px]">
 					<span class="p-2 text-3xl uppercase text-black/70 blur-none">{title}</span>
