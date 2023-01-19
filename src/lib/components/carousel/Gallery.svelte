@@ -6,13 +6,16 @@
 	 */
 	export let items = [];
 	export let title = '';
+	export let id = 'gallery';
 </script>
 
 <section class="mb-0 text-center">
-	<div id="galleryCarousel" class="slide carousel relative" data-bs-ride="carousel">
+	<div {id} class="slide carousel relative" data-bs-ride="carousel">
 		{#if title}
 			<div class="absolute inset-0 top-0 z-10 flex h-min justify-center">
-				<div class="rounded-b-3xl bg-burly-wood/70 p-2 px-8 backdrop-blur-[1px]">
+				<div
+					class="rounded-b-lg bg-gradient-to-b from-burly-wood/70 to-burly-wood/70 p-2 px-8 backdrop-blur-[1px]"
+				>
 					<span class="p-2 text-3xl uppercase text-black/70 blur-none">{title}</span>
 				</div>
 			</div>
@@ -22,7 +25,7 @@
 			{#each items as item, i}
 				<button
 					type="button"
-					data-bs-target="#galleryCarousel"
+					data-bs-target={`#${id}`}
 					data-bs-slide-to={i}
 					class:active={i === 0}
 					aria-current={i === 0}
@@ -62,7 +65,7 @@
 			<button
 				class="carousel-control-prev absolute top-0 bottom-0 left-0 flex items-center justify-center border-0 p-0 text-center hover:no-underline hover:outline-none focus:no-underline focus:outline-none"
 				type="button"
-				data-bs-target="#galleryCarousel"
+				data-bs-target={`#${id}`}
 				data-bs-slide="prev"
 			>
 				<span class="carousel-control-prev-icon inline-block bg-no-repeat" aria-hidden="true" />
@@ -71,7 +74,7 @@
 			<button
 				class="carousel-control-next absolute top-0 bottom-0 right-0 flex items-center justify-center border-0 p-0 text-center hover:no-underline hover:outline-none focus:no-underline focus:outline-none"
 				type="button"
-				data-bs-target="#galleryCarousel"
+				data-bs-target={`#${id}`}
 				data-bs-slide="next"
 			>
 				<span class="carousel-control-next-icon inline-block bg-no-repeat" aria-hidden="true" />
