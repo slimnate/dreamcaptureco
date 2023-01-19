@@ -30,6 +30,4 @@
 
 <Testimonials />
 
-<Gallery items={portfolioItems} />
-
-<Footer />
+<Gallery items={portfolioItems} title="Portfolio" titleFloating={false} />
