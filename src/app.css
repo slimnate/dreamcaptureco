@@ -15,6 +15,3 @@ body {
   @apply md:hover:scale-[102%];
 }
 
-.navbar .logo {
-  @apply hover:scale-[102%];
-}

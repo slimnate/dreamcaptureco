@@ -54,15 +54,8 @@
 		<!-- END Toggler button -->
 
 		<!-- Logo/Title TODO: move logo outside of nav collapse so it shows in center of navbar on mobile/tablet, not in dropdown -->
-		<div class="logo flex grow items-center justify-center md:justify-start">
-			<a
-				class="
-        flex
-        items-center
-        lg:mt-0
-      "
-				href="/"
-			>
+		<div class="logo flex grow items-center justify-center md:justify-start md:px-2">
+			<a href="/">
 				<span class="semibold text-lg">Dream Capture</span>
 			</a>
 		</div>
