@@ -11,6 +11,10 @@ body {
   @apply text-blonde;
 }
 
-.navbar a, .navbar button {
+.navbar .nav-item {
+  @apply md:hover:scale-[102%];
+}
+
+.navbar .logo {
   @apply hover:scale-[102%];
 }
