@@ -1,5 +1,20 @@
 <script>
-	import NavbarMenuItem from '$lib/components/NavbarMenuItem.svelte';
+	import IconHamburger from '$lib/components/icons/IconHamburger.svelte';
+
+	const navItems = [
+		{
+			href: '/portfolio',
+			text: 'Portfolio',
+		},
+		{
+			href: '/booking',
+			text: 'Booking',
+		},
+		{
+			href: '/about',
+			text: 'About',
+		},
+	];
 </script>
 
 <nav
@@ -13,13 +28,10 @@
   flex-wrap
   items-center
   justify-between
-  bg-cream
-  py-1
-  text-gray-500
-  shadow-lg hover:text-gray-700 focus:text-gray-700
+  py-1 shadow-md
   "
 >
-	<div class="container-fluid flex w-full flex-wrap items-center justify-between px-6">
+	<div class="container-fluid flex w-full justify-between px-6">
 		<!-- Toggler button -->
 		<button
 			class="
@@ -27,9 +39,8 @@
       border-0
       bg-transparent
       py-2 px-2.5
-      text-gray-500
       hover:no-underline
-      hover:shadow-none
+      hover:drop-shadow-md
       focus:no-underline focus:shadow-none focus:outline-none focus:ring-0
     "
 			type="button"
@@ -43,30 +54,31 @@
 		</button>
 		<!-- END Toggler button -->
 
-		<div class="navbar-collapse collapse flex-grow items-center" id="navbarSupportedContent">
-			<!-- Logo/Title -->
-			<a
-				class="
+		<!-- Logo/Title TODO: move logo outside of nav collapse so it shows in center of navbar on mobile/tablet, not in dropdown -->
+		<a
+			class="
         flex
         items-center
-        text-gray-900
-        hover:text-gray-900
-        focus:text-gray-900
         lg:mt-0
       "
-				href="/"
-			>
-				<span class="text-lg">Dream Capture</span>
-			</a>
-			<!-- END Logo/Title -->
+			href="/"
+		>
+			<span class="semibold text-lg">Dream Capture</span>
+		</a>
 
+		<!-- navbar collapse -->
+		<div
+			class="navbar-collapse collapse flex-grow items-center border-t-2 border-black/80 md:border-none"
+			id="navbarSupportedContent"
+		>
 			<!-- Page links -->
 			<ul class="list-style-none navbar-nav flex flex-grow flex-col justify-end">
-				<NavbarMenuItem href="/portfolio">Portfolio</NavbarMenuItem>
-				<NavbarMenuItem href="/booking">Booking</NavbarMenuItem>
-				<NavbarMenuItem href="/about">About</NavbarMenuItem>
+				{#each navItems as { href, text }}
+					<li class="nav-item p-2">
+						<a class="nav-link p-0 hover:drop-shadow-lg" {href}>{text}</a>
+					</li>
+				{/each}
 			</ul>
-			<!-- END Page links -->
 		</div>
 		<!-- END Collapsible wrapper -->
 

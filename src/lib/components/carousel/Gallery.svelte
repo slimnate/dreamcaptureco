@@ -14,7 +14,7 @@
 		{#if title}
 			<div class="absolute inset-0 top-0 z-10 flex h-min justify-center">
 				<div
-					class="rounded-b-lg bg-gradient-to-b from-burly-wood/70 to-burly-wood/70 p-2 px-8 backdrop-blur-[1px]"
+					class="rounded-b-lg bg-gradient-to-b from-burlywood/70 to-burlywood/70 p-2 px-8 backdrop-blur-[1px]"
 				>
 					<span class="p-2 text-3xl uppercase text-black/70 blur-none">{title}</span>
 				</div>

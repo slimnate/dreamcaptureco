@@ -3,5 +3,14 @@
 @tailwind utilities;
 
 body {
-  background-color: burlywood;
+  @apply bg-mediumchampagne;
+}
+
+.navbar {
+  @apply bg-xanadu;
+  @apply text-blonde;
+}
+
+.navbar a, .navbar button {
+  @apply hover:scale-[102%];
 }
