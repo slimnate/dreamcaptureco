@@ -6,6 +6,17 @@
 	import IconMail from './icons/IconMail.svelte';
 	import IconPhone from './icons/IconPhone.svelte';
 	import FooterLink from './FooterLink.svelte';
+
+	const footerLinks = [
+		{ name: 'Wedding', href: '#/' },
+		{ name: 'Engagement', href: '#/' },
+		{ name: 'Maternity', href: '#/' },
+		{ name: 'Newborn', href: '#/' },
+		{ name: 'Family', href: '#/' },
+		{ name: 'Seniors', href: '#/' },
+		{ name: 'Portrait', href: '#/' },
+		{ name: 'Boudoir', href: '#/' },
+	];
 </script>
 
 <footer class="text-center text-gray-600 lg:text-left" style="background-color: beige;">
@@ -45,14 +56,13 @@
 			<div class="flex flex-col md:col-span-2 md:border-r-2 md:text-center">
 				<h6 class="mb-4 flex justify-center font-semibold uppercase">Categories</h6>
 				<div class="grid-1 grid gap-4 md:grid-cols-2">
-					<FooterLink href="#!">Wedding</FooterLink>
-					<FooterLink href="#!">Engagement</FooterLink>
-					<FooterLink href="#!">Maternity</FooterLink>
-					<FooterLink href="#!">Newborn</FooterLink>
-					<FooterLink href="#!">Family</FooterLink>
-					<FooterLink href="#!">Seniors</FooterLink>
-					<FooterLink href="#!">Portrait</FooterLink>
-					<FooterLink href="#!">Boudoir</FooterLink>
+					{#each footerLinks as { href, name }}
+						<a
+							{href}
+							class="text-gray-600 hover:scale-[1.02] hover:text-gray-800 hover:drop-shadow-lg"
+							>{name}</a
+						>
+					{/each}
 				</div>
 			</div>
 			<div class="">
