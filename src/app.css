@@ -3,8 +3,11 @@
 @tailwind utilities;
 
 body {
-  @apply bg-mediumchampagne;
+  @apply bg-blonde;
+  @apply text-blackcoffee
 }
+
+/* navbar */
 
 .navbar {
   @apply bg-xanadu;
@@ -15,3 +18,8 @@ body {
   @apply md:hover:scale-[102%];
 }
 
+/* footer */
+
+footer {
+  @apply bg-blonde
+}
