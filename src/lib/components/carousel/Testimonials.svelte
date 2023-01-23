@@ -9,6 +9,13 @@
 			image: '/images/testimonials/electra-02.jpg',
 		},
 		{
+			name: 'Setahnie',
+			location: 'Kansas City, MO',
+			text: 'Izzy is very professional and works great with anyone! We were very impressed at how she made my daughters first photoshoot an easy task. We loved our photos and would book again with her in the future!',
+			image: '/images/testimonials/setahnie-01.jpg',
+			fitTop: true,
+		},
+		{
 			name: 'Bri',
 			location: 'Lees Summit, MO',
 			text: 'Not only are Izzy’s photos beautiful, but she is incredible to work with. I’m always amazed at how quickly Izzy gets me comfortable in front of the camera, and how beautiful she makes me feel in her pictures!',
@@ -38,10 +45,10 @@
 </script>
 
 <!-- Section: Testimonials -->
-<section class="text-center">
+<section class="border-b border-xanadu text-center">
 	<div
 		id="testimonialsCarousel"
-		class="slide carousel carousel-dark relative border-b border-xanadu"
+		class="slide carousel-dark carousel relative"
 		data-bs-ride="carousel"
 	>
 		<div class="carousel-inner relative w-full overflow-hidden">
@@ -51,12 +58,15 @@
 						<div class="flex w-full flex-col justify-end px-3 md:w-8/12 lg:justify-center">
 							<img
 								src={image}
-								class="mx-auto mb-6 h-[200px] w-[200px] rounded-full object-cover md:h-[300px] md:w-[300px]"
+								class="mx-auto mb-6 h-[50vw] w-[50vw]
+								rounded-full object-cover
+								sm:h-[40vw] sm:w-[40vw]
+								md:h-[30vw] md:w-[30vw]"
 								class:object-top={fitTop}
 								alt="{name} testimonial"
 							/>
-							<h5 class="mb-3 text-lg font-bold drop-shadow-md">{name}</h5>
-							<p class="mb-4 font-medium drop-shadow-md">{location}</p>
+							<h5 class="mb-2 text-xl font-bold drop-shadow-md">{name}</h5>
+							<p class="mb-4 drop-shadow-md">{location}</p>
 							<p class="mb-6 drop-shadow-md">
 								<IconQuote />{text}<IconQuote end />
 							</p>
