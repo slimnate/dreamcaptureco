@@ -22,6 +22,12 @@
 			image: '/images/testimonials/quinton-01.jpg',
 		},
 		{
+			name: 'Allyson',
+			location: 'Bonner Springs, KS',
+			text: 'I’ve had the pleasure of working with Izzy twice now and let me say, this definitely won’t be the last!  She’s creative and made both shoots fun!  Not to mention she did great with my kids and my dog and captured the most amazing pictures of our family!',
+			image: '/images/testimonials/allyson-01.jpg',
+		},
+		{
 			name: 'Dani',
 			location: 'Kansas City, MO',
 			text: 'Izzy was amazing! I had a toddler and a puppy for our photoshoot and Izzy made it SO breezy. My son absolutely adored her positivity and how welcoming she was. I adore all of the pictures she got of us off guard, she captures all the best moments & makes them timeless!',
