@@ -12,13 +12,13 @@
 			style="background-color: rgba(0, 0, 0, 0.55)"
 		>
 			<div class="flex h-full items-end justify-center pb-12">
-				<div class="max-w-[800px] px-6 py-6 text-center text-blonde md:py-0 md:px-12">
+				<div class="max-w-[800px] px-6 py-6 text-center text-eggshell md:py-0 md:px-12">
 					<h2 class="mb-4 text-5xl font-bold leading-tight tracking-tight md:text-6xl xl:text-7xl">
 						Dream Capture Co
 					</h2>
 					<button
 						type="button"
-						class="mt-2 inline-block rounded-full border-2 border-cream px-6 py-2
+						class="mt-2 inline-block rounded-full border-2 px-6 py-2
 					text-xs font-medium uppercase leading-tight
 					transition duration-150 ease-in-out hover:scale-[102%] hover:bg-black hover:bg-opacity-50 focus:outline-none focus:ring-0"
 					>

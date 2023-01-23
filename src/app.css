@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 body {
-  @apply bg-blonde;
+  @apply bg-eggshell;
   @apply text-blackcoffee
 }
 
 /* navbar */
 
 .navbar {
-  @apply bg-xanadu;
-  @apply text-blonde;
+  @apply bg-eggshell;
+  @apply text-blackcoffee;
 }
 
 .navbar .nav-item {
@@ -21,7 +21,7 @@ body {
 /* footer */
 
 footer {
-  @apply bg-blonde
+  @apply bg-eggshell
 }
 
 .quote {

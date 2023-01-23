@@ -23,6 +23,11 @@ module.exports = {
         'charcoal': '#2E4057',
         'jet': '#353535',
         'palatinepurple': '#4C1E4F',
+        'lightpink': '#FFC3CD',
+        'cottoncandy': '#FFC2E2',
+        'mimipink': '#F5D0E4',
+        'eggshell': '#F1F0DE',
+        'palepurplepantone': '#F8E2EE',
       }
     },
   },
