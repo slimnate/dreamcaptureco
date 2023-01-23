@@ -2,7 +2,7 @@
 	import Spacer from '../Spacer.svelte';
 
 	/**
-	 * @type {{name: string, description: string, image: string, link: string}[]}
+	 * @type {{name: string, image: string, link: string}[]}
 	 */
 	export let items = [];
 	export let title = '';
@@ -13,10 +13,8 @@
 	<div {id} class="slide carousel relative" data-bs-ride="carousel">
 		{#if title}
 			<div class="absolute inset-0 top-0 z-10 flex h-min justify-center">
-				<div
-					class="rounded-b-lg bg-gradient-to-b from-burlywood/70 to-burlywood/70 p-2 px-8 backdrop-blur-[1px]"
-				>
-					<span class="p-2 text-3xl uppercase text-black/70 blur-none">{title}</span>
+				<div class="rounded-b-lg bg-eggshell/70 p-2 px-8 backdrop-blur-[1px]">
+					<span class="p-2 text-3xl uppercase blur-none">{title}</span>
 				</div>
 			</div>
 		{/if}
@@ -35,25 +33,27 @@
 		</div>
 		<div class="carousel-inner relative w-full overflow-hidden">
 			<!-- render carousel items -->
-			{#each items as { name, description, image, link }, i}
+			{#each items as { name, image, link }, i}
 				<div class="carousel-item relative float-left w-full" class:active={i === 0}>
+					{#if name}
+						<div class="absolute inset-0 top-0 z-10 flex h-min justify-center">
+							<div class="rounded-b-lg bg-eggshell/70 p-2 px-8 backdrop-blur-[1px]">
+								<span class="p-2 text-3xl uppercase blur-none">{name}</span>
+							</div>
+						</div>
+					{/if}
 					<div
 						class="relative overflow-hidden bg-cover bg-no-repeat"
 						style="background-position: 50%;"
 					>
 						<img src={image} class="block w-full" alt="Gallery Item 1" />
-						<div
-							class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-black bg-fixed opacity-50"
-						/>
 					</div>
 					<div class="carousel-caption absolute hidden text-center md:block">
-						<h5 class="text-xl">{name}</h5>
-						<p>{description}</p>
 						<button
 							type="button"
-							class="mt-2 inline-block rounded-full border-2 border-gray-200 px-6 py-2
-					text-xs font-medium uppercase leading-tight text-gray-200
-					transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-50 focus:outline-none focus:ring-0"
+							class="mt-2 inline-block rounded-full border-2 bg-blackcoffee/50 px-6
+					py-2 text-xs font-medium uppercase
+					leading-tight transition duration-150 ease-in-out hover:bg-black/70 focus:outline-none focus:ring-0"
 						>
 							<a href={link}>See More</a>
 						</button>

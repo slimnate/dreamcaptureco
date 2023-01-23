@@ -35,4 +35,4 @@
 
 <Spacer>Portfolio</Spacer>
 
-<Gallery items={portfolioItems} title="Galleries" />
+<Gallery items={portfolioItems} />
