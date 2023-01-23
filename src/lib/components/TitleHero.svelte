@@ -1,10 +1,9 @@
 <section class="background-radial-gradient text-center text-gray-800 lg:text-left">
 	<div
-		class="relative overflow-hidden bg-cover bg-no-repeat"
+		class="relative h-[300px] overflow-hidden bg-cover bg-no-repeat sm:h-[400px] md:h-[500px]"
 		style="
             background-position: 50%;
             background-image: url('/images/hero.jpg');
-            height: 500px;
           "
 	>
 		<div
