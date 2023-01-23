@@ -1,34 +1,62 @@
 <script>
-	import Spacer from '../Spacer.svelte';
-	import TestimonialsItem from './TestimonialsItem.svelte';
+	import IconQuote from '../icons/IconQuote.svelte';
+
+	const testimonials = [
+		{
+			name: 'Quinton',
+			location: 'Lawrence, KS',
+			text: 'Izzy takes her time, she is very professional, and has a unique way of interacting with her clients. She’s a fantastic photographer! I will continue going back to Izzy for all my shoots!',
+			image: '/images/testimonials/quinton-01.jpg',
+		},
+		{
+			name: 'Bri',
+			location: 'Lees Summit, MO',
+			text: 'Not only are Izzy’s photos beautiful, but she is incredible to work with. I’m always amazed at how quickly Izzy gets me comfortable in front of the camera, and how beautiful she makes me feel in her pictures!',
+			image: '/images/testimonials/bri-01.jpg',
+			fitTop: true,
+		},
+		{
+			name: 'Electra',
+			location: 'Kansas City, MO',
+			text: 'Izzy is one of the sweetest photographers I have met! She is so fun and creative to work with! She makes your ideas come to life! I would recommend her to anyone! I have nothing but wonderful things to say!',
+			image: '/images/testimonials/electra-02.jpg',
+		},
+		{
+			name: 'Dani',
+			location: 'Kansas City, MO',
+			text: 'Izzy was amazing! I had a toddler and a puppy for our photoshoot and Izzy made it SO breezy. My son absolutely adored her positivity and how welcoming she was. I adore all of the pictures she got of us off guard, she captures all the best moments & makes them timeless!',
+			image: '/images/testimonials/dani-01.jpg',
+		},
+	];
 </script>
 
 <!-- Section: Testimonials -->
-<section class="text-center text-gray-800">
+<section class="text-center">
 	<div
 		id="testimonialsCarousel"
-		class="slide carousel carousel-dark relative"
+		class="slide carousel carousel-dark relative border-b border-xanadu"
 		data-bs-ride="carousel"
 	>
-		<div class="carousel-inner relative h-full w-full overflow-hidden">
-			<TestimonialsItem name="Maria Kate" location="Kansas City" active
-				>In ac turpis justo. Vivamus auctor quam vitae odio feugiat pulvinar. Sed semper ligula sed
-				lorem tincidunt dignissim. Nam sed cursus lectus. Proin non rutrum magna. Proin gravida,
-				justo et imperdiet tristique, turpis nisi viverra est, nec posuere ex arcu sit amet erat.
-				Sed a dictum sem. Duis pretium condimentum nulla.
-			</TestimonialsItem>
-
-			<TestimonialsItem name="John Doe" location="St. Louis"
-				>Maecenas auctor, quam eget tincidunt pretium, felis diam semper turpis, sed scelerisque
-				diam libero facilisis libero. Quisque vitae semper metus. Aliquam eu dui aliquam, faucibus
-				metus quis, elementum nunc.
-			</TestimonialsItem>
-
-			<TestimonialsItem name="Anna Deynah" location="Wichita"
-				>Duis sagittis, turpis in ullamcorper venenatis, ligula nibh porta dui, sit amet rutrum enim
-				massa in ante. Curabitur in justo at lorem laoreet ultricies. Nunc ligula felis, sagittis
-				eget nisi vitae.
-			</TestimonialsItem>
+		<div class="carousel-inner relative w-full overflow-hidden">
+			{#each testimonials as { name, location, text, image, fitTop }, i}
+				<div class="carousel-item relative float-left w-full" class:active={i === 0}>
+					<div class="flex flex-wrap justify-center">
+						<div class="flex w-full flex-col justify-end px-3 md:w-8/12 lg:justify-center">
+							<img
+								src={image}
+								class="mx-auto mb-6 h-[200px] w-[200px] rounded-full object-cover md:h-[300px] md:w-[300px]"
+								class:object-top={fitTop}
+								alt="{name} testimonial"
+							/>
+							<h5 class="mb-3 text-lg font-bold drop-shadow-md">{name}</h5>
+							<p class="mb-4 font-medium drop-shadow-md">{location}</p>
+							<p class="mb-6 drop-shadow-md">
+								<IconQuote />{text}<IconQuote end />
+							</p>
+						</div>
+					</div>
+				</div>
+			{/each}
 		</div>
 		<!-- end carousel items -->
 

@@ -23,3 +23,13 @@ body {
 footer {
   @apply bg-blonde
 }
+
+.quote {
+ position: relative;
+ top: -4px;
+}
+
+.quote-end {
+ position: relative;
+ bottom: -4px;
+}
