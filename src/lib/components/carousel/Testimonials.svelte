@@ -3,17 +3,17 @@
 
 	const testimonials = [
 		{
-			name: 'Electra',
-			location: 'Kansas City, MO',
-			text: 'Izzy is one of the sweetest photographers I have met! She is so fun and creative to work with! She makes your ideas come to life! I would recommend her to anyone! I have nothing but wonderful things to say!',
-			image: '/images/testimonials/electra-02.jpg',
-		},
-		{
 			name: 'Setahnie',
 			location: 'Kansas City, MO',
 			text: 'Izzy is very professional and works great with anyone! We were very impressed at how she made my daughters first photoshoot an easy task. We loved our photos and would book again with her in the future!',
 			image: '/images/testimonials/setahnie-01.jpg',
 			fitTop: true,
+		},
+		{
+			name: 'Electra',
+			location: 'Kansas City, MO',
+			text: 'Izzy is one of the sweetest photographers I have met! She is so fun and creative to work with! She makes your ideas come to life! I would recommend her to anyone! I have nothing but wonderful things to say!',
+			image: '/images/testimonials/electra-02.jpg',
 		},
 		{
 			name: 'Bri',
