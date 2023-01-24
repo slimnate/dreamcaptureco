@@ -7,14 +7,12 @@
 	import IconPhone from './icons/IconPhone.svelte';
 
 	const footerLinks = [
-		{ name: 'Wedding', href: '#/' },
-		{ name: 'Engagement', href: '#/' },
-		{ name: 'Maternity', href: '#/' },
-		{ name: 'Newborn', href: '#/' },
-		{ name: 'Family', href: '#/' },
-		{ name: 'Seniors', href: '#/' },
 		{ name: 'Portrait', href: '#/' },
 		{ name: 'Boudoir', href: '#/' },
+		{ name: 'Couples', href: '#/' },
+		{ name: 'Family', href: '#/' },
+		{ name: 'Maternity', href: '#/' },
+		{ name: 'Newborn', href: '#/' },
 	];
 </script>
 
