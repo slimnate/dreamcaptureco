@@ -29,6 +29,12 @@
 
 <TitleHero />
 
+<div class="mt-6 translate-x-[5vw]">
+	<div class="text-3xl font-semibold" style="font-family:'Dancing Script'">
+		<span>Let me capture your dreams</span>
+	</div>
+	<div class="reactive-line mx-auto my-4 h-24 w-[2px] bg-blackcoffee" />
+</div>
 
 <Collage />
 
