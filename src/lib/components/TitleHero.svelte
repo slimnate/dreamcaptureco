@@ -3,7 +3,7 @@
 		class="relative h-[300px] overflow-hidden bg-cover bg-no-repeat sm:h-[400px] md:h-[500px]"
 		style="
             background-position: 50%;
-            background-image: url('/images/hero.jpg');
+            background-image: url('/images/hero-alt.jpg');
           "
 	>
 		<div
