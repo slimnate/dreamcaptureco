@@ -3,6 +3,7 @@
 	import Testimonials from '$lib/components/carousel/Testimonials.svelte';
 	import Collage from '$lib/components/Collage.svelte';
 	import Spacer from '$lib/components/Spacer.svelte';
+	import Tagline from '$lib/components/Tagline.svelte';
 	import TitleHero from '$lib/components/TitleHero.svelte';
 
 	const portfolioItems = [
@@ -29,12 +30,7 @@
 
 <TitleHero />
 
-<div class="mt-6 translate-x-[5vw]">
-	<div class="text-3xl font-semibold" style="font-family:'Dancing Script'">
-		<span>Let me capture your dreams</span>
-	</div>
-	<div class="reactive-line mx-auto my-4 h-24 w-[2px] bg-blackcoffee" />
-</div>
+<Tagline />
 
 <Collage />
 
