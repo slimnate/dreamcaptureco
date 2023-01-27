@@ -8,22 +8,34 @@
 
 	const portfolioItems = [
 		{
-			name: 'Slide 1',
-			description: 'Some representative placeholder content for the first slide.',
-			image: 'https://mdbootstrap.com/img/Photos/Slides/img%20(123).jpg',
-			link: '#!',
+			name: 'Portrait',
+			image: '/images/portrait/gallery.jpg',
+			link: '/portfolio/portrait',
 		},
 		{
-			name: 'Slide 2',
-			description: 'Some representative placeholder content for the second slide.',
-			image: 'https://mdbootstrap.com/img/Photos/Slides/img%20(124).jpg',
-			link: '#!',
+			name: 'Boudoir',
+			image: '/images/boudoir/gallery.jpg',
+			link: '/portfolio/boudoir',
 		},
 		{
-			name: 'Slide 3',
-			description: 'Some representative placeholder content for the third slide.',
-			image: 'https://mdbootstrap.com/img/Photos/Slides/img%20(125).jpg',
-			link: '#!',
+			name: 'Couples',
+			image: '/images/couples/gallery.jpg',
+			link: '/portfolio/couples',
+		},
+		{
+			name: 'Family',
+			image: '/images/family/gallery.jpg',
+			link: '/portfolio/family',
+		},
+		{
+			name: 'Maternity',
+			image: '/images/maternity/gallery.jpg',
+			link: '/portfolio/maternity',
+		},
+		{
+			name: 'Newborn',
+			image: '/images/newborn/gallery.jpg',
+			link: '/portfolio/newborn',
 		},
 	];
 </script>
