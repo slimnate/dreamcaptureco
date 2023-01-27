@@ -1,8 +1,6 @@
 <script>
-	import Spacer from '../Spacer.svelte';
-
 	/**
-	 * @type {{name: string, image: string, link: string}[]}
+	 * @type {{image: string, link: string, name?: string}[]}
 	 */
 	export let items = [];
 	export let title = '';
@@ -42,16 +40,14 @@
 							</div>
 						</div>
 					{/if}
-					<div
-						class="relative overflow-hidden bg-cover bg-no-repeat"
-						style="background-position: 50%;"
-					>
-						<img src={image} class="block w-full" alt={name} />
+					<!-- carousel content -->
+					<div class="flex max-h-[500px] w-full items-center justify-center">
+						<img src={image} alt={name} />
 					</div>
 					<div class="carousel-caption absolute text-center md:block">
 						<button
 							type="button"
-							class="mt-2 inline-block hidden rounded-full border-2 bg-blackcoffee/50 px-6
+							class="mt-2 hidden rounded-full border-2 bg-blackcoffee/50 px-6
 					py-2 text-xs font-medium uppercase
 					leading-tight transition duration-150 ease-in-out hover:bg-black/70 focus:outline-none focus:ring-0"
 						>
