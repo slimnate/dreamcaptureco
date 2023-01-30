@@ -137,6 +137,9 @@ function itemMapper(category) {
 	return (/** @type {ImageItem} */ image) => generateImageItem(category, image.name);
 }
 
+/**
+ * @param {string} category
+ */
 function urlMapper(category) {
   return (/** @type {ImageItem} */ image) => `images/portfolio/${category}/${image.name}`;
 }
