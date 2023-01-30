@@ -15,7 +15,7 @@
  * @property { boolean} gallery
  */
 
-// /** @type {{images: {name:string, main:boolean, gallery:boolean}[]}}  */
+/** @type {{[key: PropertyKey]: {images: ImageItem[]}, }}  */
 const images = {
 	portrait: {
 		images: [
@@ -134,7 +134,11 @@ const images = {
  * @param {string} category
  */
 function itemMapper(category) {
-	return (/** @type {ImageItem} */ image) => { return generateImageItem(category, image.name)};
+	return (/** @type {ImageItem} */ image) => generateImageItem(category, image.name);
+}
+
+function urlMapper(category) {
+  return (/** @type {ImageItem} */ image) => `images/portfolio/${category}/${image.name}`;
 }
 
 /**
@@ -157,18 +161,30 @@ function getHeaderImages() {
 }
 
 /**
- * @param {string} category
+ * @param {PropertyKey} category
  */
 function getGalleryImagesFor(category) {
   if(!Object.hasOwn(images, category)) {
     return [];
   }
-	// @ts-ignore ignore error using string as object key until
-  // i can figure out how to tell TS this is okay
+  
 	return images[category].images.filter(img => img.gallery).map(itemMapper(category));
+}
+
+/**
+ * @param {PropertyKey} category
+ */
+function getAllImagesFor(category) {
+  if(!Object.hasOwn(images, category)) {
+    return [];
+  }
+
+  return images[category].images.map(urlMapper(category));
+
 }
 
 export {
 	getHeaderImages,
 	getGalleryImagesFor,
+  getAllImagesFor,
 };
