@@ -29,30 +29,22 @@
 				/>
 			{/each}
 		</div>
-		<div class="carousel-inner relative w-full overflow-hidden">
+		<div class="carousel-inner w-full overflow-hidden">
 			<!-- render carousel items -->
 			{#each items as { name, image, link }, i}
-				<div class="carousel-item relative float-left w-full" class:active={i === 0}>
+				<div class="carousel-item float-left w-full" class:active={i === 0}>
 					{#if name}
-						<div class="absolute inset-0 top-0 z-10 flex h-min justify-center">
-							<div class="rounded-b-lg bg-eggshell/70 p-2 px-8 backdrop-blur-[1px]">
-								<span class="p-2 text-3xl uppercase blur-none">{name}</span>
-							</div>
+						<div class="absolute inset-0 z-10 flex h-min justify-center">
+							<a href={link}
+								><div class="gallery-link p-2 px-8">
+									<span class="p-2 text-3xl uppercase blur-none">{name}</span>
+								</div></a
+							>
 						</div>
 					{/if}
 					<!-- carousel content -->
 					<div class="flex max-h-[500px] w-full items-center justify-center">
 						<img src={image} alt={name} />
-					</div>
-					<div class="carousel-caption absolute text-center md:block">
-						<button
-							type="button"
-							class="mt-2 hidden rounded-full border-2 bg-blackcoffee/50 px-6
-					py-2 text-xs font-medium uppercase
-					leading-tight transition duration-150 ease-in-out hover:bg-black/70 focus:outline-none focus:ring-0"
-						>
-							<a href={link}>See More</a>
-						</button>
 					</div>
 				</div>
 			{/each}

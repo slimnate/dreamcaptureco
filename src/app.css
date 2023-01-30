@@ -3,33 +3,74 @@
 @tailwind utilities;
 
 body {
-  @apply bg-eggshell;
-  @apply text-blackcoffee
+	@apply bg-eggshell;
+	@apply text-blackcoffee;
 }
 
 /* navbar */
 
 .navbar {
-  @apply bg-eggshell;
-  @apply text-blackcoffee;
+	@apply bg-eggshell;
+	@apply text-blackcoffee;
 }
 
 .navbar .nav-item {
-  @apply md:hover:scale-[102%];
+	@apply md:hover:scale-[102%];
 }
 
 /* footer */
 
 footer {
-  @apply bg-eggshell
+	@apply bg-eggshell;
 }
 
 .quote {
- position: relative;
- top: -4px;
+	position: relative;
+	top: -4px;
 }
 
 .quote-end {
- position: relative;
- bottom: -4px;
+	position: relative;
+	bottom: -4px;
+}
+
+/* animations */
+
+.gallery-link {
+	@apply rounded-b-lg bg-eggshell/70;
+	/* @apply backdrop-blur-[1px]; */
+
+	--animation-time: 0.25s;
+	--animation-scale: 110%;
+	--animation-shadow: inset 0 0 5px theme(colors.cream), 0px 2px 20px theme(colors.blackcoffee);
+	animation: var(--animation-time) ease-in reverse buttondepop;
+}
+
+.gallery-link:hover {
+	animation: var(--animation-time) ease-in forwards buttonpop, pulsate 6s linear infinite;
+}
+
+@keyframes buttonpop {
+	100% {
+		scale: var(--animation-scale);
+		@apply backdrop-blur-lg;
+		box-shadow: var(--animation-shadow);
+	}
+}
+
+@keyframes buttondepop {
+	100% {
+		scale: var(--animation-scale);
+		@apply backdrop-blur-lg;
+		box-shadow: var(--animation-shadow);
+	}
+}
+
+@keyframes pulsate {
+	50% {
+		/* in order: offset-x, offset-y, blur-radius, color */
+		/* inset 50px 0 80px theme(colors.blackcoffee),
+    inset -50px 0 80px theme(colors.cream), inset 50px 0 300px theme(colors.blackcoffee),
+    inset -50px 0 300px theme(colors.cream); */
+	}
 }
