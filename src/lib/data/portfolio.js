@@ -15,7 +15,7 @@
  * @property { boolean} gallery
  */
 
-/** @type {{[key: PropertyKey]: {images: ImageItem[]}, }}  */
+/** @type {{[key: string]: {images: ImageItem[]}, }}  */
 const images = {
 	portrait: {
 		images: [
@@ -161,7 +161,7 @@ function getHeaderImages() {
 }
 
 /**
- * @param {PropertyKey} category
+ * @param {string} category
  */
 function getGalleryImagesFor(category) {
   if(!Object.hasOwn(images, category)) {
@@ -172,7 +172,7 @@ function getGalleryImagesFor(category) {
 }
 
 /**
- * @param {PropertyKey} category
+ * @param {string} category
  */
 function getAllImagesFor(category) {
   if(!Object.hasOwn(images, category)) {
