@@ -141,7 +141,7 @@ function itemMapper(category) {
  * @param {string} category
  */
 function urlMapper(category) {
-  return (/** @type {ImageItem} */ image) => `images/portfolio/${category}/${image.name}`;
+  return (/** @type {ImageItem} */ image) => `/images/${category}/${image.name}`;
 }
 
 /**
@@ -150,7 +150,7 @@ function urlMapper(category) {
  * @param {string} image
  */
 function generateImageItem(category, image) {
-	return { image: `images/${category}/${image}`, link: `/portfolio/${category}`, name: category };
+	return { image: `/images/${category}/${image}`, link: `/portfolio/${category}`, name: category };
 }
 
 function getHeaderImages() {
