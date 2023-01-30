@@ -34,22 +34,22 @@
 
 <Spacer />
 
-<Gallery items={boudoirItems} id="portraitsGallery" />
+<Gallery items={boudoirItems} id="boudoirGallery" />
 
 <Spacer />
 
-<Gallery items={couplesItems} id="portraitsGallery" />
+<Gallery items={couplesItems} id="couplesGallery" />
 
 <Spacer />
 
-<Gallery items={familyItems} id="portraitsGallery" />
+<Gallery items={familyItems} id="familyGallery" />
 
 <Spacer />
 
-<Gallery items={maternityItems} id="portraitsGallery" />
+<Gallery items={maternityItems} id="maternityGallery" />
 
 <Spacer />
 
-<Gallery items={newbornItems} id="portraitsGallery" />
+<Gallery items={newbornItems} id="newbornGallery" />
 
 <Spacer />
