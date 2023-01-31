@@ -8,6 +8,8 @@
  *  standout = display this image larger on the category specific portfolio page
  */
 
+import { error } from "@sveltejs/kit";
+
 /**
  * @typedef {Object} ImageItem
  * @property {string} name
@@ -58,7 +60,7 @@ const images = {
 	boudoir: {
 		images: [
 			{ name: '001.jpg', main: true, gallery: true },
-			{ name: '002.jpg', main: false, gallery: true },
+			// { name: '002.jpg', main: false, gallery: true },
 			{ name: '003.jpg', main: false, gallery: true },
 			{ name: '004.jpg', main: false, gallery: false },
 			{ name: '005.jpg', main: false, gallery: false },
@@ -128,6 +130,13 @@ const images = {
 };
 
 /**
+ * @param {string} category
+ */
+function isValidCategory(category) {
+  return Object.hasOwn(images, category);
+}
+
+/**
  * Returns a function that is passed to Array.map to map a
  * list of image file names into a gallery item format
  *
@@ -167,9 +176,7 @@ function getHeaderImages() {
  * @param {string} category
  */
 function getGalleryImagesFor(category) {
-  if(!Object.hasOwn(images, category)) {
-    return [];
-  }
+  if(!isValidCategory(category)) throw error(404, 'Not a valid category');
   
 	return images[category].images.filter(img => img.gallery).map(itemMapper(category));
 }
@@ -178,10 +185,8 @@ function getGalleryImagesFor(category) {
  * @param {string} category
  */
 function getAllImagesFor(category) {
-  if(!Object.hasOwn(images, category)) {
-    return [];
-  }
-
+  if(!isValidCategory(category)) throw error(404, 'Not a valid category');
+  
   return images[category].images.map(urlMapper(category));
 
 }
@@ -190,4 +195,5 @@ export {
 	getHeaderImages,
 	getGalleryImagesFor,
   getAllImagesFor,
+  isValidCategory,
 };
