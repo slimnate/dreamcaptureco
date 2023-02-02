@@ -1,22 +1,20 @@
 <script>
 	/**
-	 * @type {{image: string, link: string, name?: string}[]}
+	 * @type {import("$lib/data/portfolio").GalleryItem[]}
 	 */
 	export let items = [];
 	export let title = '';
 	export let id = 'gallery';
 </script>
 
-<section class="mb-0 text-center">
-	<div {id} class="slide carousel relative" data-bs-ride="carousel">
-		{#if title}
-			<div class="absolute inset-0 top-0 z-10 flex h-min justify-center">
-				<div class="rounded-b-lg bg-eggshell/70 p-2 px-8 backdrop-blur-[1px]">
-					<span class="p-2 text-3xl uppercase blur-none">{title}</span>
-				</div>
-			</div>
-		{/if}
-		<div class="carousel-indicators absolute right-0 bottom-0 left-0 mb-4 flex justify-center p-0">
+<section>
+	<h1>{title}</h1>
+	<div
+		{id}
+		class="slide carousel carousel-dark carousel-fade relative pb-16"
+		data-bs-ride="carousel"
+	>
+		<div class="carousel-indicators absolute right-0 bottom-0 left-0 mb-12 flex justify-center p-0">
 			<!-- render carousel indicators -->
 			{#each items as item, i}
 				<button
@@ -31,20 +29,24 @@
 		</div>
 		<div class="carousel-inner w-full overflow-hidden">
 			<!-- render carousel items -->
-			{#each items as { name, image, link }, i}
+			{#each items as { name, image, link, orientation }, i}
 				<div class="carousel-item float-left w-full" class:active={i === 0}>
 					{#if name}
 						<div class="absolute inset-0 z-10 flex h-min justify-center">
 							<a href={link}
-								><div class="gallery-link p-2 px-8">
-									<span class="p-2 text-3xl uppercase blur-none">{name}</span>
+								><div class="gallery-link p-1 px-4 sm:px-8">
+									<span class="text-2xl uppercase blur-none sm:text-3xl">{name}</span>
 								</div></a
 							>
 						</div>
 					{/if}
-					<!-- carousel content -->
-					<div class="flex max-h-[500px] w-full items-center justify-center">
-						<img src={image} alt={name} />
+					<!-- carousel title -->
+					<div class="mx-auto flex h-min items-start justify-center">
+						<img
+							src={image}
+							alt={name}
+							class="h-[150vw] max-h-[max(80vh,400px)] w-full object-contain object-top"
+						/>
 					</div>
 				</div>
 			{/each}

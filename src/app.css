@@ -34,6 +34,23 @@ footer {
 	bottom: -4px;
 }
 
+section,
+footer {
+	/* background: linear-gradient(
+		to bottom,
+		theme(colors.burlywood) -50%,
+		rgba(0, 0, 0, 0%) 10%,
+		rgba(0, 0, 0, 0%) 88%,
+		theme(colors.burlywood) 150%
+	); */
+	background: radial-gradient(rgba(0, 0, 0, 0%) 75%, theme(colors.burlywood) 200%);
+	@apply border-b border-b-burlywood/50;
+}
+
+section h1 {
+	@apply py-8 text-3xl font-bold uppercase text-blackcoffee/80;
+}
+
 /* animations */
 
 .gallery-link {

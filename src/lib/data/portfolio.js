@@ -9,12 +9,21 @@
  */
 
 import { error } from "@sveltejs/kit";
+import { getOrientation } from '$lib/image';
 
 /**
  * @typedef {Object} ImageItem
  * @property {string} name
  * @property {boolean} main
- * @property { boolean} gallery
+ * @property {boolean} gallery
+ */
+
+/**
+ * @typedef {Object} GalleryItem
+ * @property {string} image
+ * @property {string} link
+ * @property {string} name
+ * @property {string} orientation
  */
 
 /** @type {{[key: string]: {images: ImageItem[]}, }}  */
@@ -50,8 +59,8 @@ const images = {
 			{ name: '027.jpg', main: false, gallery: false },
 			{ name: '028.jpg', main: false, gallery: false },
 			{ name: '029.jpg', main: false, gallery: false },
-			{ name: '030.jpg', main: false, gallery: false },
-			{ name: '031.jpg', main: true, gallery: false },
+			{ name: '030.jpg', main: true, gallery: false },
+			{ name: '031.jpg', main: false, gallery: false },
 			{ name: '032.jpg', main: false, gallery: false },
 			{ name: '033.jpg', main: false, gallery: false },
 			{ name: '034.jpg', main: false, gallery: false },
@@ -77,17 +86,17 @@ const images = {
 			{ name: '001.jpg', main: false, gallery: true },
 			{ name: '002.jpg', main: false, gallery: true },
 			{ name: '003.jpg', main: false, gallery: true },
-			{ name: '004.jpg', main: true, gallery: false },
-			{ name: '005.jpg', main: false, gallery: false },
+			{ name: '004.jpg', main: false, gallery: false },
+			{ name: '005.jpg', main: false, gallery: true },
 			{ name: '006.jpg', main: false, gallery: false },
 			{ name: '007.jpg', main: false, gallery: false },
 			{ name: '008.jpg', main: false, gallery: false },
-			{ name: '009.jpg', main: false, gallery: false },
+			{ name: '009.jpg', main: true, gallery: false },
 		],
 	},
 	family: {
 		images: [
-			{ name: '001.jpg', main: true, gallery: true },
+			{ name: '001.jpg', main: false, gallery: true },
 			{ name: '002.jpg', main: false, gallery: true },
 			{ name: '003.jpg', main: false, gallery: true },
 			{ name: '004.jpg', main: false, gallery: false },
@@ -99,7 +108,7 @@ const images = {
 			{ name: '010.jpg', main: false, gallery: false },
 			{ name: '011.jpg', main: false, gallery: false },
 			{ name: '012.jpg', main: false, gallery: false },
-			{ name: '013.jpg', main: false, gallery: false },
+			{ name: '013.jpg', main: true, gallery: false },
 			{ name: '014.jpg', main: false, gallery: false },
 			{ name: '015.jpg', main: false, gallery: false },
 			{ name: '016.jpg', main: false, gallery: false },
@@ -121,10 +130,17 @@ const images = {
 	},
 	newborn: {
 		images: [
-			{ name: '001.jpg', main: true, gallery: true },
+			{ name: '001.jpg', main: false, gallery: true },
 			{ name: '002.jpg', main: false, gallery: true },
 			{ name: '003.jpg', main: false, gallery: true },
 			{ name: '004.jpg', main: false, gallery: false },
+			{ name: '005.jpg', main: false, gallery: false },
+			{ name: '006.jpg', main: true, gallery: false },
+			{ name: '007.jpg', main: false, gallery: false },
+			{ name: '008.jpg', main: false, gallery: false },
+			{ name: '009.jpg', main: false, gallery: false },
+			{ name: '010.jpg', main: false, gallery: false },
+			{ name: '011.jpg', main: false, gallery: false },
 		],
 	},
 };
@@ -143,7 +159,7 @@ function isValidCategory(category) {
  * @param {string} category
  */
 function itemMapper(category) {
-	return (/** @type {ImageItem} */ image) => generateImageItem(category, image.name);
+	return async (/** @type {ImageItem} */ image) => await generateGalleryItem(category, image.name);
 }
 
 /**
@@ -157,31 +173,44 @@ function urlMapper(category) {
  * Generate a gallery image item from a category and image name
  * @param {string} category
  * @param {string} image
+ * @returns {Promise<GalleryItem>}
  */
-function generateImageItem(category, image) {
-	return { image: `/images/${category}/${image}`, link: `/portfolio/${category}`, name: category };
+async function generateGalleryItem(category, image) {
+  const imgPath = `/images/${category}/${image}`;
+  const orientation = await getOrientation(imgPath);
+
+	return { image: imgPath, link: `/portfolio/${category}`, name: category, orientation };
 }
 
-function getHeaderImages() {
+/**
+ * Get all the gallery items for the main page
+ */
+async function getHeaderImages() {
+	/** @type {GalleryItem[]} */
 	let result = [];
 	for (const [category, item] of Object.entries(images)) {
 		let mainItem = item.images.filter((img) => img.main)[0];
-		result.push(generateImageItem(category, mainItem.name));
+		const galleryItem = await generateGalleryItem(category, mainItem.name)
+		result.push(galleryItem);
 	}
 
 	return result;
 }
 
 /**
+ * Get all the gallery items for a specific category
  * @param {string} category
  */
-function getGalleryImagesFor(category) {
+async function getGalleryImagesFor(category) {
   if(!isValidCategory(category)) throw error(404, 'Not a valid category');
   
-	return images[category].images.filter(img => img.gallery).map(itemMapper(category));
+  const galleryImages = images[category].images.filter(img => img.gallery);
+
+	return Promise.all(galleryImages.map(itemMapper(category)));
 }
 
 /**
+ * Get all the image urls for a specific category
  * @param {string} category
  */
 function getAllImagesFor(category) {

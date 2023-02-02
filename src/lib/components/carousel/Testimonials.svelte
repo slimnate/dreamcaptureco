@@ -45,10 +45,11 @@
 </script>
 
 <!-- Section: Testimonials -->
-<section class="border-b border-xanadu text-center">
+<section class="text-center">
+	<div class="py-10 text-3xl font-bold uppercase text-black/70">Testimonials</div>
 	<div
 		id="testimonialsCarousel"
-		class="slide carousel-dark carousel relative"
+		class="slide carousel carousel-dark relative"
 		data-bs-ride="carousel"
 	>
 		<div class="carousel-inner relative w-full overflow-hidden">

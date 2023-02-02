@@ -5,7 +5,7 @@ import { error } from '@sveltejs/kit';
 export async function load({ params }) {
 	const category = params.category;
   if(!isValidCategory(category)) throw error(404, 'Not a valid category');
-	const images = getAllImagesFor(category);
+	const images = await getAllImagesFor(category);
 
 	return {
 		category,
