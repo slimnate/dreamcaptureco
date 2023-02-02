@@ -8,7 +8,7 @@
  *  standout = display this image larger on the category specific portfolio page
  */
 
-import { error } from "@sveltejs/kit";
+import { error } from '@sveltejs/kit';
 import { getOrientation } from '$lib/image';
 
 /**
@@ -149,7 +149,7 @@ const images = {
  * @param {string} category
  */
 function isValidCategory(category) {
-  return Object.hasOwn(images, category);
+	return Object.hasOwn(images, category);
 }
 
 /**
@@ -166,7 +166,7 @@ function itemMapper(category) {
  * @param {string} category
  */
 function urlMapper(category) {
-  return (/** @type {ImageItem} */ image) => `/images/${category}/${image.name}`;
+	return (/** @type {ImageItem} */ image) => `/images/${category}/${image.name}`;
 }
 
 /**
@@ -176,8 +176,8 @@ function urlMapper(category) {
  * @returns {Promise<GalleryItem>}
  */
 async function generateGalleryItem(category, image) {
-  const imgPath = `/images/${category}/${image}`;
-  const orientation = await getOrientation(imgPath);
+	const imgPath = `/images/${category}/${image}`;
+	const orientation = await getOrientation(imgPath);
 
 	return { image: imgPath, link: `/portfolio/${category}`, name: category, orientation };
 }
@@ -190,7 +190,7 @@ async function getHeaderImages() {
 	let result = [];
 	for (const [category, item] of Object.entries(images)) {
 		let mainItem = item.images.filter((img) => img.main)[0];
-		const galleryItem = await generateGalleryItem(category, mainItem.name)
+		const galleryItem = await generateGalleryItem(category, mainItem.name);
 		result.push(galleryItem);
 	}
 
@@ -202,9 +202,9 @@ async function getHeaderImages() {
  * @param {string} category
  */
 async function getGalleryImagesFor(category) {
-  if(!isValidCategory(category)) throw error(404, 'Not a valid category');
-  
-  const galleryImages = images[category].images.filter(img => img.gallery);
+	if (!isValidCategory(category)) throw error(404, 'Not a valid category');
+
+	const galleryImages = images[category].images.filter((img) => img.gallery);
 
 	return Promise.all(galleryImages.map(itemMapper(category)));
 }
@@ -214,15 +214,9 @@ async function getGalleryImagesFor(category) {
  * @param {string} category
  */
 function getAllImagesFor(category) {
-  if(!isValidCategory(category)) throw error(404, 'Not a valid category');
-  
-  return images[category].images.map(urlMapper(category));
+	if (!isValidCategory(category)) throw error(404, 'Not a valid category');
 
+	return images[category].images.map(urlMapper(category));
 }
 
-export {
-	getHeaderImages,
-	getGalleryImagesFor,
-  getAllImagesFor,
-  isValidCategory,
-};
+export { getHeaderImages, getGalleryImagesFor, getAllImagesFor, isValidCategory };

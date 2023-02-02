@@ -9,7 +9,7 @@
 	/** @type {import('./$types').PageServerData} */
 	export let data;
 
-	const { portfolioItems } = data;
+	const { portfolioItems, testimonialItems } = data;
 </script>
 
 <TitleHero />
@@ -20,6 +20,6 @@
 
 <QuickAbout />
 
-<Testimonials />
+<Testimonials items={testimonialItems} />
 
 <Gallery items={portfolioItems} title="portfolio" />
