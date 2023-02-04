@@ -15,6 +15,13 @@
 			text: 'About',
 		},
 	];
+
+	/**
+	 * @param {MouseEvent & { currentTarget: EventTarget & HTMLAnchorElement; }} event
+	 */
+	function handleNavItemClick(event) {
+		document.querySelector('.navbar-collapse')?.classList.remove('show');
+	}
 </script>
 
 <!--bg-gradient-to-b from-cream/70 via-cream to-cream/70-->
@@ -64,7 +71,9 @@
 			<ul class="list-style-none navbar-nav flex flex-col md:justify-end">
 				{#each navItems as { href, text }}
 					<li class="nav-item p-2">
-						<a class="nav-link p-0  hover:drop-shadow-lg" {href}>{text}</a>
+						<a class="nav-link p-0  hover:drop-shadow-lg" {href} on:click={handleNavItemClick}
+							>{text}</a
+						>
 					</li>
 				{/each}
 			</ul>
