@@ -62,7 +62,7 @@
 
 		<!-- Logo/Title TODO: move logo outside of nav collapse so it shows in center of navbar on mobile/tablet, not in dropdown -->
 		<div class="logo flex grow items-center justify-center md:justify-start md:px-2">
-			<a href="/">
+			<a href="/" on:click={handleNavItemClick}>
 				<span class="semibold text-lg">Dream Capture</span>
 			</a>
 		</div>
