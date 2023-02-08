@@ -1,4 +1,5 @@
-<section class="background-radial-gradient text-center text-gray-800 lg:text-left">
+<section class="background-radial-gradient text-center text-eggshell">
+	<!-- fixed size container with background image, relative parent for absolute children -->
 	<div
 		class="relative h-[300px] overflow-hidden bg-cover bg-no-repeat sm:h-[400px] md:h-[500px]"
 		style="
@@ -6,24 +7,24 @@
             background-image: url('/images/hero-alt.jpg');
           "
 	>
+		<!-- absolute, full size container with bg color overlay -->
 		<div
-			class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-fixed"
-			style="background-color: rgba(0, 0, 0, 0.55)"
+			class="absolute inset-0 overflow-hidden bg-fixed"
+			style="background-color: rgba(0, 0, 0, 0.35)"
 		>
-			<div class="flex h-full items-end justify-center pb-12">
-				<div class="max-w-[800px] px-6 py-6 text-center text-eggshell md:py-0 md:px-12">
-					<h2 class="mb-4 text-5xl font-bold leading-tight tracking-tight md:text-6xl xl:text-7xl">
-						Dream Capture Co
-					</h2>
-					<button
-						type="button"
-						class="mt-2 inline-block rounded-full border-2 px-6 py-2
-					text-xs font-medium uppercase leading-tight
-					transition duration-150 ease-in-out hover:scale-[102%] hover:bg-black hover:bg-opacity-50 focus:outline-none focus:ring-0"
-					>
-						<a href="/booking">Book Now</a>
-					</button>
-				</div>
+			<!-- items positioning container for text/button -->
+			<div class="flex h-full flex-col items-center justify-between">
+				<!-- heading -->
+				<h2
+					class="my-auto p-[0.25em] text-5xl font-bold tracking-tight sm:text-[4rem] md:text-[5rem] lg:text-[5.5rem]"
+				>
+					Dream Capture Co
+				</h2>
+
+				<!-- button-->
+				<button type="button" class="button-glass my-auto text-xl sm:text-2xl lg:text-3xl">
+					<a href="/booking">Book Now</a>
+				</button>
 			</div>
 		</div>
 	</div>

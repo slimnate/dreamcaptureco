@@ -7,11 +7,11 @@
 	export let id = 'gallery';
 </script>
 
-<section>
+<section class="text-blackcoffee">
 	<h1>{title}</h1>
 	<div
 		{id}
-		class="slide carousel carousel-dark carousel-fade relative pb-16"
+		class="slide carousel carousel-fade carousel-dark relative pb-16"
 		data-bs-ride="carousel"
 	>
 		<div class="carousel-indicators absolute right-0 bottom-0 left-0 mb-12 flex justify-center p-0">
@@ -32,11 +32,9 @@
 			{#each items as { name, image, link, orientation }, i}
 				<div class="carousel-item float-left w-full" class:active={i === 0}>
 					{#if name}
-						<div class="absolute inset-0 z-10 flex h-min justify-center">
-							<a href={link}
-								><div class="gallery-link p-1 px-4 sm:px-8">
-									<span class="text-2xl uppercase blur-none sm:text-3xl">{name}</span>
-								</div></a
+						<div class="absolute inset-0 z-10 h-min">
+							<button class="button-glass button-floating-top text-2xl"
+								><a href={link}>{name}</a></button
 							>
 						</div>
 					{/if}
