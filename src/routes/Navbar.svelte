@@ -7,6 +7,10 @@
 			text: 'Portfolio',
 		},
 		{
+			href: '/pricing',
+			text: 'Pricing',
+		},
+		{
 			href: '/booking',
 			text: 'Booking',
 		},
