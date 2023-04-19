@@ -26,7 +26,13 @@ import { getOrientation } from '$lib/image';
  * @property {string} orientation
  */
 
-/** @type {{[key: string]: {images: ImageItem[]}, }}  */
+/**
+ * @typedef {Object} CategoryDeclaration
+ * @property {ImageItem[]} images
+ * @property {string} [displayName]
+ */
+
+/** @type {{[key: string]: CategoryDeclaration, }}  */
 const images = {
 	portrait: {
 		images: [
@@ -149,6 +155,7 @@ const images = {
 		],
 	},
 	maternity: {
+		displayName: 'Maternity/Newborn',
 		images: [
 			{ name: '001.jpg', main: false, gallery: true },
 			{ name: '002.jpg', main: true, gallery: true },
@@ -166,28 +173,34 @@ const images = {
 			{ name: '014.jpg', main: false, gallery: false },
 			// { name: '013.jpg', main: false, gallery: false },
 			// { name: '014.jpg', main: false, gallery: false },
-			// { name: '015.jpg', main: false, gallery: false },
-			// { name: '016.jpg', main: false, gallery: false },
-			// { name: '017.jpg', main: false, gallery: false },
-			// { name: '018.jpg', main: false, gallery: false },
-			// { name: '019.jpg', main: false, gallery: false },
+			{ name: '015.jpg', main: false, gallery: false },
+			{ name: '016.jpg', main: false, gallery: false },
+			{ name: '017.jpg', main: false, gallery: false },
+			{ name: '018.jpg', main: false, gallery: false },
+			{ name: '019.jpg', main: false, gallery: false },
+			{ name: '020.jpg', main: false, gallery: false },
+			{ name: '021.jpg', main: false, gallery: false },
+			{ name: '022.jpg', main: false, gallery: false },
+			{ name: '023.jpg', main: false, gallery: false },
+			{ name: '024.jpg', main: false, gallery: false },
+			{ name: '025.jpg', main: false, gallery: false },
 		],
 	},
-	newborn: {
-		images: [
-			{ name: '001.jpg', main: false, gallery: true },
-			{ name: '002.jpg', main: false, gallery: true },
-			{ name: '003.jpg', main: false, gallery: true },
-			{ name: '004.jpg', main: false, gallery: false },
-			{ name: '005.jpg', main: false, gallery: false },
-			{ name: '006.jpg', main: true, gallery: false },
-			{ name: '007.jpg', main: false, gallery: false },
-			{ name: '008.jpg', main: false, gallery: false },
-			{ name: '009.jpg', main: false, gallery: false },
-			{ name: '010.jpg', main: false, gallery: false },
-			{ name: '011.jpg', main: false, gallery: false },
-		],
-	},
+	// newborn: {
+	// 	images: [
+	// 		{ name: '001.jpg', main: false, gallery: true },
+	// 		{ name: '002.jpg', main: false, gallery: true },
+	// 		{ name: '003.jpg', main: false, gallery: true },
+	// 		{ name: '004.jpg', main: false, gallery: false },
+	// 		{ name: '005.jpg', main: false, gallery: false },
+	// 		{ name: '006.jpg', main: true, gallery: false },
+	// 		{ name: '007.jpg', main: false, gallery: false },
+	// 		{ name: '008.jpg', main: false, gallery: false },
+	// 		{ name: '009.jpg', main: false, gallery: false },
+	// 		{ name: '010.jpg', main: false, gallery: false },
+	// 		{ name: '011.jpg', main: false, gallery: false },
+	// 	],
+	// },
 };
 
 /**
@@ -224,7 +237,12 @@ async function generateGalleryItem(category, image) {
 	const imgPath = `/images/${category}/${image}`;
 	const orientation = await getOrientation(imgPath);
 
-	return { image: imgPath, link: `/portfolio/${category}`, name: category, orientation };
+	return {
+		image: imgPath,
+		link: `/portfolio/${category}`,
+		name: images[category].displayName || category,
+		orientation,
+	};
 }
 
 /**
