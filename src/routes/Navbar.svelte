@@ -1,5 +1,11 @@
 <script>
+	import { Collapse, initTE } from 'tw-elements';
 	import IconHamburger from '$lib/components/icons/IconHamburger.svelte';
+	import { onMount } from 'svelte';
+
+	onMount(() => {
+		initTE({ Collapse });
+	});
 
 	const navItems = [
 		{
@@ -28,66 +34,53 @@
 	}
 </script>
 
-<!--bg-gradient-to-b from-cream/70 via-cream to-cream/70-->
-<nav
-	class="
-  navbar
-  navbar-expand-md
-  navbar-light
-	relative
-  flex
-  w-full
-  flex-wrap
-  items-center
-  justify-between
-  py-1 shadow-md
-  "
->
-	<div class="container-fluid flex w-full flex-wrap justify-between px-6">
-		<!-- Toggler button -->
+<!-- Main navigation container -->
+<nav class="relative flex w-full items-center justify-between py-3 shadow-lg" data-te-navbar-ref>
+	<div class="my-auto flex w-full flex-wrap items-center justify-between px-3">
+		<!-- Hamburger button for mobile view -->
 		<button
-			class="
-			navbar-toggler
-      w-[10vw]
-			border-0
-      bg-transparent py-2
-      pl-2.5
-    "
+			class="block border-0 bg-transparent px-2 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 lg:hidden"
 			type="button"
-			data-bs-toggle="collapse"
-			data-bs-target="#navbarSupportedContent"
-			aria-controls="navbarSupportedContent"
+			data-te-collapse-init
+			data-te-target="#navbarSupportedContent3"
+			aria-controls="navbarSupportedContent3"
 			aria-expanded="false"
 			aria-label="Toggle navigation"
 		>
 			<IconHamburger />
 		</button>
-		<!-- END Toggler button -->
 
-		<!-- Logo/Title TODO: move logo outside of nav collapse so it shows in center of navbar on mobile/tablet, not in dropdown -->
-		<div class="logo flex grow items-center justify-center md:justify-start md:px-2">
-			<a href="/" on:click={handleNavItemClick}>
-				<span class="semibold text-lg">Dream Capture</span>
-			</a>
+		<!-- Navbar title -->
+		<div class="flex grow items-center justify-center lg:justify-start">
+			<a class="pr-2 text-center text-xl" href="/"><span class="semibold">Dream Capture</span></a>
 		</div>
-		<div class="navbar-collapse collapse" id="navbarSupportedContent">
-			<!-- Page links -->
-			<ul class="list-style-none navbar-nav flex flex-col md:justify-end">
-				{#each navItems as { href, text }}
-					<li class="nav-item p-2">
-						<a class="nav-link p-0  hover:drop-shadow-lg" {href} on:click={handleNavItemClick}
-							>{text}</a
+
+		<!-- Collapsible navbar container -->
+		<div
+			class="!visible hidden flex-grow basis-[100%] lg:mt-0 lg:!flex lg:basis-auto lg:justify-end"
+			id="navbarSupportedContent3"
+			data-te-collapse-item
+		>
+			<!-- Left links -->
+			<ul
+				class="list-style-none my-auto flex flex-col justify-end pl-0 lg:flex-row"
+				data-te-navbar-nav-ref
+			>
+				{#each navItems as { href, text }, index}
+					<li
+						class:mt-4={index === 0}
+						class:mb-0={index === navItems.length - 1}
+						class="my-2 lg:mt-0 lg:mb-0 lg:px-2 lg:pr-2"
+						data-te-nav-item-ref
+					>
+						<a
+							class="text-blackcoffee/70 hover:text-blackcoffee hover:drop-shadow-lg sm:text-lg"
+							{href}
+							data-te-nav-link-ref>{text}</a
 						>
 					</li>
 				{/each}
 			</ul>
 		</div>
-		<!-- END Collapsible wrapper -->
-
-		<!-- Right elements -->
-		<div class="relative flex items-center">
-			<!-- PLACEHOLDER -->
-		</div>
-		<!-- END Right elements -->
 	</div>
 </nav>
