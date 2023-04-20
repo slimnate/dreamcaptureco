@@ -186,21 +186,21 @@ const images = {
 			{ name: '025.jpg', main: false, gallery: false },
 		],
 	},
-	// newborn: {
-	// 	images: [
-	// 		{ name: '001.jpg', main: false, gallery: true },
-	// 		{ name: '002.jpg', main: false, gallery: true },
-	// 		{ name: '003.jpg', main: false, gallery: true },
-	// 		{ name: '004.jpg', main: false, gallery: false },
-	// 		{ name: '005.jpg', main: false, gallery: false },
-	// 		{ name: '006.jpg', main: true, gallery: false },
-	// 		{ name: '007.jpg', main: false, gallery: false },
-	// 		{ name: '008.jpg', main: false, gallery: false },
-	// 		{ name: '009.jpg', main: false, gallery: false },
-	// 		{ name: '010.jpg', main: false, gallery: false },
-	// 		{ name: '011.jpg', main: false, gallery: false },
-	// 	],
-	// },
+	business: {
+		images: [
+			{ name: '001.jpg', main: false, gallery: true },
+			{ name: '002.jpg', main: false, gallery: true },
+			{ name: '003.jpg', main: false, gallery: true },
+			{ name: '004.jpg', main: false, gallery: false },
+			{ name: '005.jpg', main: false, gallery: false },
+			{ name: '006.jpg', main: true, gallery: false },
+			{ name: '007.jpg', main: false, gallery: false },
+			{ name: '008.jpg', main: false, gallery: false },
+			{ name: '009.jpg', main: false, gallery: false },
+			{ name: '010.jpg', main: false, gallery: false },
+			{ name: '011.jpg', main: false, gallery: false },
+		],
+	},
 };
 
 /**
