@@ -42,8 +42,8 @@
 			class="block border-0 bg-transparent px-2 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 lg:hidden"
 			type="button"
 			data-te-collapse-init
-			data-te-target="#navbarSupportedContent3"
-			aria-controls="navbarSupportedContent3"
+			data-te-target="#navbarContent"
+			aria-controls="navbarContent"
 			aria-expanded="false"
 			aria-label="Toggle navigation"
 		>
@@ -58,7 +58,7 @@
 		<!-- Collapsible navbar container -->
 		<div
 			class="!visible hidden flex-grow basis-[100%] lg:mt-0 lg:!flex lg:basis-auto lg:justify-end"
-			id="navbarSupportedContent3"
+			id="navbarContent"
 			data-te-collapse-item
 		>
 			<!-- Left links -->
