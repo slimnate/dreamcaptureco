@@ -1,4 +1,12 @@
 <script>
+	import { onMount } from 'svelte';
+	import { Carousel, initTE } from 'tw-elements';
+	import IconArrowLeft from '../icons/IconArrowLeft.svelte';
+	import IconArrowRight from '../icons/IconArrowRight.svelte';
+
+	onMount(() => {
+		initTE({ Carousel });
+	});
 	/**
 	 * @type {import("$lib/data/portfolio").GalleryItem[]}
 	 */
@@ -9,28 +17,38 @@
 
 <section class="text-blackcoffee">
 	<h1>{title}</h1>
-	<div
-		{id}
-		class="slide carousel carousel-fade carousel-dark relative pb-16"
-		data-bs-ride="carousel"
-	>
-		<div class="carousel-indicators absolute right-0 bottom-0 left-0 mb-12 flex justify-center p-0">
+	<div {id} class="relative pb-16" data-te-carousel-init data-te-carousel-slide>
+		<!-- Carousel buttons -->
+		<div
+			class="absolute right-0 bottom-0 left-0 mb-12 flex justify-center p-0"
+			data-te-carousel-indicators
+		>
 			<!-- render carousel indicators -->
 			{#each items as item, i}
+				{@const propertiesActive = i === 0 ? { 'data-te-carousel-active': true } : {}}
 				<button
 					type="button"
-					data-bs-target={`#${id}`}
-					data-bs-slide-to={i}
-					class:active={i === 0}
-					aria-current={i === 0}
+					class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-black bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
+					data-te-target={`#${id}`}
+					data-te-slide-to={i}
+					{...propertiesActive}
 					aria-label={item.name}
 				/>
 			{/each}
 		</div>
-		<div class="carousel-inner w-full overflow-hidden">
+
+		<!-- Carousel items -->
+		<div class="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
 			<!-- render carousel items -->
 			{#each items as { name, image, link, orientation }, i}
-				<div class="carousel-item float-left w-full" class:active={i === 0}>
+				{@const propertiesActive = i === 0 ? { 'data-te-carousel-active': true } : {}}
+				<!-- Item -->
+				<div
+					class="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+					class:hidden={i !== 0}
+					data-te-carousel-item
+					{...propertiesActive}
+				>
 					{#if name}
 						<div class="absolute inset-0 z-10 h-min">
 							<button class="button-glass button-floating-top text-2xl"
@@ -49,24 +67,36 @@
 				</div>
 			{/each}
 
-			<!-- carousel buttons -->
+			<!-- carousel buttons-->
 			<button
-				class="carousel-control-prev absolute top-0 bottom-0 left-0 flex items-center justify-center border-0 p-0 text-center hover:no-underline hover:outline-none focus:no-underline focus:outline-none"
+				class="absolute bottom-0 left-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:no-underline hover:opacity-90 hover:outline-none focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
 				type="button"
-				data-bs-target={`#${id}`}
-				data-bs-slide="prev"
+				data-te-target={`#${id}`}
+				data-te-slide="prev"
 			>
-				<span class="carousel-control-prev-icon inline-block bg-no-repeat" aria-hidden="true" />
-				<span class="visually-hidden">Previous</span>
+				<span class="inline-block h-8 w-8">
+					<IconArrowLeft />
+				</span>
+				<span
+					class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
+				>
+					Previous
+				</span>
 			</button>
 			<button
-				class="carousel-control-next absolute top-0 bottom-0 right-0 flex items-center justify-center border-0 p-0 text-center hover:no-underline hover:outline-none focus:no-underline focus:outline-none"
+				class="absolute bottom-0 right-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:no-underline hover:opacity-90 hover:outline-none focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
 				type="button"
-				data-bs-target={`#${id}`}
-				data-bs-slide="next"
+				data-te-target={`#${id}`}
+				data-te-slide="next"
 			>
-				<span class="carousel-control-next-icon inline-block bg-no-repeat" aria-hidden="true" />
-				<span class="visually-hidden">Next</span>
+				<span class="inline-block h-8 w-8">
+					<IconArrowRight />
+				</span>
+				<span
+					class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
+				>
+					Next
+				</span>
 			</button>
 		</div>
 	</div>

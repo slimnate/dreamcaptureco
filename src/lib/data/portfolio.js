@@ -186,7 +186,7 @@ const images = {
 			{ name: '025.jpg', main: false, gallery: false },
 		],
 	},
-	// newborn: {
+	// business: {
 	// 	images: [
 	// 		{ name: '001.jpg', main: false, gallery: true },
 	// 		{ name: '002.jpg', main: false, gallery: true },

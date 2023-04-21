@@ -7,14 +7,14 @@ export async function load() {
 	const couplesItems = await getGalleryImagesFor('couples');
 	const familyItems = await getGalleryImagesFor('family');
 	const maternityItems = await getGalleryImagesFor('maternity');
-	const newbornItems = await getGalleryImagesFor('newborn');
-  
-  return {
-    portraitItems,
-    boudoirItems,
-    couplesItems,
-    familyItems,
-    maternityItems,
-    newbornItems,
-  }
+	// const businessItems = await getGalleryImagesFor('business');
+
+	return {
+		portraitItems,
+		boudoirItems,
+		couplesItems,
+		familyItems,
+		maternityItems,
+		// businessItems,
+	};
 }
