@@ -89,8 +89,10 @@
 		<div
 			class="relative "
 			data-te-datepicker-init
+			data-te-format="mm/dd/yyyy"
+			data-te-disable-past="true"
+			data-te-confirm-date-on-select="true"
 			data-te-input-wrapper-init
-			data-te-datepicker-size="lg"
 			data-te-input-size="lg"
 		>
 			<input
@@ -111,7 +113,9 @@
 			class="relative "
 			data-te-timepicker-init
 			data-te-input-wrapper-init
-			data-te-timepicker-size="lg"
+			data-te-inline="false"
+			data-te-increment="true"
+			data-te-close-modal-on-minutes-click="false"
 			data-te-input-size="lg"
 		>
 			<input
