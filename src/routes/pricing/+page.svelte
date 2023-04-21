@@ -49,7 +49,7 @@
 		<h2 class="mb-12 text-center text-5xl font-bold">Pricing</h2>
 	</div>
 
-	<div class="grid px-6 md:px-12 lg:grid-cols-3 xl:px-32" style="margin-top: -200px">
+	<div class="grid px-6 md:grid-cols-3 md:px-12 xl:px-32" style="margin-top: -200px">
 		{#each tiers as tier, index}
 			<!-- Price block -->
 			<div class:py-12={index !== 1} class="p-0">
@@ -84,10 +84,11 @@
 						</button>
 					</div>
 					<div class="p-6">
-						<ol class="list-inside">
+						<ol class="list-none">
 							{#each tier.features as feature}
-								<li class="mb-4 flex items-center">
-									<IconCheck />{feature}
+								<li class="mb-4 grid grid-flow-col-dense items-center justify-start text-start">
+									<IconCheck />
+									{feature}
 								</li>
 							{/each}
 						</ol>
@@ -115,12 +116,10 @@
 	.button-primary {
 		@apply bg-blackcoffee/75 text-eggshell;
 	}
-
-	@media (min-width: 992px) {
-		#pricing {
-			height: 400px;
-			padding-top: 80px;
-		}
+	#pricing {
+		@apply /* height:
+			400px; padding-top: 80px;
+			*/ md:h-96 md:pt-20;
 	}
 
 	.background-radial-gradient {
