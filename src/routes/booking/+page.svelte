@@ -1,9 +1,9 @@
 <script lang="js">
 	import { onMount } from 'svelte';
-	import { Select, Datepicker, Input, initTE } from 'tw-elements';
+	import { Select, Datepicker, Timepicker, Input, initTE } from 'tw-elements';
 
 	onMount(() => {
-		initTE({ Select, Datepicker, Input });
+		initTE({ Select, Datepicker, Timepicker, Input });
 	});
 </script>
 
@@ -14,9 +14,9 @@
 		Fill out the form below and we'll reach out to finalize the details of your session!
 	</p>
 
-	<form class="booking-form mx-8 mb-8">
+	<form class="booking-form mx-auto grid gap-3 px-8 md:max-w-3xl md:grid-cols-2">
 		<!-- NAME -->
-		<div class="relative mb-3" data-te-input-wrapper-init>
+		<div class="relative  md:col-span-2" data-te-input-wrapper-init>
 			<input
 				type="text"
 				class="peer-focus:text-primary dark:peer-focus:text-primary peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
@@ -31,7 +31,7 @@
 		</div>
 
 		<!-- PHONE -->
-		<div class="relative mb-3" data-te-input-wrapper-init>
+		<div class="relative " data-te-input-wrapper-init>
 			<input
 				type="tel"
 				class="peer-focus:text-primary dark:peer-focus:text-primary peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
@@ -46,7 +46,7 @@
 		</div>
 
 		<!-- EMAIL -->
-		<div class="relative mb-3" data-te-input-wrapper-init>
+		<div class="relative " data-te-input-wrapper-init>
 			<input
 				type="email"
 				class="peer-focus:text-primary dark:peer-focus:text-primary peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
@@ -61,7 +61,7 @@
 		</div>
 
 		<!-- PACKAGE TYPE -->
-		<div class="relative mb-3">
+		<div class="relative ">
 			<select id="package" data-te-select-init data-te-select-size="lg">
 				<option value="" hidden selected />
 				<option value="Day Dreams">Day Dream</option>
@@ -72,7 +72,7 @@
 		</div>
 
 		<!-- SESSION TYPE -->
-		<div class="relative mb-3">
+		<div class="relative ">
 			<select id="session" data-te-select-init data-te-select-size="lg">
 				<option value="" hidden selected />
 				<option value="portrait">Protrait</option>
@@ -87,7 +87,7 @@
 
 		<!-- DATE -->
 		<div
-			class="relative mb-3"
+			class="relative "
 			data-te-datepicker-init
 			data-te-input-wrapper-init
 			data-te-datepicker-size="lg"
@@ -106,8 +106,29 @@
 			>
 		</div>
 
+		<!-- TIME -->
+		<div
+			class="relative "
+			data-te-timepicker-init
+			data-te-input-wrapper-init
+			data-te-timepicker-size="lg"
+			data-te-input-size="lg"
+		>
+			<input
+				type="text"
+				id="time"
+				class="peer-focus:text-primary peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[.37rem] px-3 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+				placeholder="Select a time"
+			/>
+			<label
+				for="time"
+				class="peer-focus:text-primary dark:peer-focus:text-primary pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200"
+				>Select a time</label
+			>
+		</div>
+
 		<!-- SUBJECTS -->
-		<div class="relative mb-[20vmin]" data-te-input-wrapper-init>
+		<div class="relative mb-20 sm:mb-12 md:col-span-2 md:mb-8" data-te-input-wrapper-init>
 			<textarea
 				class="peer-focus:text-primary dark:peer-focus:text-primary peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
 				id="subjects"
@@ -129,7 +150,7 @@
 		</div>
 
 		<!-- ADDITIONAL INFO -->
-		<div class="relative mb-[20vmin]" data-te-input-wrapper-init>
+		<div class="relative mb-20 sm:mb-12 md:col-span-2 md:mb-8" data-te-input-wrapper-init>
 			<textarea
 				class="peer-focus:text-primary dark:peer-focus:text-primary peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
 				id="additionalInfo"
