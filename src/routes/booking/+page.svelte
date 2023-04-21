@@ -128,7 +128,7 @@
 		</div>
 
 		<!-- SUBJECTS -->
-		<div class="relative mb-20 sm:mb-12 md:col-span-2 md:mb-8" data-te-input-wrapper-init>
+		<div class="relative mb-14 sm:mb-8 md:col-span-2" data-te-input-wrapper-init>
 			<textarea
 				class="peer-focus:text-primary dark:peer-focus:text-primary peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
 				id="subjects"
@@ -141,16 +141,15 @@
 				>Subjects
 			</label>
 			<div
-				class="peer-focus:text-primary dark:peer-focus:text-primary absolute h-full text-sm text-neutral-500 dark:text-neutral-200"
+				class="peer-focus:text-primary dark:peer-focus:text-primary absolute w-full text-sm text-neutral-500 dark:text-neutral-200"
 				data-te-input-helper-ref
 			>
-				Tell us about each of the people taking part in the shoot, include name, age, and any
-				special accommodation info
+				Who will be taking part in the shoot? Include name, age, and any special accommodation info
 			</div>
 		</div>
 
 		<!-- ADDITIONAL INFO -->
-		<div class="relative mb-20 sm:mb-12 md:col-span-2 md:mb-8" data-te-input-wrapper-init>
+		<div class="relative mb-14 sm:mb-8 md:col-span-2" data-te-input-wrapper-init>
 			<textarea
 				class="peer-focus:text-primary dark:peer-focus:text-primary peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
 				id="additionalInfo"
@@ -166,10 +165,18 @@
 				class="peer-focus:text-primary dark:peer-focus:text-primary absolute w-full text-sm text-neutral-500 dark:text-neutral-200"
 				data-te-input-helper-ref
 			>
-				Include any other information about the shoot, such as the occasion, theme, color pallette,
+				Include any other information about the shoot such as the occasion, theme, color pallette,
 				etc.
 			</div>
 		</div>
+
+		<!-- SUBMIT BUTTON -->
+		<button
+			type="button"
+			class="bg-primary hover:bg-primary-600 focus:bg-primary-600 active:bg-primary-700 mx-auto mb-12 mt-4 block min-w-[90%] rounded px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] md:col-span-2 md:min-w-[50%]"
+		>
+			Submit
+		</button>
 	</form>
 </section>
 
