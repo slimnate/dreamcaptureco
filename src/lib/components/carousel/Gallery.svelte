@@ -19,7 +19,10 @@
 	<h1>{title}</h1>
 	<div {id} class="relative pb-16" data-te-carousel-init data-te-carousel-slide>
 		<!-- Carousel buttons -->
-		<div class="absolute right-0 bottom-0 left-0 mb-12 flex justify-center p-0">
+		<div
+			class="absolute right-0 bottom-0 left-0 mb-12 flex justify-center p-0"
+			data-te-carousel-indicators
+		>
 			<!-- render carousel indicators -->
 			{#each items as item, i}
 				{@const propertiesActive = i === 0 ? { 'data-te-carousel-active': true } : {}}
