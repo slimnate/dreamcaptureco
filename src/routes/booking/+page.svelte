@@ -1,9 +1,9 @@
 <script lang="js">
 	import { onMount } from 'svelte';
-	import { Select, initTE } from 'tw-elements';
+	import { Select, Datepicker, Input, initTE } from 'tw-elements';
 
 	onMount(() => {
-		initTE({ Select });
+		initTE({ Select, Datepicker, Input });
 	});
 </script>
 
@@ -16,37 +16,138 @@
 
 	<form class="booking-form mx-8 mb-8">
 		<!-- NAME -->
-		<div class="relative mb-3">
+		<div class="relative mb-3" data-te-input-wrapper-init>
 			<input
-				type="email"
-				class="focus:border-primary peer-focus:text-primary dark:focus:border-primary dark:peer-focus:text-primary peer m-0 block h-[58px] w-full rounded border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-4 text-base font-normal leading-tight text-neutral-700 transition duration-200 ease-linear placeholder:text-transparent focus:pb-[0.625rem] focus:pt-[1.625rem] focus:text-neutral-700 focus:outline-none [&:not(:placeholder-shown)]:pb-[0.625rem] [&:not(:placeholder-shown)]:pt-[1.625rem]"
+				type="text"
+				class="peer-focus:text-primary dark:peer-focus:text-primary peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
 				id="name"
 				placeholder="Name"
 			/>
 			<label
 				for="name"
-				class="peer-focus:text-primary dark:peer-focus:text-primary pointer-events-none absolute left-0 top-0 origin-[0_0] border border-solid border-transparent px-3 py-4 text-blackcoffee/50 transition-[opacity,_transform] duration-200 ease-linear peer-focus:-translate-y-2 peer-focus:translate-x-[0.15rem] peer-focus:scale-[0.85] peer-[:not(:placeholder-shown)]:-translate-y-2 peer-[:not(:placeholder-shown)]:translate-x-[0.15rem] peer-[:not(:placeholder-shown)]:scale-[0.85] motion-reduce:transition-none"
+				class="peer-focus:text-primary dark:peer-focus:text-primary pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200"
 				>Name</label
 			>
 		</div>
 
-		<select data-te-select-init data-te-select-placeholder="Example placeholder">
-			<option value="Day Dreams">Day Dream</option>
-			<option value="Sweet Dream">Sweet Dream</option>
-			<option value="Dream Come True">Dream Come True</option>
-		</select>
+		<!-- PHONE -->
+		<div class="relative mb-3" data-te-input-wrapper-init>
+			<input
+				type="tel"
+				class="peer-focus:text-primary dark:peer-focus:text-primary peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+				id="phone"
+				placeholder="Phone Number"
+			/>
+			<label
+				for="phone"
+				class="peer-focus:text-primary dark:peer-focus:text-primary pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200"
+				>Phone Number</label
+			>
+		</div>
 
-		<div class="relative mb-3" data-te-datepicker-init data-te-input-wrapper-init>
+		<!-- EMAIL -->
+		<div class="relative mb-3" data-te-input-wrapper-init>
+			<input
+				type="email"
+				class="peer-focus:text-primary dark:peer-focus:text-primary peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+				id="email"
+				placeholder="Email"
+			/>
+			<label
+				for="email"
+				class="peer-focus:text-primary dark:peer-focus:text-primary pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200"
+				>Email</label
+			>
+		</div>
+
+		<!-- PACKAGE TYPE -->
+		<div class="relative mb-3">
+			<select id="package" data-te-select-init data-te-select-size="lg">
+				<option value="" hidden selected />
+				<option value="Day Dreams">Day Dream</option>
+				<option value="Sweet Dream">Sweet Dream</option>
+				<option value="Dream Come True">Dream Come True</option>
+			</select>
+			<label data-te-select-label-ref for="package">Package</label>
+		</div>
+
+		<!-- SESSION TYPE -->
+		<div class="relative mb-3">
+			<select id="session" data-te-select-init data-te-select-size="lg">
+				<option value="" hidden selected />
+				<option value="portrait">Protrait</option>
+				<option value="Boudoir">Boudoir</option>
+				<option value="Couples/Wedding">Couples/Wedding</option>
+				<option value="Family">Family</option>
+				<option value="Maternity/Newborn">Maternity/Newborn</option>
+				<option value="Business">Business</option>
+			</select>
+			<label data-te-select-label-ref for="session">Session Type</label>
+		</div>
+
+		<!-- DATE -->
+		<div
+			class="relative mb-3"
+			data-te-datepicker-init
+			data-te-input-wrapper-init
+			data-te-datepicker-size="lg"
+			data-te-input-size="lg"
+		>
 			<input
 				type="text"
-				class="peer-focus:text-primary dark:peer-focus:text-primary peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+				id="date"
+				class="peer-focus:text-primary peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[.37rem] px-3 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
 				placeholder="Select a date"
 			/>
 			<label
-				for="floatingInput"
-				class="peer-focus:text-primary dark:peer-focus:text-primary pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200"
+				for="date"
+				class="peer-focus:text-primary dark:peer-focus:text-primary pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200"
 				>Select a date</label
 			>
+		</div>
+
+		<!-- SUBJECTS -->
+		<div class="relative mb-[20vmin]" data-te-input-wrapper-init>
+			<textarea
+				class="peer-focus:text-primary dark:peer-focus:text-primary peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+				id="subjects"
+				rows="4"
+				placeholder="Tell us about your subjects"
+			/>
+			<label
+				for="subjects"
+				class="peer-focus:text-primary dark:peer-focus:text-primary pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200"
+				>Subjects
+			</label>
+			<div
+				class="peer-focus:text-primary dark:peer-focus:text-primary absolute h-full text-sm text-neutral-500 dark:text-neutral-200"
+				data-te-input-helper-ref
+			>
+				Tell us about each of the people taking part in the shoot, include name, age, and any
+				special accommodation info
+			</div>
+		</div>
+
+		<!-- ADDITIONAL INFO -->
+		<div class="relative mb-[20vmin]" data-te-input-wrapper-init>
+			<textarea
+				class="peer-focus:text-primary dark:peer-focus:text-primary peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+				id="additionalInfo"
+				rows="4"
+				placeholder="Tell us about your subjects"
+			/>
+			<label
+				for="additionalInfo"
+				class="peer-focus:text-primary dark:peer-focus:text-primary pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200"
+				>Additional Info
+			</label>
+			<div
+				class="peer-focus:text-primary dark:peer-focus:text-primary absolute w-full text-sm text-neutral-500 dark:text-neutral-200"
+				data-te-input-helper-ref
+			>
+				Include any other information about the shoot, such as the occasion, theme, color pallette,
+				etc.
+			</div>
 		</div>
 	</form>
 </section>
