@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+	darkMode: 'class',
 	content: ['./src/**/*.{html,js,svelte,ts}', './node_modules/tw-elements/dist/js/**/*.js'],
 	theme: {
 		extend: {
@@ -31,5 +32,5 @@ module.exports = {
 			},
 		},
 	},
-	plugins: [require('@tailwindcss/forms'), require('tw-elements/dist/plugin')],
+	plugins: [require('tw-elements/dist/plugin')],
 };
