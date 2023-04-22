@@ -1,9 +1,9 @@
 <script>
-	import { Collapse, initTE } from 'tw-elements';
 	import IconHamburger from '$lib/components/icons/IconHamburger.svelte';
 	import { onMount } from 'svelte';
 
-	onMount(() => {
+	onMount(async () => {
+		const { Collapse, initTE } = await import('tw-elements');
 		initTE({ Collapse });
 	});
 

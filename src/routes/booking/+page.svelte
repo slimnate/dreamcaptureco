@@ -1,8 +1,9 @@
 <script lang="js">
 	import { onMount } from 'svelte';
-	import { Select, Datepicker, Timepicker, Input, initTE } from 'tw-elements';
 
-	onMount(() => {
+	onMount(async () => {
+		const { Select, Datepicker, Timepicker, Input, initTE } = await import('tw-elements');
+
 		initTE({ Select, Datepicker, Timepicker, Input });
 	});
 </script>

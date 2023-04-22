@@ -1,12 +1,12 @@
 <script>
 	import { onMount } from 'svelte';
-	import IconQuote from '../icons/IconQuote.svelte';
 
-	import { Carousel, initTE } from 'tw-elements';
+	import IconQuote from '../icons/IconQuote.svelte';
 	import IconArrowLeft from '../icons/IconArrowLeft.svelte';
 	import IconArrowRight from '../icons/IconArrowRight.svelte';
 
-	onMount(() => {
+	onMount(async () => {
+		const { Carousel, initTE } = await import('tw-elements');
 		initTE({ Carousel });
 	});
 
