@@ -21,6 +21,7 @@
 		data-netlify="true"
 		class="booking-form mx-auto grid gap-3 px-8 md:max-w-3xl md:grid-cols-2"
 	>
+		<input type="hidden" name="form-name" value="booking" />
 		<!-- NAME -->
 		<div class="relative md:col-span-2" data-te-input-wrapper-init>
 			<input
