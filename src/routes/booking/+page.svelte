@@ -19,7 +19,7 @@
 		name="booking"
 		method="POST"
 		data-netlify="true"
-		class="booking-form mx-auto grid gap-3 px-8 md:max-w-3xl md:grid-cols-2"
+		class="booking-form mx-auto grid gap-3 px-4 md:max-w-3xl md:grid-cols-2"
 	>
 		<!-- Hidden field for netlify form detection -->
 		<input type="hidden" name="form-name" value="booking" />
@@ -105,20 +105,50 @@
 
 		<!-- PACKAGE TYPE -->
 		<div class="relative text-blackcoffee/70">
-			<select id="package" name="package" data-te-select-init data-te-select-size="lg">
+			<select
+				id="package"
+				name="package"
+				data-te-select-init
+				data-te-select-size="lg"
+				data-te-class-select-option="!h-auto !py-1 flex flex-row items-center bg-transparent justify-between w-full px-4 text-blackcoffee select-none cursor-pointer data-[te-input-multiple-active]:bg-blackcoffee/10 hover:[&:not([data-te-select-option-disabled])]:bg-blackcoffee/10 data-[te-input-state-active]:bg-blackcoffee/10 data-[te-select-option-selected]:data-[te-input-state-active]:bg-blackcoffee/10 data-[te-select-selected]:data-[te-select-option-disabled]:cursor-default data-[te-select-selected]:data-[te-select-option-disabled]:text-gray-400 data-[te-select-selected]:data-[te-select-option-disabled]:bg-transparent data-[te-select-option-selected]:bg-black/[0.02] data-[te-select-option-disabled]:text-gray-400 data-[te-select-option-disabled]:cursor-default group-data-[te-select-option-group-ref]/opt:pl-7 dark:text-gray-200 dark:hover:[&:not([data-te-select-option-disabled])]:bg-white/30 dark:data-[te-input-state-active]:bg-white/30 dark:data-[te-select-option-selected]:data-[te-input-state-active]:bg-white/30 dark:data-[te-select-option-disabled]:text-gray-400 dark:data-[te-input-multiple-active]:bg-white/30"
+				data-te-class-options-list="!py-1 bg-eggshell/70"
+				data-te-class-options-wrapper="!max-h-[40vh]"
+				data-te-class-select-options-group="group/opt"
+				data-te-class-select-option-secondary-text="block text-sm text-blackcoffee/70 tracking-tighter"
+			>
 				<option value="" hidden selected />
-				<option value="Day Dreams">Day Dream</option>
-				<option value="Sweet Dream">Sweet Dream</option>
-				<option value="Dream Come True">Dream Come True</option>
+				<option
+					value="Day Dreams"
+					data-te-select-secondary-text="$100 - 1 hour - 1 location - up to 5 people - 20-30 edits"
+					>Day Dream</option
+				>
+				<option
+					value="Sweet Dream"
+					data-te-select-secondary-text="$200 - 1.5 hours - up to 2 locations - up to 8 people - 30-40 edits"
+					>Sweet Dream</option
+				>
+				<option
+					value="Dream Come True"
+					data-te-select-secondary-text="$300 - 2 hours - up to 3 locations - 8+ people - 40-50 edits"
+					>Dream Come True</option
+				>
 			</select>
 			<label data-te-select-label-ref for="package" class="!text-blackcoffee/70">Package</label>
 		</div>
 
 		<!-- SESSION TYPE -->
 		<div class="relative">
-			<select id="session" name="session" data-te-select-init data-te-select-size="lg">
+			<select
+				id="session"
+				name="session"
+				data-te-select-init
+				data-te-select-size="lg"
+				data-te-class-select-option="!h-auto !py-1 flex flex-row items-center bg-transparent justify-between w-full px-4 text-blackcoffee select-none cursor-pointer data-[te-input-multiple-active]:bg-blackcoffee/10 hover:[&:not([data-te-select-option-disabled])]:bg-blackcoffee/10 data-[te-input-state-active]:bg-blackcoffee/10 data-[te-select-option-selected]:data-[te-input-state-active]:bg-blackcoffee/10 data-[te-select-selected]:data-[te-select-option-disabled]:cursor-default data-[te-select-selected]:data-[te-select-option-disabled]:text-gray-400 data-[te-select-selected]:data-[te-select-option-disabled]:bg-transparent data-[te-select-option-selected]:bg-black/[0.02] data-[te-select-option-disabled]:text-gray-400 data-[te-select-option-disabled]:cursor-default group-data-[te-select-option-group-ref]/opt:pl-7 dark:text-gray-200 dark:hover:[&:not([data-te-select-option-disabled])]:bg-white/30 dark:data-[te-input-state-active]:bg-white/30 dark:data-[te-select-option-selected]:data-[te-input-state-active]:bg-white/30 dark:data-[te-select-option-disabled]:text-gray-400 dark:data-[te-input-multiple-active]:bg-white/30"
+				data-te-class-options-list="!py-1 bg-eggshell/70"
+				data-te-class-options-wrapper="!max-h-[40vh]"
+			>
 				<option value="" hidden selected />
-				<option value="portrait">Protrait</option>
+				<option value="portrait">Portrait</option>
 				<option value="Boudoir">Boudoir</option>
 				<option value="Couples/Wedding">Couples/Wedding</option>
 				<option value="Family">Family</option>
