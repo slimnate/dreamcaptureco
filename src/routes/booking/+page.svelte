@@ -17,23 +17,24 @@
 		Fill out the form below and we'll reach out to finalize the details of your session!
 	</p>
 
-	<p>Check my social media for sales and promotions</p>
-
-	<div class="mx-3 mb-8 mt-2 flex justify-center gap-4">
-		<a href="https://www.facebook.com/profile.php?id=100088847065471">
-			<div
-				class="button-glass flex h-16 w-16 flex-col items-center justify-center border border-blackcoffee p-8"
-			>
-				<span><IconFacebook /></span>
-			</div>
-		</a>
-		<a href="https://www.instagram.com/dream.capture.co/">
-			<div
-				class="button-glass flex h-16 w-16 flex-col items-center justify-center border border-blackcoffee p-8"
-			>
-				<span><IconInstagram /></span>
-			</div>
-		</a>
+	<div class="mx-3 mb-8 mt-2 flex flex-col items-center justify-between gap-2">
+		<p class="flex-grow md:text-left">Check my social media for sales and promotions</p>
+		<div class="flex gap-4">
+			<a href="https://www.facebook.com/profile.php?id=100088847065471">
+				<div
+					class="button-glass flex h-16 w-16 items-center justify-center border border-blackcoffee p-8"
+				>
+					<span><IconFacebook /></span>
+				</div>
+			</a>
+			<a href="https://www.instagram.com/dream.capture.co/">
+				<div
+					class="button-glass flex h-16 w-16 items-center justify-center border border-blackcoffee p-8"
+				>
+					<span><IconInstagram /></span>
+				</div>
+			</a>
+		</div>
 	</div>
 
 	<form
