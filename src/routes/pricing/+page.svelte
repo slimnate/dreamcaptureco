@@ -71,7 +71,7 @@
 	</div>
 
 	<!-- Pricing content -->
-	<div class="mb-8 grid px-6 md:grid-cols-3 md:px-12 xl:px-32" style="margin-top: -200px">
+	<div class="mb-4 grid px-6 md:grid-cols-3 md:px-12 xl:px-32" style="margin-top: -200px">
 		{#each tiers as tier, index}
 			<!-- Price block -->
 			<div class:py-12={index !== 1} class="p-0">
@@ -95,15 +95,17 @@
 							<small class="text-sm text-gray-500">/session</small>
 						</h3>
 
-						<button
-							type="button"
-							class:button-primary={index === 1}
-							class="button button-glass"
-							data-mdb-ripple="true"
-							data-ripple-color="primary"
-						>
-							Book
-						</button>
+						<a href="/booking">
+							<button
+								type="button"
+								class:button-primary={index === 1}
+								class="button button-glass"
+								data-mdb-ripple="true"
+								data-ripple-color="primary"
+							>
+								Book
+							</button>
+						</a>
 					</div>
 					<div class="p-6">
 						<ol class="list-none">
@@ -120,8 +122,15 @@
 		{/each}
 	</div>
 
+	<!-- Event consultation -->
+	<p class="mb-4 tracking-wide text-blackcoffee/80 before:content-['***'] after:content-['***']">
+		For weddings, parties, or other events, please reach out to schedule a free consultation.
+	</p>
+
+	<a href="/booking"><button class="button-glass mb-8 text-2xl">Schedule Now</button></a>
+
 	<!-- Add ons -->
-	<span class="bold m-4 text-3xl font-bold text-blackcoffee">Add-Ons</span>
+	<div class="bold m-4 text-3xl font-bold text-blackcoffee">Add-Ons</div>
 	<div class="grid gap-3 p-4 md:grid-cols-2 md:flex-row md:gap-4 md:px-12 xl:grid-cols-4 xl:px-32">
 		{#each addOns as { name, description, price }}
 			<div
