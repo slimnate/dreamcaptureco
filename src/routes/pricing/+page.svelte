@@ -11,7 +11,7 @@
 				'up to 5 subjects',
 				'20-30 edits',
 				'access to client wardrobe',
-				'2-3 week turnaround',
+				'3-4 week turnaround',
 			],
 		},
 		{
@@ -31,7 +31,7 @@
 			price: 300,
 			features: [
 				'2 hours',
-				'up to 3 locations',
+				'1-2 locations',
 				'unlimited subjects',
 				'40-50 edits',
 				'access to client wardrobe',
@@ -49,17 +49,17 @@
 		{
 			name: 'Fast turnaround',
 			description: 'Get your pictures a week early with expedited delivery',
-			price: '$50',
+			price: '$75',
 		},
 		{
 			name: 'Extra images',
-			description: 'Get extra edited images',
+			description: 'Get 10 extra edited images',
 			price: '$50',
 		},
 		{
 			name: 'Physical delivery',
 			description: 'Get a physical copy of your images on a flash drive',
-			price: '$50',
+			price: '$30',
 		},
 	];
 </script>
