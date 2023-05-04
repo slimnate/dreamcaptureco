@@ -11,9 +11,8 @@
 				'up to 5 subjects',
 				'20-30 edits',
 				'access to client wardrobe',
-				'2-3 week turnaround',
+				'3-4 week turnaround',
 			],
-			addOns: ['+$50 shoot with snakes'],
 		},
 		{
 			name: 'Sweet Dream',
@@ -26,30 +25,53 @@
 				'access to client wardrobe',
 				'2-3 week turnaround',
 			],
-			addOns: ['+$50 shoot with snakes'],
 		},
 		{
 			name: 'Dream Come True',
 			price: 300,
 			features: [
 				'2 hours',
-				'up to 3 locations',
+				'1-2 locations',
 				'unlimited subjects',
 				'40-50 edits',
 				'access to client wardrobe',
 				'1-2 week turnaround',
 			],
-			addOns: ['+$50 shoot with snakes'],
+		},
+	];
+
+	const addOns = [
+		{
+			name: 'Snakes',
+			description: 'Shoot with two ball pythons, Drakho and Nina',
+			price: '$50',
+		},
+		{
+			name: 'Fast turnaround',
+			description: 'Get your pictures a week early with expedited delivery',
+			price: '$75',
+		},
+		{
+			name: 'Extra images',
+			description: 'Get 10 extra edited images',
+			price: '$50',
+		},
+		{
+			name: 'Physical delivery',
+			description: 'Get a physical copy of your images on a flash drive',
+			price: '$30',
 		},
 	];
 </script>
 
 <section class="pb-12">
+	<!-- Pricing header -->
 	<div id="pricing" class="background-radial-gradient text-center text-eggshell">
 		<h2 class="mb-12 text-center text-5xl font-bold">Pricing</h2>
 	</div>
 
-	<div class="grid px-6 md:grid-cols-3 md:px-12 xl:px-32" style="margin-top: -200px">
+	<!-- Pricing content -->
+	<div class="mb-4 grid px-6 md:grid-cols-3 md:px-12 xl:px-32" style="margin-top: -200px">
 		{#each tiers as tier, index}
 			<!-- Price block -->
 			<div class:py-12={index !== 1} class="p-0">
@@ -73,15 +95,17 @@
 							<small class="text-sm text-gray-500">/session</small>
 						</h3>
 
-						<button
-							type="button"
-							class:button-primary={index === 1}
-							class="button button-glass"
-							data-mdb-ripple="true"
-							data-ripple-color="primary"
-						>
-							Book
-						</button>
+						<a href="/booking">
+							<button
+								type="button"
+								class:button-primary={index === 1}
+								class="button button-glass"
+								data-mdb-ripple="true"
+								data-ripple-color="primary"
+							>
+								Book
+							</button>
+						</a>
 					</div>
 					<div class="p-6">
 						<ol class="list-none">
@@ -94,6 +118,31 @@
 						</ol>
 					</div>
 				</div>
+			</div>
+		{/each}
+	</div>
+
+	<!-- Event consultation -->
+	<p class="mb-4 tracking-wide text-blackcoffee/80 before:content-['***'] after:content-['***']">
+		For weddings, parties, or other events, please reach out to schedule a free consultation.
+	</p>
+
+	<a href="/booking"><button class="button-glass mb-8 text-2xl">Schedule Now</button></a>
+
+	<!-- Add ons -->
+	<div class="bold m-4 text-3xl font-bold text-blackcoffee">Add-Ons</div>
+	<div class="grid gap-3 p-4 md:grid-cols-2 md:flex-row md:gap-4 md:px-12 xl:grid-cols-4 xl:px-32">
+		{#each addOns as { name, description, price }}
+			<div
+				class="flex grow flex-col justify-between gap-2 rounded-lg bg-eggshell p-4 shadow-lg sm:!p-8 md:gap-4 xl:!p-4"
+			>
+				<div
+					class="flex flex-row justify-between gap-2 text-left md:!flex-col md:items-center md:!text-center"
+				>
+					<span class="text-xl font-bold uppercase">{name}</span>
+					<span class="font-bold text-blackcoffee/70">{price}</span>
+				</div>
+				<span class="font-small text-blackcoffee/70">{description}</span>
 			</div>
 		{/each}
 	</div>

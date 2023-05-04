@@ -1,9 +1,13 @@
+<script>
+	export let size = '24px';
+</script>
+
 <svg
 	aria-hidden="true"
 	focusable="false"
 	data-prefix="fab"
 	data-icon="instagram"
-	class="w-3.5"
+	height={size}
 	role="img"
 	xmlns="http://www.w3.org/2000/svg"
 	viewBox="0 0 448 512"
