@@ -4,10 +4,12 @@
 			Nice to meet you, I'm Izzy
 		</div>
 		<p class="mx-8 max-w-[35rem] leading-8 tracking-wide opacity-80 sm:mx-28 md:mx-48">
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, tenetur! Quaerat facilis minima
-			illo officiis eveniet doloremque ipsam quo eum tempore et molestiae sit nobis autem totam
-			nihil sed, inventore quis vitae earum natus perferendis nesciunt. Nemo adipisci ut distinctio,
-			sed dicta, doloribus, temporibus mollitia libero aut fugiat non?
+			Hello, my name is Izzy Stevens and I am a 24-year-old published photographer based in Kansas
+			City. I don't limit myself to one specific style of photography because I enjoy capturing a
+			wide range of subjects. Whether it's families, boudoir, weddings, or anything in between, I
+			collaborate with my clients to understand their vision and create photos that fulfill their
+			expectations. My aim is to bring your photo dreams to life with a personalized style that
+			works best for you
 		</p>
 	</div>
 </section>
