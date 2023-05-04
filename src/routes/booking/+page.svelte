@@ -105,6 +105,7 @@
 						type="radio"
 						name="preferredContact"
 						id="radioEmail"
+						value="Email"
 					/>
 					<label class="mt-px inline-block pl-[0.15rem] hover:cursor-pointer" for="radioEmail">
 						Email
@@ -116,6 +117,7 @@
 						type="radio"
 						name="preferredContact"
 						id="radioPhone"
+						value="Phone"
 						checked
 					/>
 					<label class="mt-px inline-block pl-[0.15rem] hover:cursor-pointer" for="radioPhone">
@@ -151,8 +153,13 @@
 				>
 				<option
 					value="Dream Come True"
-					data-te-select-secondary-text="$300 - 2 hours - up to 3 locations - 8+ people - 40-50 edits"
+					data-te-select-secondary-text="$300 - 2 hours - up to 2 locations - 8+ people - 40-50 edits"
 					>Dream Come True</option
+				>
+				<option
+					value="Event Consultation"
+					data-te-select-secondary-text="FREE - request a consultation for an upcoming event."
+					>Event Consultation</option
 				>
 			</select>
 			<label data-te-select-label-ref for="package" class="!text-blackcoffee/70">Package</label>
@@ -176,6 +183,7 @@
 				<option value="Family">Family</option>
 				<option value="Maternity/Newborn">Maternity/Newborn</option>
 				<option value="Business">Business</option>
+				<option value="Other">Other</option>
 			</select>
 			<label data-te-select-label-ref for="session" class="!text-blackcoffee/70">Session Type</label
 			>
