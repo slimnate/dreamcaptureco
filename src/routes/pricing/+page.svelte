@@ -13,7 +13,6 @@
 				'access to client wardrobe',
 				'2-3 week turnaround',
 			],
-			addOns: ['+$50 shoot with snakes'],
 		},
 		{
 			name: 'Sweet Dream',
@@ -26,7 +25,6 @@
 				'access to client wardrobe',
 				'2-3 week turnaround',
 			],
-			addOns: ['+$50 shoot with snakes'],
 		},
 		{
 			name: 'Dream Come True',
@@ -39,7 +37,6 @@
 				'access to client wardrobe',
 				'1-2 week turnaround',
 			],
-			addOns: ['+$50 shoot with snakes'],
 		},
 	];
 
