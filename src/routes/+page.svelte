@@ -12,6 +12,8 @@
 	const { portfolioItems, testimonialItems } = data;
 </script>
 
+<img src="/images/hero.jpg" alt="page preview" class="hidden" />
+
 <TitleHero />
 
 <Tagline />
