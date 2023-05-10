@@ -58,17 +58,32 @@
 			question: 'Do you travel?',
 			answer: 'Yes! For specific questions about travel and pricing please email/text me directly.',
 		},
+		{
+			question: 'What payment methods do you accept?',
+			answer:
+				'I accept cash as well as most online payment methods, including CashApp, Venmo, PayPal, Facebook Pay, etc.',
+		},
 	];
 </script>
 
 <section class="pb-12">
-	<h1>FAQ</h1>
+	<!-- Booking header -->
+	<div
+		id="pricing"
+		class="flex h-[300px] items-center justify-center overflow-hidden bg-cover bg-no-repeat text-center text-eggshell sm:h-[400px] md:h-[500px]"
+		style="
+			background-position: 50%;
+			background-image: url('/images/header-faq.jpg');
+		"
+	>
+		<h2 class="text-5xl font-bold">FAQ</h2>
+	</div>
 
-	<div id="faq-accordian" class="mx-auto md:max-w-xl lg:max-w-3xl">
+	<div id="faq-accordian" class="mx-auto mt-4 md:max-w-xl lg:max-w-3xl">
 		{#each faqs as faq, index}
 			<div
 				class:border-t-0={index === 0}
-				class="rounded-none border border-l-0 border-r-0 border-b-0 border-neutral-200 dark:border-neutral-600 dark:bg-neutral-800"
+				class="rounded-none border border-b-0 border-l-0 border-r-0 border-neutral-200 dark:border-neutral-600 dark:bg-neutral-800"
 			>
 				<h2 class="mb-0" id={`faq-heading${index}`}>
 					<button
