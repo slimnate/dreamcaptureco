@@ -132,7 +132,7 @@ const images = {
 			{ name: '024.jpg', main: false, gallery: false },
 			{ name: '025.jpg', main: false, gallery: false },
 			{ name: '026.jpg', main: false, gallery: false },
-			{ name: '027.jpg', main: false, gallery: false },
+			// { name: '027.jpg', main: false, gallery: false },
 			{ name: '028.jpg', main: false, gallery: false },
 			{ name: '029.jpg', main: false, gallery: false },
 			{ name: '030.jpg', main: false, gallery: false },
