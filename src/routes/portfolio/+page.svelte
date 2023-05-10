@@ -18,4 +18,4 @@
 
 <Gallery items={maternityItems} id="maternityGallery" />
 
-<!-- <Gallery items={businessItems} id="businessGallery" /> -->
+<Gallery items={businessItems} id="businessGallery" />
