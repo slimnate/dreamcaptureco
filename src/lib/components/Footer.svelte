@@ -63,11 +63,11 @@
 				</p>
 				<p class="mb-4 flex items-center justify-center md:justify-start">
 					<IconMail />
-					info@dreamcaptureco.com
+					dream.capture.co42@gmail.com
 				</p>
 				<p class="mb-4 flex items-center justify-center md:justify-start">
 					<IconPhone />
-					+ 1 816 123 1234
+					+ 1 316 390 3410
 				</p>
 			</div>
 		</div>
