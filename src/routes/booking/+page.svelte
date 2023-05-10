@@ -11,14 +11,19 @@
 </script>
 
 <section>
-	<h1 class="">Booking</h1>
+	<!-- Booking header -->
+	<div
+		id="pricing"
+		class="flex h-[300px] items-center justify-center overflow-hidden bg-cover bg-no-repeat text-center text-eggshell sm:h-[400px] md:h-[500px]"
+		style="
+			background-position: 50%;
+			background-image: url('/images/header-booking.jpg');
+		"
+	>
+		<h2 class="text-5xl font-bold">Booking</h2>
+	</div>
 
-	<p class="mx-8 mb-4 text-sm leading-tight tracking-tight text-blackcoffee/70">
-		Fill out the form below and we'll reach out to finalize the details of your session!
-	</p>
-
-	<div class="mx-3 mb-8 mt-2 flex flex-col items-center justify-between gap-2">
-		<p class="flex-grow md:text-left">Check my social media for sales and promotions</p>
+	<div class="mx-3 mb-8 mt-4 flex flex-col items-center justify-between gap-2">
 		<div class="flex gap-4">
 			<a href="https://www.facebook.com/profile.php?id=100088847065471">
 				<div
@@ -35,7 +40,12 @@
 				</div>
 			</a>
 		</div>
+		<p class="flex-grow md:text-left">Check my social media for sales and promotions</p>
 	</div>
+
+	<p class="mx-8 mb-4 text-sm leading-tight tracking-tight text-blackcoffee/70">
+		Fill out the form below and we'll reach out to finalize the details of your session!
+	</p>
 
 	<form
 		name="booking"
@@ -294,11 +304,14 @@
 		<!-- SUBMIT BUTTON -->
 		<button
 			type="submit"
-			class="mx-auto mb-12 mt-4 block min-w-[90%] rounded bg-primary px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] md:col-span-2 md:min-w-[50%]"
+			class="mx-auto mb-4 mt-4 block min-w-[90%] rounded bg-primary px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] md:col-span-2 md:min-w-[50%]"
 		>
 			Submit
 		</button>
 	</form>
+	<p class="mb-8 font-bold text-blackcoffee/70">
+		All bookings will require a 50% deposit before finalizing
+	</p>
 </section>
 
 <style lang="postcss">
