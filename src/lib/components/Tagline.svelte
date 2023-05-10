@@ -3,7 +3,7 @@
 </script>
 
 <section class="border-b-transparent">
-	<div class="xs:pl-8 pt-6 sm:pl-20 md:pl-36">
+	<div class="pt-6 xs:pl-8 sm:pl-20 md:pl-36">
 		<div class="text-3xl font-semibold" style="font-family:'Dancing Script'">
 			<span>Let me capture your dreams</span>
 		</div>
