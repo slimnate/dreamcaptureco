@@ -1,4 +1,5 @@
 <script>
+	import { page } from '$app/stores';
 	import IconCheck from '$lib/components/icons/IconCheck.svelte';
 
 	const tiers = [
@@ -66,7 +67,14 @@
 
 <section class="pb-12">
 	<!-- Pricing header -->
-	<div id="pricing" class="background-radial-gradient text-center text-eggshell">
+	<div
+		id="pricing"
+		class="h-[300px] overflow-hidden bg-cover bg-no-repeat text-center text-eggshell sm:h-[400px] md:h-[500px]"
+		style="
+			background-position: 50%;
+			background-image: url('/images/header-pricing.jpg');
+		"
+	>
 		<h2 class="mb-12 text-center text-5xl font-bold">Pricing</h2>
 	</div>
 
@@ -98,7 +106,6 @@
 						<a href="/booking">
 							<button
 								type="button"
-								class:button-primary={index === 1}
 								class="button button-glass"
 								data-mdb-ripple="true"
 								data-ripple-color="primary"
@@ -162,17 +169,9 @@
 		@apply transition duration-500 ease-in-out;
 	}
 
-	.button-primary {
-		@apply bg-blackcoffee/75 text-eggshell;
-	}
 	#pricing {
 		@apply /* height:
 			400px; padding-top: 80px;
 			*/ md:h-96 md:pt-20;
-	}
-
-	.background-radial-gradient {
-		background-position: 50%;
-		background-image: url('/images/hero-alt.jpg');
 	}
 </style>
