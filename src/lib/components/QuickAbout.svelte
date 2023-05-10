@@ -11,5 +11,7 @@
 			expectations. My aim is to bring your photo dreams to life with a personalized style that
 			works best for you
 		</p>
+
+		<a href="/about"><button class="button-glass mt-10 text-2xl">Learn more</button></a>
 	</div>
 </section>
