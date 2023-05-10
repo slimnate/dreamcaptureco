@@ -6,7 +6,9 @@
 			alt="Izzy Stevens"
 			class="mx-auto h-[50vw] max-h-[300px] w-[50vw] max-w-[300px] rounded-full object-cover"
 		/>
-		<div class="mx-auto mb-8 mt-6 text-3xl leading-10">Izzy Stevens</div>
+		<div class="mx-auto mb-8 mt-6 text-4xl leading-10" style="font-family:'Dancing Script'">
+			Izzy Stevens
+		</div>
 		<div class="about-text mx-auto max-w-[70ch] px-6 tracking-wide opacity-80">
 			<p class="mb-4">
 				Hello, my name is Izzy Stevens, and I am a 24-year-old published photographer based in
@@ -30,5 +32,20 @@
 				your photo dreams come true!
 			</p>
 		</div>
+		<p class="mb-4 mt-8 text-2xl uppercase text-blackcoffee">Published work:</p>
+		<div
+			class="published mx-4 grid max-w-3xl grid-cols-1 justify-center gap-4 md:!mx-auto md:grid-cols-2"
+		>
+			<img src="/images/magazine-01.jpg" alt="Magazine 01" />
+			<img src="/images/magazine-02.jpg" alt="Magazine 02" />
+			<img src="/images/magazine-03.jpg" alt="Magazine 03" />
+			<img src="/images/magazine-04.jpg" alt="Magazine 04" />
+		</div>
 	</div>
 </section>
+
+<style lang="postcss">
+	.published > img {
+		@apply shadow-xl;
+	}
+</style>
