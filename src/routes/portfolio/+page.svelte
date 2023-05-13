@@ -8,6 +8,10 @@
 		data;
 </script>
 
+<svelte:head>
+	<title>Portfolio - Dream Capture Co</title>
+</svelte:head>
+
 <Gallery items={portraitItems} id="portraitsGallery" title="Portfolio" />
 
 <Gallery items={boudoirItems} id="boudoirGallery" />

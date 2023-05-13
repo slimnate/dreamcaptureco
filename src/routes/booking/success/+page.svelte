@@ -1,3 +1,7 @@
+<svelte:head>
+	<title>Success - Dream Capture Co</title>
+</svelte:head>
+
 <section class="pb-12">
 	<h1>Booking</h1>
 

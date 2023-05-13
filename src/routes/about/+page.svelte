@@ -1,3 +1,7 @@
+<svelte:head>
+	<title>About - Dream Capture Co</title>
+</svelte:head>
+
 <section class="text-center">
 	<h1 class="pb-8">About</h1>
 	<div class="about mb-12">

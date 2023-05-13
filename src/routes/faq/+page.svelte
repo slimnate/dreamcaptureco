@@ -66,6 +66,10 @@
 	];
 </script>
 
+<svelte:head>
+	<title>FAQ - Dream Capture Co</title>
+</svelte:head>
+
 <section class="pb-12">
 	<!-- Booking header -->
 	<div

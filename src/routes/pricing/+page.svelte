@@ -65,6 +65,10 @@
 	];
 </script>
 
+<svelte:head>
+	<title>Pricing - Dream Capture Co</title>
+</svelte:head>
+
 <section class="pb-12">
 	<!-- Pricing header -->
 	<div

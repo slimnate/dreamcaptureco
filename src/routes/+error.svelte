@@ -1,3 +1,7 @@
+<svelte:head>
+	<title>Page Error - Dream Capture Co</title>
+</svelte:head>
+
 <!-- Section: Design Block -->
 <section class="background-radial-gradient mb-32 text-center text-gray-800 lg:text-left">
 	<div
@@ -9,11 +13,11 @@
           "
 	>
 		<div
-			class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-fixed"
+			class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed"
 			style="background-color: rgba(0, 0, 0, 0.75)"
 		>
 			<div class="flex h-full items-center justify-center">
-				<div class="max-w-[800px] px-6 py-6 text-center text-white md:py-0 md:px-12">
+				<div class="max-w-[800px] px-6 py-6 text-center text-white md:px-12 md:py-0">
 					<h2 class="mb-12 text-5xl font-bold leading-tight tracking-tight md:text-6xl xl:text-7xl">
 						Page not found
 					</h2>

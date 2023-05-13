@@ -1,4 +1,6 @@
 <script>
+	import { capitalize } from '$lib/string';
+
 	/** @type {import('./$types').PageServerData} */
 	export let data;
 
@@ -64,6 +66,10 @@
 		showPresenter(source);
 	}
 </script>
+
+<svelte:head>
+	<title>{capitalize(data.name)} - Dream Capture Co</title>
+</svelte:head>
 
 <section>
 	<h1>{data.name}</h1>

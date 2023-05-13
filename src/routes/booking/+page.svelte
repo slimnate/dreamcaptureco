@@ -10,6 +10,10 @@
 	});
 </script>
 
+<svelte:head>
+	<title>Booking - Dream Capture Co</title>
+</svelte:head>
+
 <section>
 	<!-- Booking header -->
 	<div
