@@ -19,7 +19,7 @@
  */
 
 const filesToImportRegex = /\.js|\.svelte/;
-const importCommentRegex = /\/\*.*@image-tools-generate.*?\*\//g;
+const importCommentRegex = /\/\*.*@imagetools-generate.*?\*\//g;
 // const paramsRegex =
 // 	/.*name\((?<name>.*?)\).*image\((?<image>.*?)\).*(w\((?<w>.*?)\))*.*(?:formats\((?<formats>.*?)\))*.*/;
 const nameCaptureRegex = /name\((?<name>.*?)\)/;
@@ -60,9 +60,10 @@ function mergeConfig(config) {
 		config.params = defaultConfig.params;
 	}
 
-	for (const param in defaultConfig.params) {
-		if (!config.params[param]) {
-			config.params[param] = defaultConfig.params[param];
+	for (const param in defaultConfig.defaultParams) {
+		if (!config.defaultParams[param]) {
+			console.log(1);
+			config.defaultParams[param] = defaultConfig.defaultParams[param];
 		}
 	}
 
@@ -100,6 +101,8 @@ function parseImport(line, config) {
 	imageImport.image = regexResults.image.groups.image;
 
 	if (regexResults.w) {
+		console.log(2);
+		console.log(imageImport);
 		imageImport.imagetoolsParams.w = regexResults.w.groups.w;
 	}
 
@@ -170,9 +173,11 @@ function imagetoolsGenerate(userConfig) {
 			if (filesToImportRegex.test(fileId)) {
 				const imports = code.match(importCommentRegex);
 				if (imports) {
+					console.log('processing: ' + fileId);
 					for (const importStatement of imports) {
 						const generatedCode = generateImportsFromCommentString(importStatement, config);
 						code = code.replace(importStatement, generatedCode);
+						console.log(generatedCode);
 					}
 				}
 			}
