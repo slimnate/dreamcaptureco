@@ -6,7 +6,7 @@ import { imagetoolsGenerate } from './imagetools-generate.js';
 const config = {
 	plugins: [
 		imagetoolsGenerate({
-			params: {
+			defaultParams: {
 				formats: 'avif,webp,jpg',
 				as: 'srcset',
 			},
