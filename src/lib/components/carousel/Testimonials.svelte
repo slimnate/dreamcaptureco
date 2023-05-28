@@ -34,16 +34,21 @@
 						<div
 							class="flex w-10/12 max-w-[35rem] flex-col justify-end px-3 sm:w-8/12 md:w-6/12 lg:justify-center"
 						>
-							<img
-								src={image}
-								class="mx-auto mb-2 h-[50vw] max-h-[300px]
+							<picture>
+								<source sizes={image.sizes} srcset={image.avif} type="image/avif" />
+								<source sizes={image.sizes} srcset={image.webp} type="image/webp" />
+								<img
+									srcset={image.jpg}
+									sizes={image.sizes}
+									class="mx-auto mb-2 h-[50vw] max-h-[300px]
 								w-[50vw] max-w-[300px]
 								rounded-full object-cover
 								sm:h-[40vw] sm:w-[40vw]
 								md:h-[30vw] md:w-[30vw]"
-								class:object-top={fitTop}
-								alt="{name} testimonial"
-							/>
+									class:object-top={fitTop}
+									alt="{name} testimonial"
+								/>
+							</picture>
 							<h5 class="mb-0 pb-0 text-xl font-bold">{name}</h5>
 							<p class="mb-4 text-sm leading-4 opacity-70">{location}</p>
 							<!-- TODO use pseudo-elements instead of IconQuote component maybe -->
