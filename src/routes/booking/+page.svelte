@@ -3,6 +3,17 @@
 	import IconInstagram from '$lib/components/icons/IconInstagram.svelte';
 	import { onMount } from 'svelte';
 
+	import bgImageJpg from '$lib/images/header-booking.jpg?w=1400';
+	import bgImageWebp from '$lib/images/header-booking.jpg?w=1400&format=webp';
+	import { browser } from '$app/environment';
+
+	function supportsWebp() {
+		// console.log(browser && document.documentElement.classList.contains('webp'));
+		return browser && document.documentElement.classList.contains('webp');
+	}
+
+	const bgImage = supportsWebp() ? bgImageWebp : bgImageJpg;
+
 	onMount(async () => {
 		const { Select, Datepicker, Timepicker, Input, initTE } = await import('tw-elements');
 
@@ -19,9 +30,9 @@
 	<div
 		id="pricing"
 		class="flex h-[300px] items-center justify-center overflow-hidden bg-cover bg-no-repeat text-center text-eggshell sm:h-[400px] md:h-[500px]"
+		style:background-image={`url(${bgImage})`}
 		style="
 			background-position: 50%;
-			background-image: url('/images/header-booking.jpg');
 		"
 	>
 		<h2 class="text-5xl font-bold">Booking</h2>
