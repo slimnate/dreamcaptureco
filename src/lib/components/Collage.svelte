@@ -3,7 +3,7 @@
 	/* @imagetools-generate name(collage02) image($lib/images/collage/02.jpg) w(1500;900;400) */
 	/* @imagetools-generate name(collage03) image($lib/images/collage/03.jpg) w(1500;900;400) */
 
-	const sizes = '(max-width: 500px) 400px, (max-width: 1000px) 900px, 1500px';
+	const sizes = '(max-width: 600px) 400px, (max-width: 1200px) 900px, 1500px';
 </script>
 
 <section class="py-16">
