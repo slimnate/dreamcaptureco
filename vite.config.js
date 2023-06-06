@@ -1,6 +1,6 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import { imagetools } from 'vite-imagetools';
-import { imagetoolsGenerate } from './imagetools-generate.js';
+import { imagetoolsGenerate } from './vite-imagetools-generate.js';
 
 /** @type {import('vite').UserConfig} */
 const config = {

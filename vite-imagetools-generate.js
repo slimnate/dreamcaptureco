@@ -62,7 +62,6 @@ function mergeConfig(config) {
 
 	for (const param in defaultConfig.defaultParams) {
 		if (!config.defaultParams[param]) {
-			console.log(1);
 			config.defaultParams[param] = defaultConfig.defaultParams[param];
 		}
 	}
@@ -101,8 +100,6 @@ function parseImport(line, config) {
 	imageImport.image = regexResults.image.groups.image;
 
 	if (regexResults.w) {
-		console.log(2);
-		console.log(imageImport);
 		imageImport.imagetoolsParams.w = regexResults.w.groups.w;
 	}
 
@@ -167,17 +164,17 @@ function imagetoolsGenerate(userConfig) {
 	const config = mergeConfig(userConfig);
 
 	return {
-		name: 'responsive-image-static-paths',
+		name: 'imagetools-generate',
 		enforce: 'pre',
 		transform: function (code, fileId) {
 			if (filesToImportRegex.test(fileId)) {
 				const imports = code.match(importCommentRegex);
 				if (imports) {
-					console.log('processing: ' + fileId);
+					// console.log('processing: ' + fileId);
 					for (const importStatement of imports) {
 						const generatedCode = generateImportsFromCommentString(importStatement, config);
 						code = code.replace(importStatement, generatedCode);
-						console.log(generatedCode);
+						// console.log(generatedCode);
 					}
 				}
 			}
