@@ -9,7 +9,6 @@
  */
 
 import { error } from '@sveltejs/kit';
-import { getOrientation } from '$lib/image';
 
 /**
  * @typedef {Object} ImageItem
@@ -23,7 +22,6 @@ import { getOrientation } from '$lib/image';
  * @property {string} image
  * @property {string} link
  * @property {string} name
- * @property {string} orientation
  */
 
 /**
@@ -285,13 +283,11 @@ function urlMapper(category) {
  */
 async function generateGalleryItem(category, image) {
 	const imgPath = `/images/${category}/${image}`;
-	const orientation = await getOrientation(imgPath);
 
 	return {
 		image: imgPath,
 		link: `/portfolio/${category}`,
 		name: getDisplayName(category),
-		orientation,
 	};
 }
 
