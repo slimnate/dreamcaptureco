@@ -1,5 +1,5 @@
 <section>
-	<div class="flex flex-col items-center justify-center py-16 text-blackcoffee sm:h-[400px]">
+	<div class="flex flex-col items-center justify-center py-16 text-blackcoffee">
 		<div class="pb-8 text-4xl font-bold" style="font-family:'Dancing Script'">
 			Nice to meet you, I'm Izzy
 		</div>

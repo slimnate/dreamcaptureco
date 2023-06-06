@@ -2,6 +2,17 @@
 	import { page } from '$app/stores';
 	import IconCheck from '$lib/components/icons/IconCheck.svelte';
 
+	import bgImageJpg from '$lib/images/header-pricing.jpg?w=1400';
+	import bgImageWebp from '$lib/images/header-pricing.jpg?w=1400&format=webp';
+	import { browser } from '$app/environment';
+
+	function supportsWebp() {
+		// console.log(browser && document.documentElement.classList.contains('webp'));
+		return browser && document.documentElement.classList.contains('webp');
+	}
+
+	const bgImage = supportsWebp() ? bgImageWebp : bgImageJpg;
+
 	const tiers = [
 		{
 			name: 'Day Dream',
@@ -74,9 +85,9 @@
 	<div
 		id="pricing"
 		class="h-[300px] overflow-hidden bg-cover bg-no-repeat text-center text-eggshell sm:h-[400px] md:h-[500px]"
+		style:background-image={`url(${bgImage})`}
 		style="
 			background-position: 50%;
-			background-image: url('/images/header-pricing.jpg');
 		"
 	>
 		<h2 class="mb-12 text-center text-5xl font-bold">Pricing</h2>

@@ -1,11 +1,15 @@
 <script>
 	import { onMount } from 'svelte';
+	import bgImageJpg from '$lib/images/header-faq.jpg?w=1400';
+	import bgImageWebp from '$lib/images/header-faq.jpg?w=1400&format=webp';
+	import { browser } from '$app/environment';
 
-	onMount(async () => {
-		const { Collapse, initTE } = await import('tw-elements');
+	function supportsWebp() {
+		// console.log(browser && document.documentElement.classList.contains('webp'));
+		return browser && document.documentElement.classList.contains('webp');
+	}
 
-		initTE({ Collapse });
-	});
+	const bgImage = supportsWebp() ? bgImageWebp : bgImageJpg;
 
 	const faqs = [
 		{
@@ -64,6 +68,12 @@
 				'I accept cash as well as most online payment methods, including CashApp, Venmo, PayPal, Facebook Pay, etc.',
 		},
 	];
+
+	onMount(async () => {
+		const { Collapse, initTE } = await import('tw-elements');
+
+		initTE({ Collapse });
+	});
 </script>
 
 <svelte:head>
@@ -75,9 +85,9 @@
 	<div
 		id="pricing"
 		class="flex h-[300px] items-center justify-center overflow-hidden bg-cover bg-no-repeat text-center text-eggshell sm:h-[400px] md:h-[500px]"
+		style:background-image={`url(${bgImage})`}
 		style="
 			background-position: 50%;
-			background-image: url('/images/header-faq.jpg');
 		"
 	>
 		<h2 class="text-5xl font-bold">FAQ</h2>

@@ -9,7 +9,6 @@
  */
 
 import { error } from '@sveltejs/kit';
-import { getOrientation } from '$lib/image';
 
 /**
  * @typedef {Object} ImageItem
@@ -23,7 +22,6 @@ import { getOrientation } from '$lib/image';
  * @property {string} image
  * @property {string} link
  * @property {string} name
- * @property {string} orientation
  */
 
 /**
@@ -40,7 +38,7 @@ const images = {
 			// { name: '002.jpg', main: false, gallery: true },
 			// { name: '003.jpg', main: false, gallery: true },
 			// { name: '004.jpg', main: false, gallery: false },
-			{ name: '005.jpg', main: false, gallery: false },
+			// { name: '005.jpg', main: false, gallery: false },
 			// { name: '006.jpg', main: false, gallery: false },
 			// { name: '007.jpg', main: false, gallery: false },
 			// { name: '008.jpg', main: false, gallery: false },
@@ -153,7 +151,7 @@ const images = {
 			{ name: '005.jpg', main: false, gallery: false },
 			{ name: '006.jpg', main: false, gallery: false },
 			// { name: '007.jpg', main: false, gallery: false },
-			{ name: '008.jpg', main: false, gallery: false },
+			// { name: '008.jpg', main: false, gallery: false },
 			{ name: '009.jpg', main: false, gallery: false },
 			// { name: '010.jpg', main: true, gallery: false },
 			{ name: '011.jpg', main: false, gallery: false },
@@ -204,7 +202,7 @@ const images = {
 			{ name: '004.jpg', main: false, gallery: false },
 			// { name: '005.jpg', main: false, gallery: false },
 			// { name: '006.jpg', main: false, gallery: false },
-			{ name: '007.jpg', main: false, gallery: false },
+			// { name: '007.jpg', main: false, gallery: false },
 			// { name: '008.jpg', main: false, gallery: false },
 			{ name: '009.jpg', main: false, gallery: false },
 			// { name: '010.jpg', main: false, gallery: false },
@@ -285,13 +283,11 @@ function urlMapper(category) {
  */
 async function generateGalleryItem(category, image) {
 	const imgPath = `/images/${category}/${image}`;
-	const orientation = await getOrientation(imgPath);
 
 	return {
 		image: imgPath,
 		link: `/portfolio/${category}`,
 		name: getDisplayName(category),
-		orientation,
 	};
 }
 

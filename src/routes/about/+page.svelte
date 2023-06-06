@@ -1,3 +1,12 @@
+<script>
+	/* @imagetools-generate name(izzy) image($lib/images/izzy.jpg) w(300) */
+
+	/* @imagetools-generate name(magazine01) image($lib/images/magazine-01.jpg) w(1200) */
+	/* @imagetools-generate name(magazine02) image($lib/images/magazine-02.jpg) w(1200) */
+	/* @imagetools-generate name(magazine03) image($lib/images/magazine-03.jpg) w(1200) */
+	/* @imagetools-generate name(magazine04) image($lib/images/magazine-04.jpg) w(1200) */
+</script>
+
 <svelte:head>
 	<title>About - Dream Capture Co</title>
 </svelte:head>
@@ -5,11 +14,17 @@
 <section class="text-center">
 	<h1 class="pb-8">About</h1>
 	<div class="about mb-12">
-		<img
-			src="/images/izzy.jpg"
-			alt="Izzy Stevens"
-			class="mx-auto h-[50vw] max-h-[300px] w-[50vw] max-w-[300px] rounded-full object-cover"
-		/>
+		<picture>
+			<source srcset={izzy_avif} type="image/avif" />
+			<source srcset={izzy_webp} type="image/webp" />
+			<img
+				srcset={izzy_jpg}
+				alt="Izzy Stevens"
+				loading="lazy"
+				decoding="async"
+				class="mx-auto h-[50vw] max-h-[300px] w-[50vw] max-w-[300px] rounded-full object-cover"
+			/>
+		</picture>
 		<div class="mx-auto mb-8 mt-6 text-4xl leading-10" style="font-family:'Dancing Script'">
 			Izzy Stevens
 		</div>
@@ -40,16 +55,32 @@
 		<div
 			class="published mx-4 grid max-w-3xl grid-cols-1 justify-center gap-4 md:!mx-auto md:grid-cols-2"
 		>
-			<img src="/images/magazine-01.jpg" alt="Magazine 01" />
-			<img src="/images/magazine-02.jpg" alt="Magazine 02" />
-			<img src="/images/magazine-03.jpg" alt="Magazine 03" />
-			<img src="/images/magazine-04.jpg" alt="Magazine 04" />
+			<picture>
+				<source srcset={magazine01_avif} type="image/avif" />
+				<source srcset={magazine01_webp} type="image/webp" />
+				<img srcset={magazine01_jpg} alt="Magazine page 01" loading="lazy" decoding="async" />
+			</picture>
+			<picture>
+				<source srcset={magazine02_avif} type="image/avif" />
+				<source srcset={magazine02_webp} type="image/webp" />
+				<img srcset={magazine02_jpg} alt="Magazine page 02" loading="lazy" decoding="async" />
+			</picture>
+			<picture>
+				<source srcset={magazine03_avif} type="image/avif" />
+				<source srcset={magazine03_webp} type="image/webp" />
+				<img srcset={magazine03_jpg} alt="Magazine page 03" loading="lazy" decoding="async" />
+			</picture>
+			<picture>
+				<source srcset={magazine04_avif} type="image/avif" />
+				<source srcset={magazine04_webp} type="image/webp" />
+				<img srcset={magazine04_jpg} alt="Magazine page 04" loading="lazy" decoding="async" />
+			</picture>
 		</div>
 	</div>
 </section>
 
 <style lang="postcss">
-	.published > img {
+	.published > picture {
 		@apply shadow-xl;
 	}
 </style>

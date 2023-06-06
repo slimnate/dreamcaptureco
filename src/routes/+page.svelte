@@ -16,8 +16,6 @@
 	<title>Dream Capture Co</title>
 </svelte:head>
 
-<img src="/images/hero.jpg" alt="page preview" class="hidden" />
-
 <TitleHero />
 
 <Tagline />

@@ -1,9 +1,22 @@
-<section class="background-radial-gradient text-center text-eggshell">
+<script>
+	import bgImageJpg from '$lib/images/hero.jpg';
+	import bgImageWebp from '$lib/images/hero.jpg?format=webp';
+	import { browser } from '$app/environment';
+
+	function supportsWebp() {
+		// console.log(browser && document.documentElement.classList.contains('webp'));
+		return browser && document.documentElement.classList.contains('webp');
+	}
+
+	const bgImage = supportsWebp() ? bgImageWebp : bgImageJpg;
+</script>
+
+<section class="text-center text-eggshell">
 	<!-- fixed size container with background image, relative parent for absolute children -->
 	<div
 		class="relative h-[300px] overflow-hidden bg-cover bg-no-repeat sm:h-[400px] md:h-[500px]"
+		style:background-image={`url(${bgImage})`}
 		style="
-			background-image: url('/images/hero.jpg');
 			background-position-y: 50%;
 		"
 	>
