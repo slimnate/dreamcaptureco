@@ -65,7 +65,6 @@
 	<form
 		name="booking"
 		method="POST"
-		action="/booking/success"
 		data-netlify="true"
 		class="booking-form mx-auto grid gap-3 px-4 md:max-w-3xl md:grid-cols-2"
 	>
