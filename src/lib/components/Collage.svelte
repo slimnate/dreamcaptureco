@@ -7,7 +7,7 @@
 </script>
 
 <section class="py-16">
-	<div class="-mb-[40vw] flex w-full flex-col items-center justify-center">
+	<div class="-mb-[29vw] flex w-full flex-col items-center justify-center">
 		<div class="translate-x-[5vw] bg-eggshell p-2 shadow-lg">
 			<picture>
 				<source {sizes} srcset={collage01_avif} type="image/avif" />
@@ -36,7 +36,7 @@
 				/>
 			</picture>
 		</div>
-		<div class="relative -translate-y-[40vw] translate-x-[15vw] bg-eggshell p-2 shadow-lg">
+		<div class="relative -translate-y-[30vw] translate-x-[15vw] bg-eggshell p-2 shadow-lg">
 			<picture>
 				<source {sizes} srcset={collage03_avif} type="image/avif" />
 				<source {sizes} srcset={collage03_webp} type="image/webp" />
