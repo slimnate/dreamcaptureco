@@ -169,17 +169,17 @@
 				<option value="" hidden selected />
 				<option
 					value="Day Dreams"
-					data-te-select-secondary-text="$100 - 1 hour - 1 location - up to 5 people - 20-30 edits"
+					data-te-select-secondary-text="$170 - 1 hour - 1 location - up to 5 people - 20-30 edits"
 					>Day Dream</option
 				>
 				<option
 					value="Sweet Dream"
-					data-te-select-secondary-text="$200 - 1.5 hours - up to 2 locations - up to 8 people - 30-40 edits"
+					data-te-select-secondary-text="$270 - 1.5 hours - up to 2 locations - up to 8 people - 30-40 edits"
 					>Sweet Dream</option
 				>
 				<option
 					value="Dream Come True"
-					data-te-select-secondary-text="$300 - 2 hours - up to 2 locations - 8+ people - 40-50 edits"
+					data-te-select-secondary-text="$370 - 2 hours - up to 2 locations - 8+ people - 40-50 edits"
 					>Dream Come True</option
 				>
 				<option
