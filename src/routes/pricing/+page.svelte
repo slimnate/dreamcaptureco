@@ -16,7 +16,7 @@
 	const tiers = [
 		{
 			name: 'Day Dream',
-			price: 100,
+			price: 170,
 			features: [
 				'1 hour',
 				'1 location',
@@ -28,7 +28,7 @@
 		},
 		{
 			name: 'Sweet Dream',
-			price: 200,
+			price: 270,
 			features: [
 				'1.5 hours',
 				'1-2 locations',
@@ -40,7 +40,7 @@
 		},
 		{
 			name: 'Dream Come True',
-			price: 300,
+			price: 370,
 			features: [
 				'2 hours',
 				'1-2 locations',
