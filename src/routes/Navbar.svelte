@@ -33,8 +33,10 @@
 	/**
 	 * @param {MouseEvent & { currentTarget: EventTarget & HTMLAnchorElement; }} event
 	 */
-	function handleNavItemClick(event) {
-		document.querySelector('.navbar-collapse')?.classList.remove('show');
+	async function handleNavItemClick(event) {
+		const { Collapse } = await import('tw-elements');
+		const collapse = Collapse.getInstance(document.querySelector('#navbarContent'));
+		collapse.hide();
 	}
 </script>
 
@@ -74,11 +76,12 @@
 					<li
 						class:mt-4={index === 0}
 						class:mb-0={index === navItems.length - 1}
-						class="my-2 md:mt-0 md:mb-0 md:px-2 md:pr-2"
+						class="my-2 md:mb-0 md:mt-0 md:px-2 md:pr-2"
 						data-te-nav-item-ref
 					>
 						<a
 							class="text-blackcoffee/70 hover:text-blackcoffee hover:drop-shadow-lg sm:text-lg"
+							on:click={handleNavItemClick}
 							{href}
 							data-te-nav-link-ref>{text}</a
 						>
