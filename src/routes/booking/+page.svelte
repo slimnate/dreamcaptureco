@@ -7,6 +7,20 @@
 	import bgImageWebp from '$lib/images/header-booking.jpg?w=1400&format=webp';
 	import { browser } from '$app/environment';
 
+	/** Notch styles */
+	const notchColorString = 'blackcoffee/80';
+	const notchColorRGB = 'rgb(58_45_50_/_0.7)';
+
+	const notchLeading = `border-neutral-300 dark:border-neutral-600 group-data-[te-input-focused]:shadow-[-1px_0_0_#3A2D32,_0_1px_0_0_#3A2D32,_0_-1px_0_0_#3A2D32] group-data-[te-input-focused]:border-blackcoffee`;
+	const notchMiddle = `border-neutral-300 dark:border-neutral-600 group-data-[te-input-focused]:shadow-[0_1px_0_0_#3A2D32] group-data-[te-input-focused]:border-blackcoffee`;
+	const notchTrailing = `border-neutral-300 dark:border-neutral-600 group-data-[te-input-focused]:shadow-[1px_0_0_#3A2D32,_0_-1px_0_0_#3A2D32,_0_1px_0_0_#3A2D32] group-data-[te-input-focused]:border-blackcoffee`;
+
+	/** radio styles */
+	const radioClass = `relative float-left -ml-[1.5rem] mr-1 mt-0.5 h-5 w-5 appearance-none rounded-full border-2 border-solid border-neutral-300 before:pointer-events-none before:absolute before:h-4 before:w-4 before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] after:absolute after:z-[1] after:block after:h-4 after:w-4 after:rounded-full after:content-[''] checked:border-blackcoffee checked:before:opacity-[0.16] checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:h-[0.625rem] checked:after:w-[0.625rem] checked:after:rounded-full checked:after:border-blackcoffee checked:after:bg-blackcoffee checked:after:content-[''] checked:after:[transform:translate(-50%,-50%)] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:outline-none focus:ring-0 focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:border-blackcoffee checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#3a2d32] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] dark:border-neutral-600 dark:checked:border-primary dark:checked:after:border-primary dark:checked:after:bg-primary dark:focus:before:shadow-[0px_0px_0px_13px_rgba(255,255,255,0.4)] dark:checked:focus:border-primary dark:checked:focus:before:shadow-[0px_0px_0px_13px_#3a2d32]`;
+
+	/** select styles */
+	const selectOption = `!h-auto !py-1 flex flex-row items-center bg-transparent justify-between w-full px-4 text-blackcoffee select-none cursor-pointer data-[te-input-multiple-active]:bg-blackcoffee/10 hover:[&:not([data-te-select-option-disabled])]:bg-blackcoffee/10 data-[te-input-state-active]:bg-blackcoffee/10 data-[te-select-option-selected]:data-[te-input-state-active]:bg-blackcoffee/10 data-[te-select-selected]:data-[te-select-option-disabled]:cursor-default data-[te-select-selected]:data-[te-select-option-disabled]:text-gray-400 data-[te-select-selected]:data-[te-select-option-disabled]:bg-transparent data-[te-select-option-selected]:bg-black/[0.02] data-[te-select-option-disabled]:text-gray-400 data-[te-select-option-disabled]:cursor-default group-data-[te-select-option-group-ref]/opt:pl-7 dark:text-gray-200 dark:hover:[&:not([data-te-select-option-disabled])]:bg-white/30 dark:data-[te-input-state-active]:bg-white/30 dark:data-[te-select-option-selected]:data-[te-input-state-active]:bg-white/30 dark:data-[te-select-option-disabled]:text-gray-400 dark:data-[te-input-multiple-active]:bg-white/30`;
+
 	function supportsWebp() {
 		// console.log(browser && document.documentElement.classList.contains('webp'));
 		return browser && document.documentElement.classList.contains('webp');
@@ -73,7 +87,13 @@
 		<input type="hidden" name="form-name" value="booking" />
 
 		<!-- NAME -->
-		<div class="relative md:col-span-2" data-te-input-wrapper-init>
+		<div
+			class="relative md:col-span-2"
+			data-te-input-wrapper-init
+			data-te-class-notch-leading-normal={notchLeading}
+			data-te-class-notch-middle-normal={notchMiddle}
+			data-te-class-notch-trailing-normal={notchTrailing}
+		>
 			<input
 				type="text"
 				class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
@@ -83,13 +103,19 @@
 			/>
 			<label
 				for="name"
-				class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-blackcoffee/70 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
+				class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-blackcoffee/70 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-blackcoffee/60 peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
 				>Name</label
 			>
 		</div>
 
 		<!-- PHONE -->
-		<div class="relative" data-te-input-wrapper-init>
+		<div
+			class="relative"
+			data-te-input-wrapper-init
+			data-te-class-notch-leading-normal={notchLeading}
+			data-te-class-notch-middle-normal={notchMiddle}
+			data-te-class-notch-trailing-normal={notchTrailing}
+		>
 			<input
 				type="tel"
 				class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
@@ -99,13 +125,19 @@
 			/>
 			<label
 				for="phone"
-				class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-blackcoffee/70 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
+				class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-blackcoffee/70 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-blackcoffee/70 peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
 				>Phone Number</label
 			>
 		</div>
 
 		<!-- EMAIL -->
-		<div class="relative" data-te-input-wrapper-init>
+		<div
+			class="relative"
+			data-te-input-wrapper-init
+			data-te-class-notch-leading-normal={notchLeading}
+			data-te-class-notch-middle-normal={notchMiddle}
+			data-te-class-notch-trailing-normal={notchTrailing}
+		>
 			<input
 				type="email"
 				class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
@@ -115,11 +147,12 @@
 			/>
 			<label
 				for="email"
-				class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-blackcoffee/70 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
+				class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-blackcoffee/70 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-blackcoffee/70 peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
 				>Email</label
 			>
 		</div>
 
+		<!-- CONTACT -->
 		<div class="relative flex flex-wrap justify-between gap-3 px-3 md:col-span-2">
 			<label for="prefferedContact" class="text-left text-blackcoffee/70"
 				>Preferred Contact Method
@@ -127,7 +160,7 @@
 			<div class="flex gap-8">
 				<div class="mb-[0.125rem] block min-h-[1.5rem] pl-[1.5rem]">
 					<input
-						class="relative float-left -ml-[1.5rem] mr-1 mt-0.5 h-5 w-5 appearance-none rounded-full border-2 border-solid border-neutral-300 before:pointer-events-none before:absolute before:h-4 before:w-4 before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] after:absolute after:z-[1] after:block after:h-4 after:w-4 after:rounded-full after:content-[''] checked:border-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:h-[0.625rem] checked:after:w-[0.625rem] checked:after:rounded-full checked:after:border-primary checked:after:bg-primary checked:after:content-[''] checked:after:[transform:translate(-50%,-50%)] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:outline-none focus:ring-0 focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:border-primary checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] dark:border-neutral-600 dark:checked:border-primary dark:checked:after:border-primary dark:checked:after:bg-primary dark:focus:before:shadow-[0px_0px_0px_13px_rgba(255,255,255,0.4)] dark:checked:focus:border-primary dark:checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca]"
+						class={radioClass}
 						type="radio"
 						name="preferredContact"
 						id="radioEmail"
@@ -139,7 +172,7 @@
 				</div>
 				<div class="mb-[0.125rem] block min-h-[1.5rem] pl-[1.5rem]">
 					<input
-						class="relative float-left -ml-[1.5rem] mr-1 mt-0.5 h-5 w-5 appearance-none rounded-full border-2 border-solid border-neutral-300 before:pointer-events-none before:absolute before:h-4 before:w-4 before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] after:absolute after:z-[1] after:block after:h-4 after:w-4 after:rounded-full after:content-[''] checked:border-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:h-[0.625rem] checked:after:w-[0.625rem] checked:after:rounded-full checked:after:border-primary checked:after:bg-primary checked:after:content-[''] checked:after:[transform:translate(-50%,-50%)] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:outline-none focus:ring-0 focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:border-primary checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] dark:border-neutral-600 dark:checked:border-primary dark:checked:after:border-primary dark:checked:after:bg-primary dark:focus:before:shadow-[0px_0px_0px_13px_rgba(255,255,255,0.4)] dark:checked:focus:border-primary dark:checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca]"
+						class={radioClass}
 						type="radio"
 						name="preferredContact"
 						id="radioPhone"
@@ -158,9 +191,13 @@
 			<select
 				id="package"
 				name="package"
+				class=""
 				data-te-select-init
+				data-te-class-notch-leading-normal={notchLeading}
+				data-te-class-notch-middle-normal={notchMiddle}
+				data-te-class-notch-trailing-normal={notchTrailing}
 				data-te-select-size="lg"
-				data-te-class-select-option="!h-auto !py-1 flex flex-row items-center bg-transparent justify-between w-full px-4 text-blackcoffee select-none cursor-pointer data-[te-input-multiple-active]:bg-blackcoffee/10 hover:[&:not([data-te-select-option-disabled])]:bg-blackcoffee/10 data-[te-input-state-active]:bg-blackcoffee/10 data-[te-select-option-selected]:data-[te-input-state-active]:bg-blackcoffee/10 data-[te-select-selected]:data-[te-select-option-disabled]:cursor-default data-[te-select-selected]:data-[te-select-option-disabled]:text-gray-400 data-[te-select-selected]:data-[te-select-option-disabled]:bg-transparent data-[te-select-option-selected]:bg-black/[0.02] data-[te-select-option-disabled]:text-gray-400 data-[te-select-option-disabled]:cursor-default group-data-[te-select-option-group-ref]/opt:pl-7 dark:text-gray-200 dark:hover:[&:not([data-te-select-option-disabled])]:bg-white/30 dark:data-[te-input-state-active]:bg-white/30 dark:data-[te-select-option-selected]:data-[te-input-state-active]:bg-white/30 dark:data-[te-select-option-disabled]:text-gray-400 dark:data-[te-input-multiple-active]:bg-white/30"
+				data-te-class-select-option={selectOption}
 				data-te-class-options-list="!py-1 bg-eggshell/70"
 				data-te-class-options-wrapper="!max-h-[40vh]"
 				data-te-class-select-options-group="group/opt"
@@ -198,7 +235,10 @@
 				name="session"
 				data-te-select-init
 				data-te-select-size="lg"
-				data-te-class-select-option="!h-auto !py-1 flex flex-row items-center bg-transparent justify-between w-full px-4 text-blackcoffee select-none cursor-pointer data-[te-input-multiple-active]:bg-blackcoffee/10 hover:[&:not([data-te-select-option-disabled])]:bg-blackcoffee/10 data-[te-input-state-active]:bg-blackcoffee/10 data-[te-select-option-selected]:data-[te-input-state-active]:bg-blackcoffee/10 data-[te-select-selected]:data-[te-select-option-disabled]:cursor-default data-[te-select-selected]:data-[te-select-option-disabled]:text-gray-400 data-[te-select-selected]:data-[te-select-option-disabled]:bg-transparent data-[te-select-option-selected]:bg-black/[0.02] data-[te-select-option-disabled]:text-gray-400 data-[te-select-option-disabled]:cursor-default group-data-[te-select-option-group-ref]/opt:pl-7 dark:text-gray-200 dark:hover:[&:not([data-te-select-option-disabled])]:bg-white/30 dark:data-[te-input-state-active]:bg-white/30 dark:data-[te-select-option-selected]:data-[te-input-state-active]:bg-white/30 dark:data-[te-select-option-disabled]:text-gray-400 dark:data-[te-input-multiple-active]:bg-white/30"
+				data-te-class-notch-leading-normal={notchLeading}
+				data-te-class-notch-middle-normal={notchMiddle}
+				data-te-class-notch-trailing-normal={notchTrailing}
+				data-te-class-select-option={selectOption}
 				data-te-class-options-list="!py-1 bg-eggshell/70"
 				data-te-class-options-wrapper="!max-h-[40vh]"
 			>
@@ -223,6 +263,9 @@
 			data-te-disable-past="true"
 			data-te-confirm-date-on-select="true"
 			data-te-input-wrapper-init
+			data-te-class-notch-leading-normal={notchLeading}
+			data-te-class-notch-middle-normal={notchMiddle}
+			data-te-class-notch-trailing-normal={notchTrailing}
 			data-te-input-size="lg"
 		>
 			<input
@@ -234,7 +277,7 @@
 			/>
 			<label
 				for="date"
-				class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-blackcoffee/70 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
+				class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-blackcoffee/70 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-blackcoffee/70 peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-blackcoffee/70"
 				>Select a date</label
 			>
 		</div>
@@ -244,6 +287,9 @@
 			class="relative"
 			data-te-timepicker-init
 			data-te-input-wrapper-init
+			data-te-class-notch-leading-normal={notchLeading}
+			data-te-class-notch-middle-normal={notchMiddle}
+			data-te-class-notch-trailing-normal={notchTrailing}
 			data-te-inline="false"
 			data-te-increment="true"
 			data-te-close-modal-on-minutes-click="false"
@@ -258,7 +304,7 @@
 			/>
 			<label
 				for="time"
-				class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-blackcoffee/70 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
+				class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-blackcoffee/70 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-blackcoffee/70 peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-blackcoffee/70"
 				>Select a time</label
 			>
 		</div>
@@ -272,7 +318,13 @@
 		</div>
 
 		<!-- SUBJECTS -->
-		<div class="relative mb-14 sm:mb-8 md:col-span-2" data-te-input-wrapper-init>
+		<div
+			class="relative mb-14 sm:mb-8 md:col-span-2"
+			data-te-input-wrapper-init
+			data-te-class-notch-leading-normal={notchLeading}
+			data-te-class-notch-middle-normal={notchMiddle}
+			data-te-class-notch-trailing-normal={notchTrailing}
+		>
 			<textarea
 				class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
 				id="subjects"
@@ -282,11 +334,11 @@
 			/>
 			<label
 				for="subjects"
-				class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-blackcoffee/70 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
+				class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-blackcoffee/70 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-blackcoffee/70 peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-blackcoffee/70"
 				>Subjects
 			</label>
 			<div
-				class="absolute w-full text-sm text-blackcoffee/70 peer-focus:text-primary dark:text-neutral-200 dark:peer-focus:text-primary"
+				class="absolute w-full text-sm text-blackcoffee/70 peer-focus:text-blackcoffee/70 dark:text-neutral-200 dark:peer-focus:text-blackcoffee/70"
 				data-te-input-helper-ref
 			>
 				Who will be taking part in the shoot? Include name, age, and any special accommodation info
@@ -294,7 +346,13 @@
 		</div>
 
 		<!-- ADDITIONAL INFO -->
-		<div class="relative mb-14 sm:mb-8 md:col-span-2" data-te-input-wrapper-init>
+		<div
+			class="relative mb-14 sm:mb-8 md:col-span-2"
+			data-te-input-wrapper-init
+			data-te-class-notch-leading-normal={notchLeading}
+			data-te-class-notch-middle-normal={notchMiddle}
+			data-te-class-notch-trailing-normal={notchTrailing}
+		>
 			<textarea
 				class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
 				id="additionalInfo"
@@ -304,11 +362,11 @@
 			/>
 			<label
 				for="additionalInfo"
-				class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-blackcoffee/70 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
+				class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-blackcoffee/70 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-blackcoffee/70 peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-blackcoffee/70"
 				>Additional Info
 			</label>
 			<div
-				class="absolute w-full text-sm text-blackcoffee/70 peer-focus:text-primary dark:text-neutral-200 dark:peer-focus:text-primary"
+				class="absolute w-full text-sm text-blackcoffee/70 peer-focus:text-blackcoffee/70 dark:text-neutral-200 dark:peer-focus:text-blackcoffee/70"
 				data-te-input-helper-ref
 			>
 				Include any other information about the shoot such as the occasion, theme, color pallette,
@@ -319,7 +377,7 @@
 		<!-- SUBMIT BUTTON -->
 		<button
 			type="submit"
-			class="mx-auto mb-4 mt-4 block min-w-[90%] rounded bg-primary px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] md:col-span-2 md:min-w-[50%]"
+			class="mx-auto mb-4 mt-4 block min-w-[90%] rounded !bg-blackcoffee/95 px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(58,45,50,0.8)] transition duration-150 ease-in-out hover:!bg-blackcoffee hover:shadow-[0_8px_9px_-4px_rgba(58,45,50,0.8),0_4px_18px_0_rgba(59,113,202,0.2)] focus:!bg-blackcoffee focus:shadow-[0_8px_9px_-4px_rgba(58,45,50,0.8),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:!bg-blackcoffee active:shadow-[0_8px_9px_-4px_rgba(58,45,50,0.8),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] md:col-span-2 md:min-w-[50%]"
 		>
 			Submit
 		</button>
