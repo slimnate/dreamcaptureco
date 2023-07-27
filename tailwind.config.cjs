@@ -1,7 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	darkMode: 'class',
-	content: ['./src/**/*.{html,js,svelte,ts}', './node_modules/tw-elements/dist/js/**/*.js'],
+	content: [
+		'./src/**/*.{html,js,svelte,ts}',
+		// './node_modules/tw-elements/dist/js/**/*.js',
+		require('path').join(require.resolve('@skeletonlabs/skeleton'), '../**/*.{html,js,svelte,ts}'),
+	],
 	theme: {
 		extend: {
 			colors: {
@@ -9,7 +13,20 @@ module.exports = {
 				cream: '#f7edbb',
 				blonde: '#F7EDBB',
 				lightcoral: '#FF7477',
-				blackcoffee: '#3A2D32',
+				blackcoffee: {
+					50: '#EDE8EA',
+					100: '#DBD1D5',
+					200: '#B8A3AB',
+					300: '#947581',
+					400: '#675059',
+					500: '#3A2D32',
+					600: '#2E2428',
+					700: '#221B1E',
+					800: '#171214',
+					900: '#0B090A',
+					950: '#060405',
+					DEFAULT: '#3A2D32',
+				},
 				cafeaulait: '#A47963',
 				terracotta: '#ED6A5A',
 				goldfusion: '#7B7554',
@@ -32,5 +49,9 @@ module.exports = {
 			},
 		},
 	},
-	plugins: [require('tw-elements/dist/plugin')],
+	plugins: [
+		// require('tw-elements/dist/plugin'),
+		require('@tailwindcss/forms'),
+		...require('@skeletonlabs/skeleton/tailwind/skeleton.cjs')(),
+	],
 };
