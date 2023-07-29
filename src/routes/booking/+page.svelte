@@ -1,7 +1,6 @@
 <script lang="js">
 	import IconFacebook from '$lib/components/icons/IconFacebook.svelte';
 	import IconInstagram from '$lib/components/icons/IconInstagram.svelte';
-	import { onMount } from 'svelte';
 
 	import bgImageJpg from '$lib/images/header-booking.jpg?w=1400';
 	import bgImageWebp from '$lib/images/header-booking.jpg?w=1400&format=webp';
@@ -13,12 +12,6 @@
 	}
 
 	const bgImage = supportsWebp() ? bgImageWebp : bgImageJpg;
-
-	onMount(async () => {
-		const { Select, Datepicker, Timepicker, Input, initTE } = await import('tw-elements');
-
-		initTE({ Select, Datepicker, Timepicker, Input });
-	});
 </script>
 
 <svelte:head>
