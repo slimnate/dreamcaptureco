@@ -212,7 +212,7 @@
 				id="subjects"
 				name="subjects"
 				rows="4"
-				placeholder="Tell us about your subjects"
+				placeholder="Subjects"
 			/>
 			<label for="subjects" class="floating label">Subjects </label>
 			<div
@@ -229,7 +229,7 @@
 				id="additionalInfo"
 				name="additionalInfo"
 				rows="4"
-				placeholder="Tell us about your subjects"
+				placeholder="Additional Info"
 			/>
 			<label for="additionalInfo" class="floating label">Additional Info </label>
 			<div class="helper">
@@ -257,7 +257,7 @@
 	}
 
 	label.floating {
-		@apply absolute left-4 top-0 text-xs font-semibold text-blackcoffee-500/70 transition-all duration-200 peer-placeholder-shown:top-2.5 peer-placeholder-shown:text-base peer-placeholder-shown:font-normal peer-placeholder-shown:text-blackcoffee-500/60;
+		@apply absolute left-4 top-0 text-xs font-semibold text-blackcoffee-500/70 transition-all duration-200 peer-placeholder-shown:top-[0.55rem] peer-placeholder-shown:text-base peer-placeholder-shown:font-normal peer-placeholder-shown:text-blackcoffee-500/60;
 	}
 
 	input.floating,
