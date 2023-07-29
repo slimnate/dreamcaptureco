@@ -7,20 +7,6 @@
 	import bgImageWebp from '$lib/images/header-booking.jpg?w=1400&format=webp';
 	import { browser } from '$app/environment';
 
-	/** Notch styles */
-	const notchColorString = 'blackcoffee/80';
-	const notchColorRGB = 'rgb(58_45_50_/_0.7)';
-
-	const notchLeading = `border-neutral-300 dark:border-neutral-600 group-data-[te-input-focused]:shadow-[-1px_0_0_#3A2D32,_0_1px_0_0_#3A2D32,_0_-1px_0_0_#3A2D32] group-data-[te-input-focused]:border-blackcoffee`;
-	const notchMiddle = `border-neutral-300 dark:border-neutral-600 group-data-[te-input-focused]:shadow-[0_1px_0_0_#3A2D32] group-data-[te-input-focused]:border-blackcoffee`;
-	const notchTrailing = `border-neutral-300 dark:border-neutral-600 group-data-[te-input-focused]:shadow-[1px_0_0_#3A2D32,_0_-1px_0_0_#3A2D32,_0_1px_0_0_#3A2D32] group-data-[te-input-focused]:border-blackcoffee`;
-
-	/** radio styles */
-	const radioClass = `relative float-left -ml-[1.5rem] mr-1 mt-0.5 h-5 w-5 appearance-none rounded-full border-2 border-solid border-neutral-300 before:pointer-events-none before:absolute before:h-4 before:w-4 before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] after:absolute after:z-[1] after:block after:h-4 after:w-4 after:rounded-full after:content-[''] checked:border-blackcoffee checked:before:opacity-[0.16] checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:h-[0.625rem] checked:after:w-[0.625rem] checked:after:rounded-full checked:after:border-blackcoffee checked:after:bg-blackcoffee checked:after:content-[''] checked:after:[transform:translate(-50%,-50%)] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:outline-none focus:ring-0 focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:border-blackcoffee checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#3a2d32] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] dark:border-neutral-600 dark:checked:border-primary dark:checked:after:border-primary dark:checked:after:bg-primary dark:focus:before:shadow-[0px_0px_0px_13px_rgba(255,255,255,0.4)] dark:checked:focus:border-primary dark:checked:focus:before:shadow-[0px_0px_0px_13px_#3a2d32]`;
-
-	/** select styles */
-	const selectOption = `!h-auto !py-1 flex flex-row items-center bg-transparent justify-between w-full px-4 text-blackcoffee select-none cursor-pointer data-[te-input-multiple-active]:bg-blackcoffee/10 hover:[&:not([data-te-select-option-disabled])]:bg-blackcoffee/10 data-[te-input-state-active]:bg-blackcoffee/10 data-[te-select-option-selected]:data-[te-input-state-active]:bg-blackcoffee/10 data-[te-select-selected]:data-[te-select-option-disabled]:cursor-default data-[te-select-selected]:data-[te-select-option-disabled]:text-gray-400 data-[te-select-selected]:data-[te-select-option-disabled]:bg-transparent data-[te-select-option-selected]:bg-black/[0.02] data-[te-select-option-disabled]:text-gray-400 data-[te-select-option-disabled]:cursor-default group-data-[te-select-option-group-ref]/opt:pl-7 dark:text-gray-200 dark:hover:[&:not([data-te-select-option-disabled])]:bg-white/30 dark:data-[te-input-state-active]:bg-white/30 dark:data-[te-select-option-selected]:data-[te-input-state-active]:bg-white/30 dark:data-[te-select-option-disabled]:text-gray-400 dark:data-[te-input-multiple-active]:bg-white/30`;
-
 	function supportsWebp() {
 		// console.log(browser && document.documentElement.classList.contains('webp'));
 		return browser && document.documentElement.classList.contains('webp');
@@ -87,102 +73,50 @@
 		<input type="hidden" name="form-name" value="booking" />
 
 		<!-- NAME -->
-		<div
-			class="relative md:col-span-2"
-			data-te-input-wrapper-init
-			data-te-class-notch-leading-normal={notchLeading}
-			data-te-class-notch-middle-normal={notchMiddle}
-			data-te-class-notch-trailing-normal={notchTrailing}
-		>
-			<input
-				type="text"
-				class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-				id="name"
-				name="name"
-				placeholder="Name"
-			/>
-			<label
-				for="name"
-				class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-blackcoffee/70 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-blackcoffee/60 peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
-				>Name</label
-			>
+		<div class="relative md:col-span-2">
+			<input type="text" class="floating peer input" id="name" name="name" placeholder="Name" />
+			<label for="name" class="floating label">Name</label>
 		</div>
 
 		<!-- PHONE -->
-		<div
-			class="relative"
-			data-te-input-wrapper-init
-			data-te-class-notch-leading-normal={notchLeading}
-			data-te-class-notch-middle-normal={notchMiddle}
-			data-te-class-notch-trailing-normal={notchTrailing}
-		>
+		<div class="relative">
 			<input
 				type="tel"
-				class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+				class="floating peer input"
 				id="phone"
 				name="phone"
 				placeholder="Phone Number"
 			/>
-			<label
-				for="phone"
-				class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-blackcoffee/70 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-blackcoffee/70 peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
-				>Phone Number</label
-			>
+			<label for="phone" class="floating label">Phone Number</label>
 		</div>
 
 		<!-- EMAIL -->
-		<div
-			class="relative"
-			data-te-input-wrapper-init
-			data-te-class-notch-leading-normal={notchLeading}
-			data-te-class-notch-middle-normal={notchMiddle}
-			data-te-class-notch-trailing-normal={notchTrailing}
-		>
-			<input
-				type="email"
-				class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-				id="email"
-				name="email"
-				placeholder="Email"
-			/>
-			<label
-				for="email"
-				class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-blackcoffee/70 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-blackcoffee/70 peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
-				>Email</label
-			>
+		<div class="relative">
+			<input type="email" class="floating peer input" id="email" name="email" placeholder="Email" />
+			<label for="email" class="floating label">Email</label>
 		</div>
 
 		<!-- CONTACT -->
-		<div class="relative flex flex-wrap justify-between gap-3 px-3 md:col-span-2">
+		<div class="relative flex flex-wrap justify-between px-4 md:col-span-2">
 			<label for="prefferedContact" class="text-left text-blackcoffee/70"
 				>Preferred Contact Method
 			</label>
 			<div class="flex gap-8">
-				<div class="mb-[0.125rem] block min-h-[1.5rem] pl-[1.5rem]">
+				<label class="flex items-center space-x-2">
+					<input class="radio" type="radio" name="preferredContact" id="radioEmail" value="Email" />
+					<p>Email</p>
+				</label>
+				<label class="flex items-center space-x-2">
 					<input
-						class={radioClass}
-						type="radio"
-						name="preferredContact"
-						id="radioEmail"
-						value="Email"
-					/>
-					<label class="mt-px inline-block pl-[0.15rem] hover:cursor-pointer" for="radioEmail">
-						Email
-					</label>
-				</div>
-				<div class="mb-[0.125rem] block min-h-[1.5rem] pl-[1.5rem]">
-					<input
-						class={radioClass}
+						class="radio"
 						type="radio"
 						name="preferredContact"
 						id="radioPhone"
 						value="Phone"
 						checked
 					/>
-					<label class="mt-px inline-block pl-[0.15rem] hover:cursor-pointer" for="radioPhone">
-						Phone
-					</label>
-				</div>
+					<p>Phone</p>
+				</label>
 			</div>
 		</div>
 
@@ -191,17 +125,12 @@
 			<select
 				id="package"
 				name="package"
-				class=""
-				data-te-select-init
-				data-te-class-notch-leading-normal={notchLeading}
-				data-te-class-notch-middle-normal={notchMiddle}
-				data-te-class-notch-trailing-normal={notchTrailing}
-				data-te-select-size="lg"
-				data-te-class-select-option={selectOption}
-				data-te-class-options-list="!py-1 bg-eggshell/70"
-				data-te-class-options-wrapper="!max-h-[40vh]"
-				data-te-class-select-options-group="group/opt"
-				data-te-class-select-option-secondary-text="block text-sm text-blackcoffee/70 tracking-tighter"
+				class="peer select"
+				data-selected=""
+				on:change={(e) => {
+					e.currentTarget.dataset.selected = e.currentTarget.value;
+					console.log(e);
+				}}
 			>
 				<option value="" hidden selected />
 				<option
@@ -225,7 +154,7 @@
 					>Event Consultation</option
 				>
 			</select>
-			<label data-te-select-label-ref for="package" class="!text-blackcoffee/70">Package</label>
+			<label for="package" class="floating-select">Package</label>
 		</div>
 
 		<!-- SESSION TYPE -->
@@ -233,14 +162,16 @@
 			<select
 				id="session"
 				name="session"
-				data-te-select-init
-				data-te-select-size="lg"
-				data-te-class-notch-leading-normal={notchLeading}
-				data-te-class-notch-middle-normal={notchMiddle}
-				data-te-class-notch-trailing-normal={notchTrailing}
-				data-te-class-select-option={selectOption}
-				data-te-class-options-list="!py-1 bg-eggshell/70"
-				data-te-class-options-wrapper="!max-h-[40vh]"
+				class="peer select"
+				data-selected=""
+				on:change={(e) => {
+					e.currentTarget.dataset.selected = e.currentTarget.value;
+					console.log(e);
+				}}
+				on:click={(e) => {
+					if (e.currentTarget.dataset.open == 'true') e.currentTarget.dataset.open = 'true';
+					else e.currentTarget.dataset.open = 'false';
+				}}
 			>
 				<option value="" hidden selected />
 				<option value="portrait">Portrait</option>
@@ -251,62 +182,19 @@
 				<option value="Business">Business</option>
 				<option value="Other">Other</option>
 			</select>
-			<label data-te-select-label-ref for="session" class="!text-blackcoffee/70">Session Type</label
-			>
+			<label data-te-select-label-ref for="session" class="floating-select">Session Type</label>
 		</div>
 
 		<!-- DATE -->
-		<div
-			class="relative"
-			data-te-datepicker-init
-			data-te-format="mm/dd/yyyy"
-			data-te-disable-past="true"
-			data-te-confirm-date-on-select="true"
-			data-te-input-wrapper-init
-			data-te-class-notch-leading-normal={notchLeading}
-			data-te-class-notch-middle-normal={notchMiddle}
-			data-te-class-notch-trailing-normal={notchTrailing}
-			data-te-input-size="lg"
-		>
-			<input
-				type="text"
-				id="date"
-				name="date"
-				class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[.37rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-				placeholder="Select a date"
-			/>
-			<label
-				for="date"
-				class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-blackcoffee/70 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-blackcoffee/70 peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-blackcoffee/70"
-				>Select a date</label
-			>
+		<div class="relative">
+			<input type="date" id="date" name="date" class="floating input" placeholder="Select a date" />
+			<label for="date" class="floating label">Select a date</label>
 		</div>
 
 		<!-- TIME -->
-		<div
-			class="relative"
-			data-te-timepicker-init
-			data-te-input-wrapper-init
-			data-te-class-notch-leading-normal={notchLeading}
-			data-te-class-notch-middle-normal={notchMiddle}
-			data-te-class-notch-trailing-normal={notchTrailing}
-			data-te-inline="false"
-			data-te-increment="true"
-			data-te-close-modal-on-minutes-click="false"
-			data-te-input-size="lg"
-		>
-			<input
-				type="text"
-				id="time"
-				name="time"
-				class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[.37rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-				placeholder="Select a time"
-			/>
-			<label
-				for="time"
-				class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-blackcoffee/70 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-blackcoffee/70 peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-blackcoffee/70"
-				>Select a time</label
-			>
+		<div class="relative">
+			<input type="text" id="time" name="time" class="floating input" placeholder="Select a time" />
+			<label for="time" class="floating label">Select a time</label>
 		</div>
 
 		<!-- AVAILABILITY -->
@@ -318,57 +206,33 @@
 		</div>
 
 		<!-- SUBJECTS -->
-		<div
-			class="relative mb-14 sm:mb-8 md:col-span-2"
-			data-te-input-wrapper-init
-			data-te-class-notch-leading-normal={notchLeading}
-			data-te-class-notch-middle-normal={notchMiddle}
-			data-te-class-notch-trailing-normal={notchTrailing}
-		>
+		<div class="relative mb-14 sm:mb-8 md:col-span-2">
 			<textarea
-				class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+				class="floating peer textarea"
 				id="subjects"
 				name="subjects"
 				rows="4"
 				placeholder="Tell us about your subjects"
 			/>
-			<label
-				for="subjects"
-				class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-blackcoffee/70 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-blackcoffee/70 peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-blackcoffee/70"
-				>Subjects
-			</label>
+			<label for="subjects" class="floating label">Subjects </label>
 			<div
 				class="absolute w-full text-sm text-blackcoffee/70 peer-focus:text-blackcoffee/70 dark:text-neutral-200 dark:peer-focus:text-blackcoffee/70"
-				data-te-input-helper-ref
 			>
 				Who will be taking part in the shoot? Include name, age, and any special accommodation info
 			</div>
 		</div>
 
 		<!-- ADDITIONAL INFO -->
-		<div
-			class="relative mb-14 sm:mb-8 md:col-span-2"
-			data-te-input-wrapper-init
-			data-te-class-notch-leading-normal={notchLeading}
-			data-te-class-notch-middle-normal={notchMiddle}
-			data-te-class-notch-trailing-normal={notchTrailing}
-		>
+		<div class="relative mb-14 sm:mb-8 md:col-span-2">
 			<textarea
-				class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+				class="floating peer textarea"
 				id="additionalInfo"
 				name="additionalInfo"
 				rows="4"
 				placeholder="Tell us about your subjects"
 			/>
-			<label
-				for="additionalInfo"
-				class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-blackcoffee/70 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-blackcoffee/70 peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-blackcoffee/70"
-				>Additional Info
-			</label>
-			<div
-				class="absolute w-full text-sm text-blackcoffee/70 peer-focus:text-blackcoffee/70 dark:text-neutral-200 dark:peer-focus:text-blackcoffee/70"
-				data-te-input-helper-ref
-			>
+			<label for="additionalInfo" class="floating label">Additional Info </label>
+			<div class="helper">
 				Include any other information about the shoot such as the occasion, theme, color pallette,
 				etc.
 			</div>
@@ -388,4 +252,28 @@
 </section>
 
 <style lang="postcss">
+	.helper {
+		@apply absolute w-full text-sm text-blackcoffee/70 peer-focus:text-blackcoffee/70 dark:text-neutral-200 dark:peer-focus:text-blackcoffee/70;
+	}
+
+	label.floating {
+		@apply absolute left-4 top-0 text-xs font-semibold text-blackcoffee-500/70 transition-all duration-200 peer-placeholder-shown:top-2.5 peer-placeholder-shown:text-base peer-placeholder-shown:font-normal peer-placeholder-shown:text-blackcoffee-500/60;
+	}
+
+	input.floating,
+	textarea.floating {
+		@apply variant-form-material border-blackcoffee-300 pb-1 pl-4 pt-3 placeholder-transparent placeholder-shown:py-2;
+	}
+
+	select {
+		@apply variant-form-material border-blackcoffee-300 pb-1 pl-4 pt-3 focus:border-blackcoffee-500;
+	}
+
+	label.floating-select {
+		@apply absolute left-4 top-0 text-xs font-semibold text-blackcoffee-500/70 transition-all duration-200 peer-placeholder-shown:top-2.5 peer-placeholder-shown:text-base peer-placeholder-shown:font-normal peer-placeholder-shown:text-blackcoffee-500 peer-[[data-selected=""]]:left-4 peer-[[data-selected=""]]:top-2 peer-[[data-selected=""]]:text-base peer-[[data-selected=""]]:font-normal peer-[[data-selected=""]]:text-blackcoffee-500/60;
+	}
+
+	.radio {
+		@apply bg-blackcoffee-300;
+	}
 </style>
