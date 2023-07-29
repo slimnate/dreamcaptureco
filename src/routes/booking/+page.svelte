@@ -215,9 +215,7 @@
 				placeholder="Subjects"
 			/>
 			<label for="subjects" class="floating label">Subjects </label>
-			<div
-				class="absolute w-full text-sm text-blackcoffee/70 peer-focus:text-blackcoffee/70 dark:text-neutral-200 dark:peer-focus:text-blackcoffee/70"
-			>
+			<div class="helper">
 				Who will be taking part in the shoot? Include name, age, and any special accommodation info
 			</div>
 		</div>
@@ -241,7 +239,7 @@
 		<!-- SUBMIT BUTTON -->
 		<button
 			type="submit"
-			class="mx-auto mb-4 mt-4 block min-w-[90%] rounded !bg-blackcoffee/95 px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(58,45,50,0.8)] transition duration-150 ease-in-out hover:!bg-blackcoffee hover:shadow-[0_8px_9px_-4px_rgba(58,45,50,0.8),0_4px_18px_0_rgba(59,113,202,0.2)] focus:!bg-blackcoffee focus:shadow-[0_8px_9px_-4px_rgba(58,45,50,0.8),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:!bg-blackcoffee active:shadow-[0_8px_9px_-4px_rgba(58,45,50,0.8),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] md:col-span-2 md:min-w-[50%]"
+			class="mx-auto mb-4 mt-4 block min-w-[90%] rounded !bg-blackcoffee/95 px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(58,45,50,0.8)] transition duration-150 ease-in-out hover:!bg-blackcoffee hover:shadow-[0_8px_9px_-4px_rgba(58,45,50,0.8),0_4px_18px_0_rgba(59,113,202,0.2)] focus:!bg-blackcoffee focus:shadow-[0_8px_9px_-4px_rgba(58,45,50,0.8),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:!bg-blackcoffee active:shadow-[0_8px_9px_-4px_rgba(58,45,50,0.8),0_4px_18px_0_rgba(59,113,202,0.2)] md:col-span-2 md:min-w-[50%]"
 		>
 			Submit
 		</button>
@@ -253,7 +251,7 @@
 
 <style lang="postcss">
 	.helper {
-		@apply absolute w-full text-sm text-blackcoffee/70 peer-focus:text-blackcoffee/70 dark:text-neutral-200 dark:peer-focus:text-blackcoffee/70;
+		@apply absolute w-full text-sm text-blackcoffee/70 peer-focus:text-blackcoffee/70;
 	}
 
 	label.floating {
