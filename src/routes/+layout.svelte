@@ -2,6 +2,7 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import '../theme.postcss'; // skeleton theme
 	import '@skeletonlabs/skeleton/styles/skeleton.css';
+	import '../svelty-picker-theme.postcss';
 	import '../app.css';
 	import Navbar from './Navbar.svelte';
 	import 'tw-elements/dist/css/tw-elements.min.css';
