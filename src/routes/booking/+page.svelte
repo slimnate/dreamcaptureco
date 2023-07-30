@@ -32,6 +32,31 @@
 		const picker = document.getElementById('date-picker');
 		picker?.classList.add('invisible');
 	}
+
+	function override(e) {
+		console.log(e);
+		e.preventDefault();
+	}
+
+	function timeOpen() {
+		// console.log('open');
+		const picker = document.getElementById('time-picker');
+		picker?.classList.remove('invisible');
+	}
+
+	function timeInput(e) {
+		// console.log('input');
+		console.log(e);
+		const timeElement = document.getElementById('time');
+		timeElement.value = e.detail;
+		timeClose();
+	}
+
+	function timeClose(e) {
+		// console.log('blur');
+		const picker = document.getElementById('time-picker');
+		picker?.classList.add('invisible');
+	}
 </script>
 
 <svelte:head>
@@ -211,12 +236,15 @@
 				on:click={dateOpen}
 				on:focus={dateOpen}
 				on:focusout={dateClose}
+				on:keypress={override}
+				on:keydown={override}
 			/>
 			<label for="date" class="floating label">Select a date</label>
 			<span class="svelty-container invisible" id="date-picker"
 				><SveltyPicker
 					pickerOnly={true}
 					mode="date"
+					format="mm-dd-yyyy"
 					on:input={dateInput}
 					on:blur={dateClose}
 					on:mousedown={dateOpen}
@@ -226,8 +254,32 @@
 
 		<!-- TIME -->
 		<div class="relative">
-			<input type="text" id="time" name="time" class="floating input" placeholder="Select a time" />
+			<input
+				type="text"
+				id="time"
+				name="time"
+				class="floating peer input"
+				placeholder="Select a time"
+				value=""
+				autocomplete="off"
+				on:click={timeOpen}
+				on:focus={timeOpen}
+				on:focusout={timeClose}
+				on:keypress={override}
+				on:keydown={override}
+			/>
 			<label for="time" class="floating label">Select a time</label>
+			<span class="svelty-container invisible" id="time-picker">
+				<SveltyPicker
+					pickerOnly={true}
+					mode="time"
+					format="HH:ii P"
+					autocommit={false}
+					on:input={timeInput}
+					on:blur={timeClose}
+					on:mousedown={timeOpen}
+				/>
+			</span>
 		</div>
 
 		<!-- AVAILABILITY -->
