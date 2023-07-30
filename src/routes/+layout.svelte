@@ -1,6 +1,6 @@
 <script>
 	import Footer from '$lib/components/Footer.svelte';
-	import '../theme.postcss';
+	import '../theme.postcss'; // skeleton theme
 	import '@skeletonlabs/skeleton/styles/skeleton.css';
 	import '../app.css';
 	import Navbar from './Navbar.svelte';
