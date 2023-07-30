@@ -1,6 +1,7 @@
 <script lang="js">
 	import IconFacebook from '$lib/components/icons/IconFacebook.svelte';
 	import IconInstagram from '$lib/components/icons/IconInstagram.svelte';
+	import SveltyPicker from 'svelty-picker';
 
 	import bgImageJpg from '$lib/images/header-booking.jpg?w=1400';
 	import bgImageWebp from '$lib/images/header-booking.jpg?w=1400&format=webp';
@@ -12,6 +13,25 @@
 	}
 
 	const bgImage = supportsWebp() ? bgImageWebp : bgImageJpg;
+
+	function dateOpen() {
+		// console.log('open');
+		const picker = document.getElementById('date-picker');
+		picker?.classList.remove('invisible');
+	}
+
+	function dateInput(e) {
+		// console.log('input');
+		const dateElement = document.getElementById('date');
+		dateElement.value = e.detail;
+		dateClose();
+	}
+
+	function dateClose(e) {
+		// console.log('blur');
+		const picker = document.getElementById('date-picker');
+		picker?.classList.add('invisible');
+	}
 </script>
 
 <svelte:head>
@@ -180,8 +200,28 @@
 
 		<!-- DATE -->
 		<div class="relative">
-			<input type="date" id="date" name="date" class="floating input" placeholder="Select a date" />
+			<input
+				type="text"
+				id="date"
+				name="date"
+				class="floating peer input"
+				placeholder="Select a date"
+				value=""
+				autocomplete="off"
+				on:click={dateOpen}
+				on:focus={dateOpen}
+				on:focusout={dateClose}
+			/>
 			<label for="date" class="floating label">Select a date</label>
+			<span class="svelty-container invisible" id="date-picker"
+				><SveltyPicker
+					pickerOnly={true}
+					mode="date"
+					on:input={dateInput}
+					on:blur={dateClose}
+					on:mousedown={dateOpen}
+				/></span
+			>
 		</div>
 
 		<!-- TIME -->
@@ -266,5 +306,10 @@
 
 	.radio {
 		@apply bg-blackcoffee-300;
+	}
+
+	.svelty-container {
+		/* display: none; */
+		@apply absolute left-0 top-10 z-10;
 	}
 </style>
