@@ -2,6 +2,7 @@
 	import IconFacebook from '$lib/components/icons/IconFacebook.svelte';
 	import IconInstagram from '$lib/components/icons/IconInstagram.svelte';
 	import SveltyPicker from 'svelty-picker';
+	import Select from '$lib/components/Select.svelte';
 
 	import bgImageJpg from '$lib/images/header-booking.jpg?w=1400';
 	import bgImageWebp from '$lib/images/header-booking.jpg?w=1400&format=webp';
@@ -57,6 +58,17 @@
 		const picker = document.getElementById('time-picker');
 		picker?.classList.add('invisible');
 	}
+
+	const sessionTypeOptions = [
+		{
+			value: 'Portrait',
+			display: 'Portrait',
+		},
+		{
+			value: 'Boudoir',
+			display: 'Boudoir',
+		},
+	];
 </script>
 
 <svelte:head>
@@ -158,12 +170,16 @@
 			</div>
 		</div>
 
+		<div class="relative text-blackcoffee/70">
+			<Select id="test" options={sessionTypeOptions} />
+		</div>
+
 		<!-- PACKAGE TYPE -->
 		<div class="relative text-blackcoffee/70">
 			<select
 				id="package"
 				name="package"
-				class="peer select"
+				class="peer select relative"
 				data-selected=""
 				on:change={(e) => {
 					e.currentTarget.dataset.selected = e.currentTarget.value;
@@ -171,10 +187,8 @@
 				}}
 			>
 				<option value="" hidden selected />
-				<option
-					value="Day Dreams"
-					data-te-select-secondary-text="$170 - 1 hour - 1 location - up to 5 people - 20-30 edits"
-					>Day Dream</option
+				<option value="Day Dreams" data-te-select-secondary-text=""
+					>Day Dream <span>$170 - 1 hour - 1 location - up to 5 people - 20-30 edits</span></option
 				>
 				<option
 					value="Sweet Dream"
@@ -348,20 +362,12 @@
 		@apply variant-form-material border-blackcoffee-300 pb-1 pl-4 pt-3 placeholder-transparent placeholder-shown:py-2;
 	}
 
-	select {
-		@apply variant-form-material border-blackcoffee-300 pb-1 pl-4 pt-3 focus:border-blackcoffee-500;
-	}
-
-	label.floating-select {
-		@apply absolute left-4 top-0 text-xs font-semibold text-blackcoffee-500/70 transition-all duration-200 peer-placeholder-shown:top-2.5 peer-placeholder-shown:text-base peer-placeholder-shown:font-normal peer-placeholder-shown:text-blackcoffee-500 peer-[[data-selected=""]]:left-4 peer-[[data-selected=""]]:top-2 peer-[[data-selected=""]]:text-base peer-[[data-selected=""]]:font-normal peer-[[data-selected=""]]:text-blackcoffee-500/60;
-	}
-
 	.radio {
 		@apply bg-blackcoffee-300;
 	}
 
 	.svelty-container {
 		/* display: none; */
-		@apply absolute left-0 top-10 z-10;
+		@apply absolute left-0 top-11 z-10;
 	}
 </style>
