@@ -4,6 +4,7 @@
 	 * @property {string} value
 	 * @property {string} display
 	 * @property {string?} secondary
+	 * @property {string?} description
 	 */
 
 	/**
@@ -76,9 +77,12 @@
 					toggleOptionsShown();
 				}}
 			>
-				{option.display}
 				{#if option.secondary}
-					<span class="secondary">{option.secondary}</span>
+					<span class="font-bold">{option.secondary}</span>
+				{/if}
+				{option.display}
+				{#if option.description}
+					<span class="secondary">{option.description}</span>
 				{/if}
 			</div>
 		{/each}
