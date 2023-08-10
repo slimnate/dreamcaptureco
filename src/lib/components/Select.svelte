@@ -125,7 +125,7 @@
 		transform: translateY(0.25rem) rotate(-135deg);
 	}
 
-	/*prevent select of options including current selected*/
+	/*prevent select of options and current selected*/
 	.options div,
 	.select {
 		user-select: none;
@@ -164,6 +164,6 @@
 	}
 
 	label {
-		@apply absolute left-4 top-3 text-base font-normal text-transparent;
+		@apply absolute left-4 top-3 hidden text-base font-normal;
 	}
 </style>
