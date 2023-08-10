@@ -68,6 +68,53 @@
 			value: 'Boudoir',
 			display: 'Boudoir',
 		},
+		{
+			value: 'Couples/Wedding',
+			display: 'Couples/Wedding',
+		},
+		{
+			value: 'Family',
+			display: 'Family',
+		},
+		{
+			value: 'Maternity/Newborn',
+			display: 'Maternity/Newborn',
+		},
+		{
+			value: 'Business',
+			display: 'Business',
+		},
+		{
+			value: 'Other',
+			display: 'Other',
+		},
+	];
+
+	const packageOptions = [
+		{
+			value: 'Day Dream',
+			display: 'Day Dream',
+			secondary: '$170',
+			description: '1 hour - 1 location - up to 5 people - 20-30 edits',
+		},
+		{
+			value: 'Sweet Dream',
+			display: 'Sweet Dream',
+			secondary: '$270',
+			description: '1.5 hours - up to 2 locations - up to 8 people - 30-40 edits',
+		},
+		{
+			value: 'Dream Come True',
+			display: 'Dream Come True',
+			secondary: '$370',
+			description: '2 hours - up to 2 locations - 8+ people - 40-50 edits',
+		},
+		{
+			value: 'Event Consultation',
+			display: 'Event Consultation',
+			secondary: 'FREE',
+			description: 'request a consultation for an upcoming event.',
+		},
 	];
 </script>
 
@@ -170,72 +217,11 @@
 			</div>
 		</div>
 
-		<div class="relative text-blackcoffee/70">
-			<Select id="test" options={sessionTypeOptions} />
-		</div>
-
 		<!-- PACKAGE TYPE -->
-		<div class="relative text-blackcoffee/70">
-			<select
-				id="package"
-				name="package"
-				class="peer select relative"
-				data-selected=""
-				on:change={(e) => {
-					e.currentTarget.dataset.selected = e.currentTarget.value;
-					console.log(e);
-				}}
-			>
-				<option value="" hidden selected />
-				<option value="Day Dreams" data-te-select-secondary-text=""
-					>Day Dream <span>$170 - 1 hour - 1 location - up to 5 people - 20-30 edits</span></option
-				>
-				<option
-					value="Sweet Dream"
-					data-te-select-secondary-text="$270 - 1.5 hours - up to 2 locations - up to 8 people - 30-40 edits"
-					>Sweet Dream</option
-				>
-				<option
-					value="Dream Come True"
-					data-te-select-secondary-text="$370 - 2 hours - up to 2 locations - 8+ people - 40-50 edits"
-					>Dream Come True</option
-				>
-				<option
-					value="Event Consultation"
-					data-te-select-secondary-text="FREE - request a consultation for an upcoming event."
-					>Event Consultation</option
-				>
-			</select>
-			<label for="package" class="floating-select">Package</label>
-		</div>
+		<Select id="package" options={packageOptions} placeholder="Package" />
 
 		<!-- SESSION TYPE -->
-		<div class="relative">
-			<select
-				id="session"
-				name="session"
-				class="peer select"
-				data-selected=""
-				on:change={(e) => {
-					e.currentTarget.dataset.selected = e.currentTarget.value;
-					console.log(e);
-				}}
-				on:click={(e) => {
-					if (e.currentTarget.dataset.open == 'true') e.currentTarget.dataset.open = 'true';
-					else e.currentTarget.dataset.open = 'false';
-				}}
-			>
-				<option value="" hidden selected />
-				<option value="portrait">Portrait</option>
-				<option value="Boudoir">Boudoir</option>
-				<option value="Couples/Wedding">Couples/Wedding</option>
-				<option value="Family">Family</option>
-				<option value="Maternity/Newborn">Maternity/Newborn</option>
-				<option value="Business">Business</option>
-				<option value="Other">Other</option>
-			</select>
-			<label data-te-select-label-ref for="session" class="floating-select">Session Type</label>
-		</div>
+		<Select id="session" options={sessionTypeOptions} placeholder="Session Type" />
 
 		<!-- DATE -->
 		<div class="relative">
