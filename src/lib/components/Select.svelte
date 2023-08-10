@@ -77,6 +77,9 @@
 				}}
 			>
 				{option.display}
+				{#if option.secondary}
+					<span class="secondary">{option.secondary}</span>
+				{/if}
 			</div>
 		{/each}
 	</div>
@@ -90,7 +93,7 @@
 	}
 
 	.select {
-		@apply variant-form-material border-blackcoffee-300 pb-1 pl-4 pt-3 text-left focus:border-blackcoffee-500;
+		@apply variant-form-material border-blackcoffee-300 pb-1 pl-4 pt-3 text-left text-blackcoffee/70;
 	}
 
 	.select.selected {
@@ -137,7 +140,7 @@
 	}
 
 	.options div {
-		@apply border-b-[1px] border-blackcoffee-300 py-2;
+		@apply border-b-[1px] border-blackcoffee-300 p-2 pl-4 text-left;
 	}
 
 	.options div:last-child {
@@ -146,6 +149,10 @@
 
 	.options div:hover {
 		@apply bg-surface-500;
+	}
+
+	.options div .secondary {
+		@apply block text-sm leading-3 tracking-tight text-blackcoffee/70;
 	}
 
 	label.floating {
