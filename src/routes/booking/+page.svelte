@@ -171,13 +171,7 @@
 
 		<!-- NAME -->
 		<div class="relative md:col-span-2">
-			<input
-				type="text"
-				class="peer input variant-form-material"
-				id="name"
-				name="name"
-				placeholder="Name"
-			/>
+			<input type="text" class="floating peer input" id="name" name="name" placeholder="Name" />
 			<label for="name" class="floating label">Name</label>
 		</div>
 
@@ -185,7 +179,7 @@
 		<div class="relative">
 			<input
 				type="tel"
-				class="peer input variant-form-material"
+				class="floating peer input"
 				id="phone"
 				name="phone"
 				placeholder="Phone Number"
@@ -195,13 +189,7 @@
 
 		<!-- EMAIL -->
 		<div class="relative">
-			<input
-				type="email"
-				class="peer input variant-form-material"
-				id="email"
-				name="email"
-				placeholder="Email"
-			/>
+			<input type="email" class="floating peer input" id="email" name="email" placeholder="Email" />
 			<label for="email" class="floating label">Email</label>
 		</div>
 
@@ -241,7 +229,7 @@
 				type="text"
 				id="date"
 				name="date"
-				class="peer input variant-form-material"
+				class="floating peer input"
 				placeholder="Select a date"
 				value=""
 				autocomplete="off"
@@ -270,7 +258,7 @@
 				type="text"
 				id="time"
 				name="time"
-				class="peer input variant-form-material"
+				class="floating peer input"
 				placeholder="Select a time"
 				value=""
 				autocomplete="off"
@@ -305,7 +293,7 @@
 		<!-- SUBJECTS -->
 		<div class="relative mb-14 sm:mb-8 md:col-span-2">
 			<textarea
-				class="peer textarea variant-form-material"
+				class="floating peer textarea"
 				id="subjects"
 				name="subjects"
 				rows="4"
@@ -320,7 +308,7 @@
 		<!-- ADDITIONAL INFO -->
 		<div class="relative mb-14 sm:mb-8 md:col-span-2">
 			<textarea
-				class="peer textarea variant-form-material"
+				class="floating peer textarea"
 				id="additionalInfo"
 				name="additionalInfo"
 				rows="4"
@@ -357,7 +345,7 @@
 
 	input.floating,
 	textarea.floating {
-		@apply border-blackcoffee-300 pb-1 pl-4 pt-3 placeholder-transparent placeholder-shown:py-2;
+		@apply variant-form-material border-blackcoffee-300 pb-1 pl-4 pt-3 placeholder-transparent placeholder-shown:py-2;
 	}
 
 	.radio {

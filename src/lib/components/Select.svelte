@@ -60,7 +60,7 @@
 	</select>
 
 	<div
-		class="select variant-form-material"
+		class="select"
 		class:open={isOpen}
 		class:selected={!isPlaceholderShown}
 		on:click={toggleOptionsShown}
@@ -97,7 +97,7 @@
 	}
 
 	.select {
-		@apply border-blackcoffee-300 pb-1 pl-4 pt-3 text-left text-blackcoffee/70;
+		@apply variant-form-material border-blackcoffee-300 pb-1 pl-4 pt-3 text-left text-blackcoffee/70;
 	}
 
 	.select.selected {
