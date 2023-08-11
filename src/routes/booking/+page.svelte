@@ -358,6 +358,9 @@
 	input.floating,
 	textarea.floating {
 		@apply border-blackcoffee-300 pb-1 pl-4 pt-3 placeholder-transparent placeholder-shown:py-2;
+		border-width: 0px;
+		border-bottom-width: 2px;
+		background-color: rgb(var(--color-surface-500) / 0.1);
 	}
 
 	.radio {
