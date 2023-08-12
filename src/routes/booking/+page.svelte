@@ -7,6 +7,8 @@
 	import bgImageJpg from '$lib/images/header-booking.jpg?w=1400';
 	import bgImageWebp from '$lib/images/header-booking.jpg?w=1400&format=webp';
 	import { browser } from '$app/environment';
+	import sessionTypes from '$lib/data/sessionTypes';
+	import pricing from '$lib/data/pricing';
 
 	function supportsWebp() {
 		// console.log(browser && document.documentElement.classList.contains('webp'));
@@ -59,56 +61,23 @@
 		picker?.classList.add('invisible');
 	}
 
-	const sessionTypeOptions = [
-		{
-			value: 'Portrait',
-			display: 'Portrait',
-		},
-		{
-			value: 'Boudoir',
-			display: 'Boudoir',
-		},
-		{
-			value: 'Couples/Wedding',
-			display: 'Couples/Wedding',
-		},
-		{
-			value: 'Family',
-			display: 'Family',
-		},
-		{
-			value: 'Maternity/Newborn',
-			display: 'Maternity/Newborn',
-		},
-		{
-			value: 'Business',
-			display: 'Business',
-		},
-		{
-			value: 'Other',
-			display: 'Other',
-		},
-	];
+	const sessionTypeOptions = sessionTypes.map((type) => {
+		return { value: type, display: type };
+	});
 
 	const packageOptions = [
-		{
-			value: 'Day Dream',
-			display: 'Day Dream',
-			secondary: '$170',
-			description: '1 hour - 1 location - up to 5 people - 20-30 edits',
-		},
-		{
-			value: 'Sweet Dream',
-			display: 'Sweet Dream',
-			secondary: '$270',
-			description: '1.5 hours - up to 2 locations - up to 8 people - 30-40 edits',
-		},
-		{
-			value: 'Dream Come True',
-			display: 'Dream Come True',
-			secondary: '$370',
-			description: '2 hours - up to 2 locations - 8+ people - 40-50 edits',
-		},
+		...pricing.packages.map((p) => {
+			const featureList = p.features.reduce((prev, curr) => {
+				return prev + `<div class="p-1">${curr}</div>`;
+			}, '');
+
+			return {
+				value: p.name,
+				display: p.name,
+				secondary: `$${p.price}`,
+				description: `<div class="grid grid-cols-2">${featureList}</div>`,
+			};
+		}),
 		{
 			value: 'Event Consultation',
 			display: 'Event Consultation',

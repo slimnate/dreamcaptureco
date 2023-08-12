@@ -78,11 +78,15 @@
 				}}
 			>
 				{#if option.secondary}
-					<span class="font-bold">{option.secondary}</span>
+					<span class="font-semibold">
+						{option.secondary}
+					</span>
 				{/if}
-				{option.display}
+				<span class="font-bold">
+					{option.display}
+				</span>
 				{#if option.description}
-					<span class="secondary">{option.description}</span>
+					<span class="secondary">{@html option.description}</span>
 				{/if}
 			</div>
 		{/each}
@@ -145,6 +149,10 @@
 
 	.options div {
 		@apply border-b-[1px] border-blackcoffee-300 p-2 pl-4 text-left;
+
+		.secondary {
+			@apply block text-sm leading-3 tracking-tight text-blackcoffee/70;
+		}
 	}
 
 	.options div:last-child {
@@ -153,10 +161,6 @@
 
 	.options div:hover {
 		@apply bg-surface-500;
-	}
-
-	.options div .secondary {
-		@apply block text-sm leading-3 tracking-tight text-blackcoffee/70;
 	}
 
 	label.floating {
