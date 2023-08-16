@@ -1,10 +1,12 @@
 <script>
+	import Container from 'postcss/lib/container';
+
 	/**
 	 * @typedef {Object} SelectOption
 	 * @property {string} value
 	 * @property {string} display
-	 * @property {string?} secondary
-	 * @property {string?} description
+	 * @property {string} [secondary]
+	 * @property {string} [description]
 	 */
 
 	/**
@@ -16,18 +18,27 @@
 		/**
 		 * Event handle for click events on the DOM. Detects if a click was within
 		 * the parent node, and fires an event if not.
-		 * @param {MouseEvent} event */
+		 * @param {Event & MouseEvent & {target: Node }} event */
 		const handleClick = (event) => {
 			if (node && !node.contains(event.target) && !event.defaultPrevented) {
-				node.dispatchEvent(new CustomEvent('click_outside', node));
+				node.dispatchEvent(
+					new CustomEvent('click_outside', /** @type {CustomEventInit<HTMLElement>} */ (node))
+				);
 			}
 		};
 
-		document.addEventListener('click', handleClick);
+		document.addEventListener(
+			'click',
+			/** @type {EventListenerOrEventListenerObject}*/ (handleClick)
+		);
 
 		return {
 			destroy() {
-				document.removeEventListener('click', handleClick, true);
+				document.removeEventListener(
+					'click',
+					/** @type {EventListenerOrEventListenerObject}*/ (handleClick),
+					true
+				);
 			},
 		};
 	}
@@ -49,78 +60,100 @@
 	export let placeholder = 'Select a value:';
 
 	$: isPlaceholderShown = selectedValue === '';
+
+	/**
+	 *
+	 * @param {KeyboardEvent  & { currentTarget: EventTarget & HTMLDivElement }} event
+	 */
+	function handleSelectKeypress(event) {
+		throw new Error('Function not implemented.');
+	}
+
+	/**
+	 *
+	 * @param {KeyboardEvent  & { currentTarget: EventTarget & HTMLDivElement }} event
+	 */
+	function handleOptionKeypress(event) {
+		throw new Error('Function not implemented.');
+	}
 </script>
 
 <div class="relative" use:clickOutside on:click_outside={closeOptions}>
-	<select {id} name={id} value={selectedValue}>
+	<!-- Hidden select element that will store the selected item. -->
+	<select {id} name={id} value={selectedValue} class="hidden">
 		<option value="" />
 		{#each options as option}
 			<option value={option.value}>{option.display}</option>
 		{/each}
 	</select>
 
+	<!-- Custom listbox implementation that will update the hidden select field. -->
 	<div
-		class="select variant-form-material"
+		role="listbox"
+		class="select variant-form-material border-blackcoffee-300 pb-1 pl-4 pt-3 text-left text-blackcoffee/70 after:absolute after:right-4 after:top-4 after:h-2 after:w-2 after:border-b-[0.175rem] after:border-r-[0.127rem] after:border-blackcoffee-300 after:content-[''] focus:border-blackcoffee-300 focus:outline-none"
 		class:open={isOpen}
 		class:selected={!isPlaceholderShown}
 		on:click={toggleOptionsShown}
+		on:keypress={handleSelectKeypress}
 		tabindex="0"
 	>
 		{isPlaceholderShown ? placeholder : selectedValue}
 	</div>
 
-	<div class="options" class:hide={!isOpen}>
+	<!-- Options list container -->
+	<div
+		class="options rounded-b-md border-[1px] border-t-0 border-blackcoffee-300 bg-surface-400"
+		class:hide={!isOpen}
+	>
 		{#each options as option}
+			<!-- Option item container -->
 			<div
+				class="border-b-[1px] border-blackcoffee-300 p-2 pl-4 text-left last:rounded-b-md last:border-none hover:bg-surface-500"
+				role="option"
+				tabindex="0"
+				aria-selected={option.value === selectedValue}
 				on:click={() => {
 					selectedValue = option.value;
 					toggleOptionsShown();
 				}}
+				on:keypress={handleOptionKeypress}
 			>
+				<!-- Secondary text, shown in semi-bold font weight-->
 				{#if option.secondary}
 					<span class="font-semibold">
 						{option.secondary}
 					</span>
 				{/if}
-				<span class="font-bold">
+
+				<!-- Primary display text, shown in bold ONLY IF there is secondary text -->
+				<span class:font-bold={option.secondary}>
 					{option.display}
 				</span>
+
+				<!-- Description Container, allows me to provide custom HTML. -->
 				{#if option.description}
-					<span class="secondary">{@html option.description}</span>
+					<span class="block text-sm leading-3 tracking-tight text-blackcoffee/70"
+						>{@html option.description}</span
+					>
 				{/if}
 			</div>
 		{/each}
 	</div>
 
-	<label for="session" class:floating={!isPlaceholderShown}>{placeholder}</label>
+	<label
+		for="session"
+		class="absolute left-4 top-3 hidden text-base font-normal"
+		class:floating={!isPlaceholderShown}>{placeholder}</label
+	>
 </div>
 
 <style lang="postcss">
-	select {
-		display: none;
-	}
-
-	.select {
-		@apply border-blackcoffee-300 pb-1 pl-4 pt-3 text-left text-blackcoffee/70;
-	}
-
 	.select.selected {
 		@apply text-primary-500;
 	}
 
-	.select:focus {
-		@apply border-blackcoffee-300 outline-none;
-	}
-
 	/*chevron inside select box*/
 	.select:after {
-		@apply border-b-[0.175rem] border-r-[0.175rem] border-blackcoffee-300;
-		position: absolute;
-		right: 1rem;
-		content: '';
-		top: 1rem;
-		width: 0.5rem;
-		height: 0.5rem;
 		transform: rotate(45deg);
 	}
 
@@ -138,36 +171,25 @@
 	.hide {
 		display: none;
 	}
+
 	.options {
 		position: absolute;
 		top: 100%;
 		left: 0;
 		right: 0;
 		z-index: 99;
-		@apply rounded-b-md border-[1px] border-t-0 border-blackcoffee-300 bg-surface-400;
-	}
-
-	.options div {
-		@apply border-b-[1px] border-blackcoffee-300 p-2 pl-4 text-left;
-
-		.secondary {
-			@apply block text-sm leading-3 tracking-tight text-blackcoffee/70;
-		}
-	}
-
-	.options div:last-child {
-		@apply rounded-b-md border-none;
-	}
-
-	.options div:hover {
-		@apply bg-surface-500;
 	}
 
 	label.floating {
-		@apply left-4 top-0 text-xs font-semibold text-blackcoffee-500/70 transition-all duration-200;
-	}
+		left: 1rem;
+		top: 0px;
+		font-size: 0.75rem;
+		line-height: 1rem;
+		font-weight: 600;
 
-	label {
-		@apply absolute left-4 top-3 hidden text-base font-normal;
+		transition-property: all;
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+		transition-duration: 200ms;
+		@apply text-blackcoffee-500/70;
 	}
 </style>
