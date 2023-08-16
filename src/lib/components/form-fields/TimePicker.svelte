@@ -2,7 +2,6 @@
 	import SveltyPicker from 'svelty-picker';
 
 	function handleOpen() {
-		// console.log('open');
 		const picker = document.getElementById(pickerId);
 		picker?.classList.remove('invisible');
 	}
@@ -20,18 +19,30 @@
 	}
 
 	function handleClose() {
-		// console.log('blur');
 		const picker = document.getElementById(pickerId);
 		picker?.classList.add('invisible');
 	}
 
-	export let id = '';
-	export let name = '';
-	export let label = 'Select time';
+	export let /** @type string */ id;
+	export let /** @type string */ name;
+	export let /** @type string */ label = 'Select time';
+	export let /** @type string */ format = 'HH:ii P';
 
 	const pickerId = `${id}-picker`;
 </script>
 
+<!--
+  @component
+  This is a custom time picker component that provides a material design
+  with a floating placeholder/label, by wrapping a normal `input` element
+  and providing a floating time picker UI
+
+  Props:
+  - `id` **required** - id of the underlying `input` element
+  - `name` **required** - name of the underlying `input` element
+  - `label` **optional** - placeholder and label text for field (default: `Select time`)
+  - `format` **optional** - Time format to use in the display field (default: `HH:ii P`) - see standard formats section of [svelty-picker documentation](https://mskocik.github.io/svelty-picker/formatting)
+-->
 <div class="relative">
 	<input
 		type="text"
@@ -56,7 +67,7 @@
 		<SveltyPicker
 			pickerOnly={true}
 			mode="time"
-			format="HH:ii P"
+			{format}
 			autocommit={false}
 			on:input={handleInput}
 			on:blur={handleClose}

@@ -74,10 +74,10 @@
 	</div>
 
 	<!-- PACKAGE TYPE -->
-	<Select id="package" options={packageOptions} placeholder="Package" />
+	<Select id="package" name="package" options={packageOptions} placeholder="Package" />
 
 	<!-- SESSION TYPE -->
-	<Select id="session" options={sessionTypeOptions} placeholder="Session Type" />
+	<Select id="session" name="session" options={sessionTypeOptions} placeholder="Session Type" />
 
 	<!-- DATE -->
 	<DatePicker id="date" name="date" label="Select a date" />

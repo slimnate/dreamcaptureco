@@ -1,6 +1,4 @@
 <script>
-	import Container from 'postcss/lib/container';
-
 	/**
 	 * @typedef {Object} SelectOption
 	 * @property {string} value
@@ -51,16 +49,6 @@
 		isOpen = false;
 	}
 
-	let isOpen = false;
-	let selectedValue = '';
-
-	/** @type SelectOption[] */
-	export let options = [];
-	export let id = 'select';
-	export let placeholder = 'Select a value:';
-
-	$: isPlaceholderShown = selectedValue === '';
-
 	/**
 	 *
 	 * @param {KeyboardEvent  & { currentTarget: EventTarget & HTMLDivElement }} event
@@ -76,11 +64,37 @@
 	function handleOptionKeypress(event) {
 		throw new Error('Function not implemented.');
 	}
+	let isOpen = false;
+	let selectedValue = '';
+
+	export let /** @type string */ id;
+	export let /** @type string */ name;
+	export let /** @type string */ placeholder = 'Select a value';
+	export let /** @type SelectOption[] */ options;
+
+	$: isPlaceholderShown = selectedValue === '';
 </script>
 
+<!--
+  @component
+  This is a custom `select` component that provides a material design
+  with a floating placeholder/label, and a customizable option list.
+
+  Props:
+  - `id` **required** - `id` attribute for the select element
+  - `name` **required** - `name` attribute of the select element
+  - `label` **optional** - placeholder and label text for field (default: `Select a value`)
+  - `options` **required** - a list of `SelectOption` objects that will be used to render the options list
+  
+  `SelectOption` props:
+		- `value` **required** - `value` attribute for the option item
+		- `display` **required** - display text for the option item
+		- `secondary` **optional** - secondary text for the option item. If supplied, this text will appear in semi-bold before the display text, and the display text will be bold
+		- `description` **optional** - This value can be used to provide a description that will show up below the display and secondary text, and can also accept raw HTML to allow for custom markup, like a list, grid, or table.
+-->
 <div class="relative" use:clickOutside on:click_outside={closeOptions}>
 	<!-- Hidden select element that will store the selected item. -->
-	<select {id} name={id} value={selectedValue} class="hidden">
+	<select {id} {name} value={selectedValue} class="hidden">
 		<option value="" />
 		{#each options as option}
 			<option value={option.value}>{option.display}</option>

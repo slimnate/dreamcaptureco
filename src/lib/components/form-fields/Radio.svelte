@@ -7,13 +7,27 @@
 	 * @property {boolean} [checked]
 	 */
 
-	export let label = 'Select';
-	export let name = '';
-
-	/** @type RadioOption[] */
-	export let options = [];
+	export let /** @type string */ label = 'Select';
+	export let /** @type string */ name;
+	export let /** @type RadioOption[] */ options;
 </script>
 
+<!--
+  @component
+  This is a custom `radio` component that provides a material design
+  with a floating placeholder/label.
+
+  Props:
+  - `name` **required** - name of the form field for each of the radio elements
+  - `label` **optional** - placeholder and label text for field (default: `Select`)
+  - `options` **required** - a list of `RadioOption` objects that will be used to render the options
+  
+  `RadioOption` props:
+    - `id` **required** - `id` attribute for the specific radio item
+    - `value` **required** - `value` attribute for the specific radio item
+    - `display` **optional** - optional display text for the radio item, if not supplied `value` will be used
+    - `checked` **optional** - optional boolean value, if truthy value supplied the radio item will default to checked
+-->
 <div class="relative flex flex-wrap justify-between px-4">
 	<label for={name} class="text-left text-blackcoffee/70">{label} </label>
 	<div class="flex gap-8">

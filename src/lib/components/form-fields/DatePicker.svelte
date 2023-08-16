@@ -2,7 +2,6 @@
 	import SveltyPicker from 'svelty-picker';
 
 	function handleOpen() {
-		// console.log('open');
 		const picker = document.getElementById(pickerId);
 		picker?.classList.remove('invisible');
 	}
@@ -20,19 +19,30 @@
 	}
 
 	function handleClose() {
-		// console.log('blur');
 		const picker = document.getElementById(pickerId);
 		picker?.classList.add('invisible');
 	}
 
-	export let id = '';
-	export let name = '';
-	export let label = 'Select date';
-	export let format = 'mm-dd-yyyy';
+	export let /** @type string */ id;
+	export let /** @type string */ name;
+	export let /** @type string */ label = 'Select date';
+	export let /** @type string */ format = 'mm-dd-yyyy';
 
 	const pickerId = `${id}-picker`;
 </script>
 
+<!--
+  @component
+  This is a custom date picker component that provides a material design
+  with a floating placeholder/label, by wrapping a normal `input` element
+  and providing a floating date picker UI
+
+  Props:
+  - `id` **required** - id of the underlying `input` element
+  - `name` **required** - name of the underlying `input` element
+  - `label` **optional** - placeholder and label text for field (default: `Select date`)
+  - `format` **optional** - Date format to use in the display field (default: `mm-dd-yyy`) - see standard formats section of [svelty-picker documentation](https://mskocik.github.io/svelty-picker/formatting) for more information
+-->
 <div class="relative">
 	<input
 		type="text"

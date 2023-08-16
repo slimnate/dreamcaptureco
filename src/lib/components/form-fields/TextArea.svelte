@@ -1,9 +1,19 @@
 <script>
-	export let id = '';
-	export let name = '';
-	export let label = '';
+	export let /** @type string */ id;
+	export let /** @type string */ name;
+	export let /** @type string */ label;
 </script>
 
+<!--
+  @component
+  This is a custom `textarea` component that provides a material design
+  with a floating placeholder/label
+
+  Props:
+  - `id` **required** - id of the underlying `textarea` element
+  - `name` **required** - name of the underlying `textarea` element
+  - `label` **required** - placeholder and label text for field
+-->
 <div class="relative mb-14 sm:mb-8 md:col-span-2">
 	<textarea
 		class="peer input variant-form-material border-0 border-b-2 !border-blackcoffee-300 bg-surface-500/10 pb-1 pl-4 pt-3 placeholder-transparent placeholder-shown:py-2"

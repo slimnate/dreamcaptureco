@@ -1,10 +1,21 @@
 <script>
-	export let type = 'text';
-	export let name = '';
-	export let id = '';
-	export let label = '';
+	export let /** @type string */ type = 'text';
+	export let /** @type string */ name;
+	export let /** @type string */ id;
+	export let /** @type string */ label;
 </script>
 
+<!--
+  @component
+  This is a custom `input` component that provides a material design
+  with a floating placeholder/label
+
+  Props:
+  - `id` **required** - id of the underlying `textarea` element
+  - `name` **required** - name of the underlying `textarea` element
+  - `label` **required** - placeholder and label text for field
+  - `type` **optional** - the `type` attribute supplied to the `input` element (default: `text`)
+-->
 <div class="relative">
 	<input
 		{type}
