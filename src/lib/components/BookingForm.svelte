@@ -44,6 +44,36 @@
 	let /** @type string */ time;
 	let /** @type string */ subjects;
 	let /** @type string */ additionalInfo;
+
+	/**
+	 * Submit the form
+	 */
+	function submit() {
+		const formData = new FormData();
+
+		formData.append('form-name', 'booking'); // for
+		formData.append('name', name);
+		formData.append('phone', phone);
+		formData.append('email', email);
+		formData.append('preferredContact', preferredContact);
+		formData.append('packageType', packageType);
+		formData.append('sessionType', sessionType);
+		formData.append('date', date);
+		formData.append('time', time);
+		formData.append('subjects', subjects);
+		formData.append('additionalInfo', additionalInfo);
+
+		fetch('/', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+			body: new URLSearchParams(formData).toString(),
+		})
+			.then((response) => {
+				alert('Thank you for your submission');
+				console.log(response);
+			})
+			.catch((error) => alert(error));
+	}
 </script>
 
 <form
@@ -125,6 +155,7 @@
 	<button
 		type="submit"
 		class="mx-auto mb-4 mt-4 block min-w-[90%] rounded !bg-blackcoffee/95 px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(58,45,50,0.8)] transition duration-150 ease-in-out hover:!bg-blackcoffee hover:shadow-[0_8px_9px_-4px_rgba(58,45,50,0.8),0_4px_18px_0_rgba(59,113,202,0.2)] focus:!bg-blackcoffee focus:shadow-[0_8px_9px_-4px_rgba(58,45,50,0.8),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:!bg-blackcoffee active:shadow-[0_8px_9px_-4px_rgba(58,45,50,0.8),0_4px_18px_0_rgba(59,113,202,0.2)] md:col-span-2 md:min-w-[50%]"
+		on:click|preventDefault={submit}
 	>
 		Submit
 	</button>
