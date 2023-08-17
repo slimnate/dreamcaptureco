@@ -16,7 +16,7 @@
 	const packageOptions = [
 		...pricing.packages.map((p) => {
 			const featureList = p.features.reduce((prev, curr) => {
-				return prev + `<div class="p-1">${curr}</div>`;
+				return prev + `<div class="p-0">${curr}</div>`;
 			}, '');
 
 			return {
