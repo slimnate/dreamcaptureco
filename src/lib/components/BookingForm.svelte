@@ -33,6 +33,17 @@
 			description: 'request a consultation for an upcoming event.',
 		},
 	];
+
+	let /** @type string */ name;
+	let /** @type string */ phone;
+	let /** @type string */ email;
+	let /** @type string */ preferredContact;
+	let /** @type string */ packageType;
+	let /** @type string */ sessionType;
+	let /** @type string */ date;
+	let /** @type string */ time;
+	let /** @type string */ subjects;
+	let /** @type string */ additionalInfo;
 </script>
 
 <form
@@ -46,20 +57,13 @@
 	<input type="hidden" name="form-name" value="booking" />
 
 	<!-- NAME -->
-	<div class="md:col-span-2"><Input name="name" id="name" label="Name" /></div>
+	<div class="md:col-span-2"><Input name="name" id="name" label="Name" bind:value={name} /></div>
 
 	<!-- PHONE -->
-	<Input
-		name="phone"
-		id="phone"
-		label="Phone"
-		on:click={() => {
-			console.log('phone click');
-		}}
-	/>
+	<Input name="phone" id="phone" label="Phone" bind:value={phone} />
 
 	<!-- EMAIL -->
-	<Input name="email" id="email" label="Email" />
+	<Input name="email" id="email" label="Email" bind:value={email} />
 
 	<!-- CONTACT -->
 	<div class="md:col-span-2">
@@ -70,20 +74,33 @@
 				{ id: 'radioEmail', value: 'Email' },
 				{ id: 'radioPhone', value: 'Phone', checked: true },
 			]}
+			bind:value={preferredContact}
 		/>
 	</div>
 
 	<!-- PACKAGE TYPE -->
-	<Select id="package" name="package" options={packageOptions} placeholder="Package" />
+	<Select
+		id="package"
+		name="package"
+		options={packageOptions}
+		placeholder="Package"
+		bind:value={packageType}
+	/>
 
 	<!-- SESSION TYPE -->
-	<Select id="session" name="session" options={sessionTypeOptions} placeholder="Session Type" />
+	<Select
+		id="session"
+		name="session"
+		options={sessionTypeOptions}
+		placeholder="Session Type"
+		bind:value={sessionType}
+	/>
 
 	<!-- DATE -->
-	<DatePicker id="date" name="date" label="Select a date" />
+	<DatePicker id="date" name="date" label="Select a date" bind:value={date} />
 
 	<!-- TIME -->
-	<TimePicker id="time" name="time" label="Select a time" />
+	<TimePicker id="time" name="time" label="Select a time" bind:value={time} />
 
 	<!-- AVAILABILITY -->
 	<div class="relative text-sm text-blackcoffee/70 md:col-span-2">
@@ -94,10 +111,15 @@
 	</div>
 
 	<!-- SUBJECTS -->
-	<TextArea id="subjects" name="subjects" label="Subjects" />
+	<TextArea id="subjects" name="subjects" label="Subjects" bind:value={subjects} />
 
 	<!-- ADDITIONAL INFO -->
-	<TextArea id="additionalInfo" name="additionalInfo" label="Additional Info" />
+	<TextArea
+		id="additionalInfo"
+		name="additionalInfo"
+		label="Additional Info"
+		bind:value={additionalInfo}
+	/>
 
 	<!-- SUBMIT BUTTON -->
 	<button
