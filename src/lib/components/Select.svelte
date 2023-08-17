@@ -50,7 +50,6 @@
 	}
 
 	/**
-	 *
 	 * @param {KeyboardEvent  & { currentTarget: EventTarget & HTMLDivElement }} event
 	 */
 	function handleSelectKeypress(event) {
@@ -58,21 +57,20 @@
 	}
 
 	/**
-	 *
 	 * @param {KeyboardEvent  & { currentTarget: EventTarget & HTMLDivElement }} event
 	 */
 	function handleOptionKeypress(event) {
 		throw new Error('Function not implemented.');
 	}
 	let isOpen = false;
-	let selectedValue = '';
 
 	export let /** @type string */ id;
 	export let /** @type string */ name;
 	export let /** @type string */ placeholder = 'Select a value';
 	export let /** @type SelectOption[] */ options;
+	export let /** @type string */ value = '';
 
-	$: isPlaceholderShown = selectedValue === '';
+	$: isPlaceholderShown = value === '';
 </script>
 
 <!--
@@ -85,6 +83,7 @@
   - `name` **required** - `name` attribute of the select element
   - `label` **optional** - placeholder and label text for field (default: `Select a value`)
   - `options` **required** - a list of `SelectOption` objects that will be used to render the options list
+  - `value` **optional** - the value of the field, can also be bound to (default: `''`)
   
   `SelectOption` props:
 		- `value` **required** - `value` attribute for the option item
@@ -94,7 +93,7 @@
 -->
 <div class="relative" use:clickOutside on:click_outside={closeOptions}>
 	<!-- Hidden select element that will store the selected item. -->
-	<select {id} {name} value={selectedValue} class="hidden">
+	<select {id} {name} {value} class="hidden">
 		<option value="" />
 		{#each options as option}
 			<option value={option.value}>{option.display}</option>
@@ -111,7 +110,7 @@
 		on:keypress={handleSelectKeypress}
 		tabindex="0"
 	>
-		{isPlaceholderShown ? placeholder : selectedValue}
+		{isPlaceholderShown ? placeholder : value}
 	</div>
 
 	<!-- Options list container -->
@@ -125,9 +124,9 @@
 				class="border-b-[1px] border-blackcoffee-300 p-2 pl-4 text-left last:rounded-b-md last:border-none hover:bg-surface-500"
 				role="option"
 				tabindex="0"
-				aria-selected={option.value === selectedValue}
+				aria-selected={option.value === value}
 				on:click={() => {
-					selectedValue = option.value;
+					value = option.value;
 					toggleOptionsShown();
 				}}
 				on:keypress={handleOptionKeypress}

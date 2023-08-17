@@ -1,4 +1,6 @@
 <script>
+	import Collage from '../Collage.svelte';
+
 	/**
 	 * @typedef RadioOption
 	 * @property {string} id
@@ -10,6 +12,19 @@
 	export let /** @type string */ label = 'Select';
 	export let /** @type string */ name;
 	export let /** @type RadioOption[] */ options;
+	export let /** @type string */ value = '';
+
+	// set default value
+	options.forEach((option) => {
+		if (option.checked) value = option.value;
+	});
+
+	/**
+	 * @param event {Event & { currentTarget: EventTarget & HTMLInputElement }}
+	 */
+	function handleChange(event) {
+		value = event.currentTarget.value;
+	}
 </script>
 
 <!--
@@ -21,6 +36,7 @@
   - `name` **required** - name of the form field for each of the radio elements
   - `label` **optional** - placeholder and label text for field (default: `Select`)
   - `options` **required** - a list of `RadioOption` objects that will be used to render the options
+  - `value` **optional** - the value of the field - **ONLY USE FOR BINDING - initial selection should be specified using the `checked` property on the option item**
   
   `RadioOption` props:
     - `id` **required** - `id` attribute for the specific radio item
@@ -40,6 +56,7 @@
 					id={option.id}
 					value={option.value}
 					checked={option.checked}
+					on:change={handleChange}
 				/>
 				<p>{option.display ? option.display : option.value}</p>
 			</label>

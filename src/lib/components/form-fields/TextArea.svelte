@@ -2,6 +2,7 @@
 	export let /** @type string */ id;
 	export let /** @type string */ name;
 	export let /** @type string */ label;
+	export let /** @type string */ value = '';
 </script>
 
 <!--
@@ -13,6 +14,7 @@
   - `id` **required** - id of the underlying `textarea` element
   - `name` **required** - name of the underlying `textarea` element
   - `label` **required** - placeholder and label text for field
+  - `value` **optional** - the value of the field, can also be bound to (default: `''`)
 -->
 <div class="relative mb-14 sm:mb-8 md:col-span-2">
 	<textarea
@@ -21,6 +23,7 @@
 		{name}
 		rows="4"
 		placeholder={label}
+		bind:value
 	/>
 	<label
 		for={name}
