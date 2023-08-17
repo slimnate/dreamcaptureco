@@ -18,7 +18,7 @@
 -->
 <div class="relative">
 	<input
-		class="peer input variant-form-material border-0 border-b-2 !border-blackcoffee-300 bg-surface-500/10 pb-1 pl-4 pt-3 placeholder-transparent placeholder-shown:py-2"
+		class="peer input variant-form-material border-0 border-b-2 !border-blackcoffee-300 bg-surface-500/10 pb-1 pl-4 pt-3 placeholder-transparent outline-0 placeholder-shown:py-2"
 		{id}
 		{name}
 		placeholder={label}
