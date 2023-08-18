@@ -1,4 +1,6 @@
 <script>
+	import FieldError from '$lib/components/form-fields/FieldError.svelte';
+
 	/**
 	 * @typedef {Object} SelectOption
 	 * @property {string} value
@@ -69,6 +71,7 @@
 	export let /** @type string */ placeholder = 'Select a value';
 	export let /** @type SelectOption[] */ options;
 	export let /** @type string */ value = '';
+	export let /** @type string */ error;
 
 	$: isPlaceholderShown = value === '';
 </script>
@@ -84,6 +87,7 @@
   - `label` **optional** - placeholder and label text for field (default: `Select a value`)
   - `options` **required** - a list of `SelectOption` objects that will be used to render the options list
   - `value` **optional** - the value of the field, can also be bound to (default: `''`)
+  - `error` **optional** - the errors message to display on invalid value
   
   `SelectOption` props:
 		- `value` **required** - `value` attribute for the option item
@@ -158,6 +162,8 @@
 		class="absolute left-4 top-3 hidden text-base font-normal"
 		class:floating={!isPlaceholderShown}>{placeholder}</label
 	>
+
+	<FieldError {error} />
 </div>
 
 <style lang="postcss">

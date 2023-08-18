@@ -1,5 +1,6 @@
 <script>
 	import SveltyPicker from 'svelty-picker';
+	import FieldError from '$lib/components/form-fields/FieldError.svelte';
 
 	function handleOpen() {
 		picker.classList.remove('invisible');
@@ -23,6 +24,7 @@
 	export let /** @type string */ label = 'Select date';
 	export let /** @type string */ format = 'mm-dd-yyyy';
 	export let /** @type string */ value = '';
+	export let /** @type string */ error;
 
 	let /** @type {HTMLElement}*/ picker;
 </script>
@@ -39,6 +41,7 @@
   - `label` **optional** - placeholder and label text for field (default: `Select date`)
   - `format` **optional** - Date format to use in the display field (default: `mm-dd-yyy`) - see **standard formats** section of [svelty-picker documentation](https://mskocik.github.io/svelty-picker/formatting) for more information
   - `value` **optional** - the value of the field, can also be bound to (default: `''`)
+  - `error` **optional** - the errors message to display on invalid value
 -->
 <div class="relative">
 	<input
@@ -70,4 +73,6 @@
 			on:mousedown={handleOpen}
 		/></span
 	>
+
+	<FieldError {error} />
 </div>
