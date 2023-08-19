@@ -141,7 +141,10 @@
 				alert('Thank you for your submission');
 				console.log(response);
 			})
-			.catch((error) => alert(error));
+			.catch((error) => {
+				console.log(error);
+				alert(error);
+			});
 	}
 </script>
 
