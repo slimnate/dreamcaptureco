@@ -1,5 +1,5 @@
 <script>
-	import Select from '$lib/components/Select.svelte';
+	import Select from '$lib/components/form-fields/Select.svelte';
 	import Input from '$lib/components/form-fields/Input.svelte';
 	import Radio from '$lib/components/form-fields/Radio.svelte';
 	import DatePicker from '$lib/components/form-fields/DatePicker.svelte';
