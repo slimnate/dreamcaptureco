@@ -13,7 +13,6 @@
 	 * @param {MouseEvent & {currentTarget: HTMLElement | null}} event
 	 */
 	function handleClick(event) {
-		console.log(event);
 		const index = new Number(
 			event.currentTarget?.querySelector('img')?.getAttribute('data-index')
 		).valueOf();
@@ -26,12 +25,7 @@
 	 * @param event {CustomEvent<number>}
 	 */
 	function handlePresenterHide(event) {
-		console.log('close');
-		console.log(event);
-
 		const currentIndex = event.detail;
-		const img = document.getElementById(`image-btn-${currentIndex}`);
-		console.log(img);
 		document.getElementById(`image-btn-${currentIndex}`)?.focus();
 	}
 </script>
