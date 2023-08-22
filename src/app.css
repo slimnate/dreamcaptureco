@@ -48,7 +48,7 @@ footer {
 }
 
 section h1 {
-	@apply text-blackcoffee/80 !mt-0 py-8 text-3xl font-bold uppercase;
+	@apply !mt-0 py-8 text-3xl font-bold uppercase text-blackcoffee/80;
 }
 
 /* buttons */
