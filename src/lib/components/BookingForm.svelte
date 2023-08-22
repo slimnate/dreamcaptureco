@@ -209,12 +209,12 @@
 	<TimePicker id="time" name="time" label="Select a time" bind:value={time} error={timeError} />
 
 	<!-- AVAILABILITY -->
-	<div class="relative text-sm text-blackcoffee/70 md:col-span-2">
+	<!-- <div class="relative text-sm text-blackcoffee/70 md:col-span-2">
 		<p>
 			<b>NOTE:</b> Current only available on <i>weekends and after 5pm on weekdays</i>, but can be
 			flexible in some circumstances.
 		</p>
-	</div>
+	</div> -->
 
 	<!-- SUBJECTS -->
 	<TextArea id="subjects" name="subjects" label="Subjects" bind:value={subjects} />
