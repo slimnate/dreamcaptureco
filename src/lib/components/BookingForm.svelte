@@ -131,8 +131,8 @@
 		formData.append('phone', phone);
 		formData.append('email', email);
 		formData.append('preferredContact', preferredContact);
-		formData.append('packageType', packageType);
-		formData.append('sessionType', sessionType);
+		formData.append('package', packageType);
+		formData.append('session', sessionType);
 		formData.append('date', date);
 		formData.append('time', time);
 		formData.append('subjects', subjects);
