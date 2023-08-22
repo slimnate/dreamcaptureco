@@ -9,6 +9,7 @@
 	import sessionTypes from '$lib/data/sessionTypes';
 	import pricing from '$lib/data/pricing';
 	import { notEmpty, validEmail, validPhone } from '$lib/validation';
+	import SuccessModal from './form-fields/SuccessModal.svelte';
 
 	const sessionTypeOptions = sessionTypes.map((type) => {
 		return { value: type, display: type };
@@ -53,6 +54,11 @@
 	let /** @type string */ sessionTypeError;
 	let /** @type string */ dateError;
 	let /** @type string */ timeError;
+
+	/**
+	 * @type {SuccessModal | null}
+	 */
+	let successModal = null;
 
 	function clearErrors() {
 		nameError = '';
@@ -138,8 +144,16 @@
 			body: new URLSearchParams(formData).toString(),
 		})
 			.then((response) => {
-				alert('Thank you for your submission');
-				console.log(response);
+				if (response.ok) {
+					if (successModal) {
+						successModal.show();
+					} else {
+						alert('Thank you for your submission');
+					}
+				} else {
+					console.log(response);
+					alert(`${response.status} - ${response.statusText}`);
+				}
 			})
 			.catch((error) => {
 				console.log(error);
@@ -150,8 +164,6 @@
 
 <form
 	name="booking"
-	method="POST"
-	action="/booking/success"
 	data-netlify="true"
 	class="booking-form mx-auto grid gap-3 px-4 md:max-w-3xl md:grid-cols-2"
 >
@@ -229,11 +241,12 @@
 
 	<!-- SUBMIT BUTTON -->
 	<button
-		type="submit"
 		class="mx-auto mb-4 mt-4 block min-w-[90%] rounded !bg-blackcoffee/95 px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(58,45,50,0.8)] transition duration-150 ease-in-out hover:!bg-blackcoffee hover:shadow-[0_8px_9px_-4px_rgba(58,45,50,0.8),0_4px_18px_0_rgba(59,113,202,0.2)] focus:!bg-blackcoffee focus:shadow-[0_8px_9px_-4px_rgba(58,45,50,0.8),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:!bg-blackcoffee active:shadow-[0_8px_9px_-4px_rgba(58,45,50,0.8),0_4px_18px_0_rgba(59,113,202,0.2)] md:col-span-2 md:min-w-[50%]"
 		on:click|preventDefault={clearErrors}
 		on:click|preventDefault={submit}
 	>
 		Submit
 	</button>
+
+	<SuccessModal {name} bind:this={successModal} />
 </form>
