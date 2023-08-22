@@ -74,9 +74,11 @@
 <section>
 	<h1>{data.name}</h1>
 	<div class="text-blackcoffee/70">Click an image to view fullscreen</div>
-	<div class="mx-10 columns-1 sm:mx-auto sm:max-w-[90vw] sm:columns-2 md:max-w-[80vw] md:columns-3">
+	<div
+		class="mx-10 columns-1 sm:!mx-auto sm:max-w-[90vw] sm:columns-2 md:max-w-[80vw] md:columns-3"
+	>
 		{#each data.images as img}
-			<button on:click={handleClick} class="presenter-show">
+			<button type="button" on:click={handleClick} class="presenter-show">
 				<img
 					src={img}
 					alt={img}
