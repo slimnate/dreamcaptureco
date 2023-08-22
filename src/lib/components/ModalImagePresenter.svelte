@@ -27,6 +27,9 @@
 		shown = true;
 	}
 
+	/**
+	 * Navigate to the next image
+	 */
 	function nextImage() {
 		if (currentIndex === images.length - 1) {
 			currentIndex = 0;
@@ -35,6 +38,9 @@
 		}
 	}
 
+	/**
+	 * Navigate to previous image
+	 */
 	function previousImage() {
 		if (currentIndex === 0) {
 			currentIndex = images.length - 1;
@@ -52,28 +58,29 @@
 	function handleKeys(event) {
 		const key = event.key;
 
-		console.log(key);
-		// capture tab
 		if (key === 'Tab') event.preventDefault();
 
-		if (key == 'ArrowLeft') {
+		if (key === 'ArrowLeft') {
 			previousImage();
 		}
 
-		if (key == 'ArrowRight') {
+		if (key === 'ArrowRight') {
 			nextImage();
 		}
 
+		if (key === 'ArrowUp' || key === 'ArrowDown') {
+			event.preventDefault();
+		}
+
 		if (key === 'Escape' || key === 'Enter' || key === ' ') {
+			// prevent default to keep space from reopening after focus is returned to calling element.
+			event.preventDefault();
 			hide();
-			event.preventDefault(); // prevent default to keep space from reopening after focus is returned to calling element.
 		}
 	}
 
 	let /** @type {Boolean} */ shown = false;
 	let /** @type {Number} */ currentIndex = 0;
-	let /** @type {HTMLElement | null} */ previousFocusedElement;
-
 	export let /** @type {string[]} */ images;
 </script>
 
