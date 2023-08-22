@@ -1,6 +1,4 @@
 <script>
-	import Collage from '../Collage.svelte';
-
 	/**
 	 * @typedef RadioOption
 	 * @property {string} id
