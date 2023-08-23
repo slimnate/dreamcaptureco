@@ -27,7 +27,9 @@
 	function handlePresenterHide(event) {
 		const currentIndex = event.detail;
 		const toFocus = document.getElementById(`image-btn-${currentIndex}`);
-		toFocus?.scrollTo();
+		toFocus?.scrollIntoView({
+			block: 'center',
+		});
 		toFocus?.focus();
 	}
 </script>
