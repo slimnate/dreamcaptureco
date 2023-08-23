@@ -52,8 +52,8 @@
 		placeholder={label}
 		bind:value
 		autocomplete="off"
-		on:click={handleOpen}
-		on:focus={handleOpen}
+		on:click|preventDefault={handleOpen}
+		on:focus|preventDefault={handleOpen}
 		on:focusout={handleClose}
 		on:keypress|preventDefault
 		on:keydown|preventDefault
