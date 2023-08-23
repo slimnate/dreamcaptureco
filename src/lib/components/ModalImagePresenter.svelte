@@ -102,7 +102,7 @@
 				src={images[currentIndex]}
 			/>
 			<div
-				class="balance absolute top-0 rounded-b-lg bg-eggshell/30 px-2 py-1 text-blackcoffee/80 backdrop-blur-md"
+				class="balance absolute top-0 rounded-b-lg bg-eggshell/50 px-2 py-1 text-blackcoffee/90 backdrop-blur-lg"
 			>
 				{#if isTouchDevice()}
 					Tap or swipe up/down to close the preview
