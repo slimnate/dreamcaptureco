@@ -1,6 +1,7 @@
 <script>
 	import ModalImagePresenter from '$lib/components/ModalImagePresenter.svelte';
 	import { capitalize } from '$lib/string';
+	import { isTouchDevice } from '$lib/touch';
 
 	/** @type {import('./$types').PageServerData} */
 	export let data;
@@ -40,7 +41,13 @@
 
 <section>
 	<h1>{data.name}</h1>
-	<div class="text-blackcoffee/70">Click an image to view fullscreen</div>
+	<div class="text-blackcoffee/70">
+		{#if isTouchDevice()}
+			Touch an image to view fullscreen
+		{:else}
+			Click an image to view fullscreen
+		{/if}
+	</div>
 	<div
 		class="mx-10 columns-1 sm:!mx-auto sm:max-w-[90vw] sm:columns-2 md:max-w-[80vw] md:columns-3"
 	>

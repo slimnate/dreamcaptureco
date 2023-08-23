@@ -1,6 +1,7 @@
 <script>
 	import { createEventDispatcher } from 'svelte';
 	import { Hammer, swipe } from 'svelte-hammer';
+	import { isTouchDevice } from '$lib/touch';
 
 	const dispatch = createEventDispatcher();
 
@@ -101,10 +102,20 @@
 				src={images[currentIndex]}
 			/>
 			<div
-				class="absolute top-0 rounded-b-lg bg-eggshell/30 px-4 py-1 text-blackcoffee/70 backdrop-blur-md"
+				class="balance absolute top-0 rounded-b-lg bg-eggshell/30 px-2 py-1 text-blackcoffee/80 backdrop-blur-md"
 			>
-				Click anywhere to close the preview
+				{#if isTouchDevice()}
+					Tap or swipe up/down to close the preview
+				{:else}
+					Click anywhere to close the preview
+				{/if}
 			</div>
 		</div>
 	</button>
 </div>
+
+<style>
+	.balance {
+		text-wrap: balance;
+	}
+</style>
