@@ -1,6 +1,6 @@
 <script>
 	import { createEventDispatcher } from 'svelte';
-	import { swipe } from 'svelte-hammer';
+	import { Hammer, swipe } from 'svelte-hammer';
 
 	const dispatch = createEventDispatcher();
 
@@ -87,12 +87,12 @@
 <div class="fixed inset-0 z-10 bg-blackcoffee/50" class:hidden={!shown}>
 	<button
 		class=" h-full w-full"
-		on:click={hide}
-		use:swipe
+		on:click|preventDefault={hide}
+		use:swipe={{ direction: Hammer.DIRECTION_ALL }}
 		on:swipeleft={nextImage}
 		on:swiperight={previousImage}
-		on:swipeup={close}
-		on:swipedown={close}
+		on:swipeup={hide}
+		on:swipedown={hide}
 	>
 		<div class="relative flex items-center justify-center">
 			<img
