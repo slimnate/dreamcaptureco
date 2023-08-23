@@ -125,9 +125,12 @@
 
 	<label
 		for="session"
-		class="absolute left-4 top-3 hidden text-base font-normal"
-		class:floating={!isPlaceholderShown}>{placeholder}</label
+		class="absolute left-4 top-3 text-base font-normal"
+		class:floating={!isPlaceholderShown}
+		class:hidden={isPlaceholderShown}
 	>
+		{placeholder}
+	</label>
 
 	<FieldError {error} />
 </div>
