@@ -65,17 +65,6 @@ const images = {
 			// { name: '029.jpg', main: false, gallery: false },
 			{ name: '030.jpg', main: false, gallery: false },
 			// { name: '031.jpg', main: false, gallery: false },
-<<<<<<< Updated upstream
-			{ name: '032.jpg', main: false, gallery: false },
-			{ name: '033.jpg', main: false, gallery: false },
-			// { name: '034.jpg', main: false, gallery: false },
-			{ name: '035.jpg', main: false, gallery: true },
-			// { name: '036.jpg', main: false, gallery: false },
-			// { name: '037.jpg', main: false, gallery: false },
-			// { name: '038.jpg', main: false, gallery: false },
-			{ name: '038.jpg', main: false, gallery: false },
-			{ name: '039.jpg', main: false, gallery: false },
-=======
 			// { name: '032.jpg', main: false, gallery: false },
 			// { name: '033.jpg', main: false, gallery: false },
 			// { name: '034.jpg', main: false, gallery: false },
@@ -85,7 +74,6 @@ const images = {
 			{ name: '066.jpg', main: false, gallery: true }, //out of order
 			// { name: '038.jpg', main: false, gallery: true },
 			// { name: '039.jpg', main: false, gallery: false },
->>>>>>> Stashed changes
 			{ name: '040.jpg', main: false, gallery: false },
 			// { name: '041.jpg', main: false, gallery: false },
 			// { name: '042.jpg', main: false, gallery: false },
@@ -98,23 +86,6 @@ const images = {
 			{ name: '049.jpg', main: false, gallery: false },
 			{ name: '050.jpg', main: false, gallery: false },
 			{ name: '051.jpg', main: false, gallery: false },
-<<<<<<< Updated upstream
-			{ name: '052.jpg', main: false, gallery: false },
-			{ name: '053.jpg', main: false, gallery: false },
-			{ name: '054.jpg', main: false, gallery: false },
-			{ name: '055.jpg', main: false, gallery: true },
-			{ name: '056.jpg', main: false, gallery: false },
-			{ name: '057.jpg', main: false, gallery: false },
-			{ name: '058.jpg', main: false, gallery: false },
-			{ name: '059.jpg', main: false, gallery: false },
-			{ name: '060.jpg', main: false, gallery: false },
-			{ name: '061.jpg', main: false, gallery: false },
-			{ name: '062.jpg', main: false, gallery: false },
-			{ name: '063.jpg', main: false, gallery: false },
-			{ name: '064.jpg', main: true, gallery: true },
-			{ name: '065.jpg', main: false, gallery: false },
-			// { name: '047.jpg', main: false, gallery: false },
-=======
 			// { name: '052.jpg', main: false, gallery: false },
 			// { name: '053.jpg', main: false, gallery: false },
 			// { name: '054.jpg', main: false, gallery: false },
@@ -144,7 +115,6 @@ const images = {
 			// { name: '079.jpg', main: false, gallery: false },
 			// { name: '080.jpg', main: false, gallery: false },
 			{ name: '081.jpg', main: false, gallery: true },
->>>>>>> Stashed changes
 		],
 	},
 	boudoir: {
@@ -203,11 +173,6 @@ const images = {
 			// { name: '013.jpg', main: true, gallery: false },
 			{ name: '014.jpg', main: false, gallery: false },
 			{ name: '015.jpg', main: true, gallery: true },
-<<<<<<< Updated upstream
-			{ name: '016.jpg', main: false, gallery: false },
-			{ name: '017.jpg', main: false, gallery: false },
-			{ name: '018.jpg', main: false, gallery: true },
-=======
 			// { name: '016.jpg', main: false, gallery: false },
 			// { name: '017.jpg', main: false, gallery: false },
 			{ name: '018.jpg', main: false, gallery: false },
@@ -221,7 +186,6 @@ const images = {
 			{ name: '026.jpg', main: false, gallery: false },
 			{ name: '027.jpg', main: false, gallery: true },
 			{ name: '028.jpg', main: false, gallery: false },
->>>>>>> Stashed changes
 		],
 	},
 	family: {
