@@ -4,7 +4,7 @@
 	/** @type {import('./$types').PageServerData} */
 	export let data;
 
-	const { portraitItems, boudoirItems, couplesItems, familyItems, maternityItems, businessItems } =
+	const { portraitItems, boudoirItems, couplesItems, familyItems, maternityItems, businessItems, seniorsItems } =
 		data;
 </script>
 
@@ -23,3 +23,5 @@
 <Gallery items={maternityItems} id="maternityGallery" />
 
 <Gallery items={businessItems} id="businessGallery" />
+
+<Gallery items={seniorsItems} id="seniorsGallery" />

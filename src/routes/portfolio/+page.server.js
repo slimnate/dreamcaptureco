@@ -8,6 +8,7 @@ export async function load() {
 	const familyItems = await getGalleryImagesFor('family');
 	const maternityItems = await getGalleryImagesFor('maternity');
 	const businessItems = await getGalleryImagesFor('business');
+	const seniorsItems = await getGalleryImagesFor('seniors');
 
 	return {
 		portraitItems,
@@ -16,5 +17,6 @@ export async function load() {
 		familyItems,
 		maternityItems,
 		businessItems,
+		seniorsItems,
 	};
 }
