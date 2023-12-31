@@ -22,7 +22,7 @@
 				alt="Izzy Stevens"
 				loading="lazy"
 				decoding="async"
-				class="mx-auto h-[50vw] max-h-[300px] w-[50vw] max-w-[300px] rounded-full object-cover"
+				class="mx-auto h-[50vw] max-h-[300px] w-[50vw] max-w-[300px] rounded-full object-cover object-top"
 			/>
 		</picture>
 		<div class="mx-auto mb-8 mt-6 text-4xl leading-10" style="font-family:'Dancing Script'">
