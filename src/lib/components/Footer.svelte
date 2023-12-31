@@ -21,7 +21,7 @@
 		class="flex items-center justify-center border-b border-xanadu p-4 md:justify-between md:p-6"
 	>
 		<div class="mr-12 hidden md:block">
-			<span>Get connected with us on social networks:</span>
+			<span>Get connected on social networks:</span>
 		</div>
 		<div class="flex justify-center">
 			<a
@@ -63,11 +63,11 @@
 				</p>
 				<p class="mb-4 flex items-center justify-center md:justify-start">
 					<IconMail />
-					dream.capture.co42@gmail.com
+					dream.capture.co.42@gmail.com
 				</p>
 				<p class="mb-4 flex items-center justify-center md:justify-start">
 					<IconPhone />
-					+ 1 316 390 3410
+					+ 1 816 501 8247
 				</p>
 			</div>
 		</div>

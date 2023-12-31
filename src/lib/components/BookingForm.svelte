@@ -46,6 +46,7 @@
 	let /** @type string */ time;
 	let /** @type string */ subjects;
 	let /** @type string */ additionalInfo;
+	let /** @type string */ referral;
 
 	let /** @type string */ nameError;
 	let /** @type string */ phoneError;
@@ -137,6 +138,7 @@
 		formData.append('time', time);
 		formData.append('subjects', subjects);
 		formData.append('additionalInfo', additionalInfo);
+		formData.append('referral', referral);
 
 		fetch('/', {
 			method: 'POST',
@@ -229,15 +231,33 @@
 	</div> -->
 
 	<!-- SUBJECTS -->
-	<TextArea id="subjects" name="subjects" label="Subjects" bind:value={subjects} />
+	<TextArea
+		id="subjects"
+		name="subjects"
+		label="Subjects"
+		hint="Who will be taking part in the shoot? Include name, age, and any special accommodation info"
+		bind:value={subjects}
+	/>
 
 	<!-- ADDITIONAL INFO -->
 	<TextArea
 		id="additionalInfo"
 		name="additionalInfo"
 		label="Additional Info"
+		hint="Anything else you want me to know"
 		bind:value={additionalInfo}
 	/>
+
+	<!-- REFERRAL -->
+	<div class="md:col-span-2">
+		<Input
+			id="referral"
+			name="referral"
+			label="Where did you hear about me?"
+			hint="Facebook, Instagram, word of mouth, etc"
+			bind:value={referral}
+		/>
+	</div>
 
 	<!-- SUBMIT BUTTON -->
 	<button
