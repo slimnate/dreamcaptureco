@@ -15,7 +15,7 @@
 				alt="Izzy Stevens"
 				loading="lazy"
 				decoding="async"
-				class="mx-auto mb-8 h-[50vw] max-h-[300px] w-[50vw] max-w-[300px] rounded-full object-cover"
+				class="mx-auto mb-8 h-[50vw] max-h-[300px] w-[50vw] max-w-[300px] rounded-full object-cover object-top"
 			/>
 		</picture>
 		<p class="mx-8 max-w-[35rem] leading-8 tracking-wide opacity-80 sm:mx-28 md:mx-48">

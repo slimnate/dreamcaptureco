@@ -10,7 +10,7 @@
 const sizes = '(max-width: 600px) 200px, 500px';
 
 /* @imagetools-generate name(setahnie) image($lib/images/testimonials/setahnie-01.jpg) w(200;500) */
-/* @imagetools-generate name(electra) image($lib/images/testimonials/electra-03.jpg) w(200;500) */
+/* @imagetools-generate name(electra) image($lib/images/testimonials/electra-04.jpg) w(200;500) */
 /* @imagetools-generate name(bri) image($lib/images/testimonials/bri-03.jpg) w(200;500) */
 /* @imagetools-generate name(quinton) image($lib/images/testimonials/quinton-02.jpg) w(200;500) */
 /* @imagetools-generate name(allyson) image($lib/images/testimonials/allyson-01.jpg) w(200;500) */
@@ -43,15 +43,6 @@ const testimonials = [
 		// @ts-ignore
 		// eslint-disable-next-line no-undef
 		image: { ...bri_images, sizes },
-		fitTop: true,
-	},
-	{
-		name: 'Quinton',
-		location: 'Lawrence, KS',
-		text: 'Izzy takes her time, she is very professional, and has a unique way of interacting with her clients. She’s a fantastic photographer! I will continue going back to Izzy for all my shoots!',
-		// @ts-ignore
-		// eslint-disable-next-line no-undef
-		image: { ...quinton_images, sizes },
 		fitTop: true,
 	},
 	{

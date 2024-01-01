@@ -86,6 +86,10 @@
 		{/each}
 	</div>
 
+	<p class="mb-4 tracking-wide text-blackcoffee/80 before:content-['***'] after:content-['***']">
+		Prices do not include custom/specialty props if they are needed for a shoot.
+	</p>
+
 	<!-- Event consultation -->
 	<p class="mb-4 tracking-wide text-blackcoffee/80 before:content-['***'] after:content-['***']">
 		For weddings, parties, or other events, please reach out to schedule a free consultation.

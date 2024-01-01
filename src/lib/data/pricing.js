@@ -1,11 +1,23 @@
 const packages = [
+	// {
+	// 	name: 'Mini',
+	// 	price: 200,
+	// 	features: [
+	// 		'30 minutes',
+	// 		'1 location',
+	// 		'1-2 subjects',
+	// 		'10-15 edits',
+	// 		'access to client wardrobe',
+	// 		'3-4 week turnaround',
+	// 	],
+	// },
 	{
 		name: 'Day Dream',
-		price: 200,
+		price: 250,
 		features: [
-			'1 hour',
+			'45 min',
 			'1 location',
-			'up to 5 subjects',
+			'up to 3 subjects',
 			'20-30 edits',
 			'access to client wardrobe',
 			'3-4 week turnaround',
@@ -13,11 +25,11 @@ const packages = [
 	},
 	{
 		name: 'Sweet Dream',
-		price: 300,
+		price: 400,
 		features: [
 			'1.5 hours',
 			'1-2 locations',
-			'up to 8 subjects',
+			'up to 5 subjects',
 			'30-40 edits',
 			'access to client wardrobe',
 			'2-3 week turnaround',
@@ -25,7 +37,7 @@ const packages = [
 	},
 	{
 		name: 'Dream Come True',
-		price: 400,
+		price: 550,
 		features: [
 			'2 hours',
 			'1-2 locations',
@@ -53,10 +65,15 @@ const addOns = [
 		description: 'Get 10 extra edited images',
 		price: '$50',
 	},
+	// {
+	// 	name: 'Physical delivery',
+	// 	description: 'Get a physical copy of your images on a flash drive',
+	// 	price: '$30',
+	// },
 	{
-		name: 'Physical delivery',
-		description: 'Get a physical copy of your images on a flash drive',
-		price: '$30',
+		name: 'Studio Upgrade',
+		description: 'Upgrade to larger studio with more backdrop options',
+		price: '$50/hr',
 	},
 ];
 
