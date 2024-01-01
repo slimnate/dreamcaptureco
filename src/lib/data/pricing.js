@@ -15,7 +15,7 @@ const packages = [
 		name: 'Day Dream',
 		price: 250,
 		features: [
-			'45 min',
+			'45 minutes',
 			'1 location',
 			'up to 3 subjects',
 			'20-30 edits',
