@@ -21,6 +21,10 @@
 			text: 'Booking',
 		},
 		{
+			href: '/store',
+			text: 'Prints',
+		},
+		{
 			href: '/about',
 			text: 'About',
 		},

@@ -36,7 +36,7 @@
 	export let /** @type string */ name;
 	export let /** @type string */ placeholder = 'Select a value';
 	export let /** @type SelectOption[] */ options;
-	export let /** @type string */ value = '';
+	export let /** @type string|number */ value = '';
 	export let /** @type string */ error;
 
 	$: isPlaceholderShown = value === '';

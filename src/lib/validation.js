@@ -17,6 +17,18 @@ function notEmpty(value) {
 }
 
 /**
+ * Verify that a value exists within a specific set
+ * @param {any} value Value to validate
+ * @param {any[]} set Set to check for value
+ */
+function inSet(value, set) {
+	if (set.indexOf(value) === -1) {
+		return false;
+	}
+	return true;
+}
+
+/**
  *  Verify that `value` is a valid phone number format
  * @param {string} value Value to validate
  * @returns {boolean} true if value is a valid phone number
@@ -34,4 +46,4 @@ function validEmail(value) {
 	return new RegExp(emailRegex).test(value);
 }
 
-export { notEmpty, validPhone, validEmail };
+export { notEmpty, validPhone, validEmail, inSet };
