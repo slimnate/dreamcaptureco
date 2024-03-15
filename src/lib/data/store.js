@@ -33,12 +33,16 @@ const images = [
 /** @type {SizeItem[]} */
 const sizes = [
 	{
-		name: '5" x 9"',
-		price: '$20',
+		name: '5" x 7"',
+		price: '$15',
 	},
 	{
-		name: '8.5" x 11"',
-		price: '$50',
+		name: '8" x 10"',
+		price: '$25',
+	},
+	{
+		name: '11" x 14"',
+		price: '$45',
 	},
 ];
 
