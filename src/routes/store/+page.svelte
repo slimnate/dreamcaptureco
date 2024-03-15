@@ -1,15 +1,12 @@
 <script>
 	/**
 	 * TODO:
-	 * Add shipping address fields
-	 * Change image grid size on larger layouts
 	 * show images in add new image dropdown
 	 */
 	import Input from '$lib/components/form-fields/Input.svelte';
 	import Select from '$lib/components/form-fields/Select.svelte';
 	import Spinner from '$lib/components/form-fields/Spinner.svelte';
 	import SuccessModal from '$lib/components/form-fields/SuccessModal.svelte';
-	import TextArea from '$lib/components/form-fields/TextArea.svelte';
 	import IconTrash from '$lib/components/icons/IconTrash.svelte';
 	import store from '$lib/data/store.js';
 	import { notEmpty, validEmail, validPhone, inSet } from '$lib/validation';
@@ -221,7 +218,7 @@
 	<!-- TODO - Store Header image ?? -->
 
 	<!-- Store images -->
-	<div class="mx-10 columns-2">
+	<div class="mx-10 columns-2 sm:columns-3 md:columns-4">
 		{#each images as image}
 			<div class="relative">
 				<img src={image.path} alt="" class="py-2 drop-shadow-lg" />
