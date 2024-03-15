@@ -2,12 +2,14 @@
 	/**
 	 * TODO:
 	 * Add shipping address fields
+	 * Change image grid size on larger layouts
 	 * show images in add new image dropdown
 	 */
 	import Input from '$lib/components/form-fields/Input.svelte';
 	import Select from '$lib/components/form-fields/Select.svelte';
 	import Spinner from '$lib/components/form-fields/Spinner.svelte';
 	import SuccessModal from '$lib/components/form-fields/SuccessModal.svelte';
+	import TextArea from '$lib/components/form-fields/TextArea.svelte';
 	import IconTrash from '$lib/components/icons/IconTrash.svelte';
 	import store from '$lib/data/store.js';
 	import { notEmpty, validEmail, validPhone, inSet } from '$lib/validation';
@@ -50,11 +52,19 @@
 	let /** @type string */ name;
 	let /** @type string */ phone;
 	let /** @type string */ email;
+	let /** @type string */ address;
+	let /** @type string */ city;
+	let /** @type string */ state;
+	let /** @type string */ zip;
 	let /** @type string */ order;
 
 	let /** @type string */ nameError;
 	let /** @type string */ phoneError;
 	let /** @type string */ emailError;
+	let /** @type string */ addressError;
+	let /** @type string */ cityError;
+	let /** @type string */ stateError;
+	let /** @type string */ zipError;
 
 	let /** @type string */ stagedOrderItemError;
 	let /** @type string */ stagedOrderSizeError;
@@ -111,6 +121,10 @@
 		nameError = '';
 		phoneError = '';
 		emailError = '';
+		addressError = '';
+		cityError = '';
+		stateError = '';
+		zipError = '';
 	}
 
 	function validate() {
@@ -135,6 +149,30 @@
 			emailError = 'Invalid email address';
 		}
 
+		//validate address
+		if (!notEmpty(address)) {
+			valid = false;
+			addressError = 'Invalid shipping address';
+		}
+
+		//validate city
+		if (!notEmpty(city)) {
+			valid = false;
+			cityError = 'Invalid city';
+		}
+
+		//validate state
+		if (!notEmpty(state)) {
+			valid = false;
+			stateError = 'Invalid state';
+		}
+
+		//validate zip
+		if (!notEmpty(zip)) {
+			valid = false;
+			zipError = 'Invalid zip';
+		}
+
 		return valid;
 	}
 
@@ -149,6 +187,10 @@
 		formData.append('name', name);
 		formData.append('phone', phone);
 		formData.append('email', email);
+		formData.append('address', address);
+		formData.append('city', city);
+		formData.append('state', state);
+		formData.append('zip', zip);
 		formData.append('order', order);
 
 		fetch('/', {
@@ -227,6 +269,18 @@
 
 			<!-- EMAIL -->
 			<Input name="email" id="email" label="Email" bind:value={email} error={emailError} />
+
+			<!-- SHIPPING ADDRESS -->
+			<Input
+				name="address"
+				id="adress"
+				label="Shipping Address"
+				bind:value={address}
+				error={addressError}
+			/>
+			<Input name="city" id="city" label="City" bind:value={city} error={cityError} />
+			<Input name="state" id="state" label="State" bind:value={state} error={stateError} />
+			<Input name="zip" id="zip" label="Zip" bind:value={zip} error={zipError} />
 
 			<!-- ADD TO CART FORM -->
 			<div
