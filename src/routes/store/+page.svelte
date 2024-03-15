@@ -5,6 +5,7 @@
 	 */
 	import Input from '$lib/components/form-fields/Input.svelte';
 	import Select from '$lib/components/form-fields/Select.svelte';
+	import ImageSelect from '$lib/components/form-fields/ImageSelect.svelte';
 	import Spinner from '$lib/components/form-fields/Spinner.svelte';
 	import SuccessModal from '$lib/components/form-fields/SuccessModal.svelte';
 	import IconTrash from '$lib/components/icons/IconTrash.svelte';
@@ -285,7 +286,7 @@
 			>
 				<div class="font-semibold md:col-span-2">Add To Order</div>
 				<div class="md:col-span-2">
-					<Select
+					<ImageSelect
 						id="staged-order-itemid"
 						name="staged-order-itemid"
 						placeholder="Image"
