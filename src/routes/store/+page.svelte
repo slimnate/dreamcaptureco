@@ -233,7 +233,7 @@
 	<!-- Store sizes -->
 	<div class="mx-10">
 		Available sizes:
-		<div class="columns-2">
+		<div class="columns-3">
 			{#each sizes as size}
 				<div
 					class="rounded-lg border-2 border-solid border-blackcoffee-500 bg-cream py-6 text-lg drop-shadow-lg"
