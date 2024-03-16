@@ -220,7 +220,7 @@
 
 	<!-- Store images -->
 	<div class="mx-10 columns-2 sm:columns-3 md:columns-4">
-		{#each images as image}
+		{#each images as image, i}
 			<div class="relative">
 				<img src={image.path} alt="" class="py-2 drop-shadow-lg" />
 				<div class="absolute right-0 top-2 h-8 w-8 bg-cream/50">
@@ -284,7 +284,7 @@
 			<div
 				class="mt-4 grid gap-3 rounded-lg border-2 border-blackcoffee-300 p-4 pt-2 md:col-span-2 md:grid-cols-2"
 			>
-				<div class="font-semibold md:col-span-2">Add To Order</div>
+				<div class="font-semibold md:col-span-2">Add To Cart</div>
 				<div class="md:col-span-2">
 					<ImageSelect
 						id="staged-order-itemid"
@@ -323,12 +323,14 @@
 			</div>
 
 			<!-- CART -->
-			<div
-				class="mt-4 grid gap-3 rounded-lg border-2 border-blackcoffee-300 p-4 pt-2 md:col-span-2"
-			>
+			<div class="mt-4 grid gap-3 rounded-lg border-2 border-blackcoffee-300 pt-2 md:col-span-2">
 				<div class="font-semibold">Cart</div>
 				{#each orderItems as item, i}
-					<div class="flex w-full flex-col items-center justify-items-center gap-4 md:flex-row">
+					<div
+						class:border-t-0={i === 0}
+						class:pt-2={i === 0}
+						class="flex w-full flex-col items-center justify-items-center gap-4 border-t-[1px] border-blackcoffee-300 p-4 md:flex-row"
+					>
 						<div class="flex w-48 flex-col items-center md:flex-row">
 							<img src={item.path} alt={item.id.toString()} />
 							<button
