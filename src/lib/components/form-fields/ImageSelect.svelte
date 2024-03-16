@@ -84,7 +84,7 @@
 
 	<!-- Options list container -->
 	<div
-		class="options max-h-80 overflow-y-scroll rounded-b-md border-[1px] border-t-0 border-blackcoffee-300 bg-surface-400"
+		class="options max-h-96 overflow-y-scroll rounded-b-md border-[1px] border-t-0 border-blackcoffee-300 bg-surface-400"
 		class:hide={!isOpen}
 	>
 		{#each options as option}
