@@ -1,8 +1,4 @@
 <script>
-	/**
-	 * TODO:
-	 * show images in add new image dropdown
-	 */
 	import Input from '$lib/components/form-fields/Input.svelte';
 	import Select from '$lib/components/form-fields/Select.svelte';
 	import ImageSelect from '$lib/components/form-fields/ImageSelect.svelte';
@@ -42,7 +38,7 @@
 	const validImageIDs = images.map((item) => item.id);
 
 	/** @type {OrderItem[]}*/
-	let orderItems = [defaultOrderItem];
+	let orderItems = [];
 
 	/** @type {OrderItem}*/
 	let stagedOrderItem = JSON.parse(JSON.stringify(defaultOrderItem));
@@ -325,6 +321,10 @@
 			<!-- CART -->
 			<div class="mt-4 grid gap-3 rounded-lg border-2 border-blackcoffee-300 pt-2 md:col-span-2">
 				<div class="font-semibold">Cart</div>
+				{#if orderItems.length === 0}
+					<div class="mb-4">Cart is empty</div>
+				{/if}
+
 				{#each orderItems as item, i}
 					<div
 						class:border-t-0={i === 0}
