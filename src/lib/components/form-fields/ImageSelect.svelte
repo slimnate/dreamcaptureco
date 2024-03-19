@@ -1,7 +1,6 @@
 <script>
 	import FieldError from '$lib/components/form-fields/FieldError.svelte';
 	import { clickOutside } from '$lib/actions';
-	import { isValidCategory } from '$lib/data/portfolio';
 	/**
 	 * @typedef {Object} ImageSelectOption
 	 * @property {string} value
