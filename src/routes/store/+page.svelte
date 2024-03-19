@@ -362,7 +362,7 @@
 						</div>
 						<button
 							class="hidden h-12 rounded !bg-blackcoffee/95 px-4 text-sm font-medium uppercase leading-normal text-cream shadow-[0_4px_9px_-4px_rgba(58,45,50,0.8)] transition duration-150 ease-in-out hover:!bg-blackcoffee hover:shadow-[0_8px_9px_-4px_rgba(58,45,50,0.8),0_4px_18px_0_rgba(59,113,202,0.2)] focus:!bg-blackcoffee focus:shadow-[0_8px_9px_-4px_rgba(58,45,50,0.8),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:!bg-blackcoffee active:shadow-[0_8px_9px_-4px_rgba(58,45,50,0.8),0_4px_18px_0_rgba(59,113,202,0.2)] md:block"
-							on:click|preventDefault={submit}
+							on:click|preventDefault={removeItemFromCart(i)}
 						>
 							<IconTrash />
 						</button>
