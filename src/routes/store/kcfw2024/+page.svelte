@@ -1,9 +1,39 @@
 <script>
-	/** @type string[] */
+	import ModalImagePresenter from '$lib/components/ModalImagePresenter.svelte';
+
+	/** @type {string[]} */
 	let images = [];
 
 	for (let i = 0; i < 207; i++) {
 		images.push(`/images/kcfw/${i}.jpg`);
+	}
+
+	let /** @type {ModalImagePresenter} */ presenter;
+
+	/**
+	 * Handle click of a gallery image, will also be called when enter/space pressed
+	 * on focus for keyboard navigators/screenreaders.
+	 * @param {MouseEvent & {currentTarget: HTMLElement | null}} event
+	 */
+	function handleClick(event) {
+		const index = new Number(
+			event.currentTarget?.querySelector('img')?.getAttribute('data-index')
+		).valueOf();
+
+		presenter.show(index);
+	}
+
+	/**
+	 * Handle presenter 'hide' event to focus the image that was shown last
+	 * @param event {CustomEvent<number>}
+	 */
+	function handlePresenterHide(event) {
+		const currentIndex = event.detail;
+		const toFocus = document.getElementById(`image-btn-${currentIndex}`);
+		toFocus?.scrollIntoView({
+			block: 'center',
+		});
+		toFocus?.focus();
 	}
 </script>
 
@@ -57,11 +87,14 @@
 	<div class="mx-10 my-8 columns-2 sm:columns-3 md:columns-4">
 		{#each images as image, i}
 			<div class="relative">
-				<img src={image} alt="" class="py-2 drop-shadow-lg" />
-				<div class="absolute right-0 top-2 h-8 w-8 bg-cream/50">
-					<!-- pt-[.2rem] is just a hacky way to center the text, remember how to do this properly later -->
-					<div class="mx-auto my-auto pt-[.2rem]">{i}</div>
-				</div>
+				<button id={`image-btn-${i}`} type="button" on:click={handleClick} class="presenter-show">
+					<img
+						data-index={i}
+						src={image}
+						alt={image}
+						class="py-2 drop-shadow-lg hover:brightness-90"
+					/>
+				</button>
 			</div>
 		{/each}
 	</div>
@@ -108,4 +141,11 @@
 		</p>
 		Thanks!
 	</div>
+
+	<ModalImagePresenter
+		{images}
+		bind:this={presenter}
+		on:hide={handlePresenterHide}
+		showIndex={true}
+	/>
 </section>

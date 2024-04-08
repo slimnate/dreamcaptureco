@@ -83,6 +83,7 @@
 	let /** @type {Boolean} */ shown = false;
 	let /** @type {Number} */ currentIndex = 0;
 	export let /** @type {string[]} */ images;
+	export let /** @type {boolean}*/ showIndex = false;
 </script>
 
 <div class="fixed inset-0 z-10 bg-blackcoffee/50" class:hidden={!shown}>
@@ -110,6 +111,12 @@
 					Click anywhere to close the preview
 				{/if}
 			</div>
+			{#if showIndex}
+				<div class="absolute bottom-0 h-16 w-16 bg-cream/50">
+					<!-- pt-[.2rem] is just a hacky way to center the text, remember how to do this properly later -->
+					<div class="mx-auto pt-[0.6rem] text-3xl">{currentIndex}</div>
+				</div>
+			{/if}
 		</div>
 	</button>
 </div>
