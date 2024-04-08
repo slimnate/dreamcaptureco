@@ -65,10 +65,6 @@
 					<IconMail />
 					dream.capture.co.42@gmail.com
 				</p>
-				<p class="mb-4 flex items-center justify-center md:justify-start">
-					<IconPhone />
-					+ 1 816 501 8247
-				</p>
 			</div>
 		</div>
 	</div>
