@@ -94,6 +94,10 @@
 						alt={image}
 						class="py-2 drop-shadow-lg hover:brightness-90"
 					/>
+					<div class="absolute right-0 top-2 h-8 w-8 bg-cream/50">
+						<!-- pt-[.2rem] is just a hacky way to center the text, remember how to do this properly later -->
+						<div class="mx-auto my-auto pt-[.2rem]">{i}</div>
+					</div>
 				</button>
 			</div>
 		{/each}
