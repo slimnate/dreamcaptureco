@@ -13,7 +13,7 @@ const packages = [
 	// },
 	{
 		name: 'Day Dream',
-		price: 250,
+		price: 350,
 		features: [
 			'45 minutes',
 			'1 location',
@@ -25,7 +25,7 @@ const packages = [
 	},
 	{
 		name: 'Sweet Dream',
-		price: 400,
+		price: 500,
 		features: [
 			'1.5 hours',
 			'1-2 locations',
@@ -37,7 +37,7 @@ const packages = [
 	},
 	{
 		name: 'Dream Come True',
-		price: 550,
+		price: 650,
 		features: [
 			'2 hours',
 			'1-2 locations',
